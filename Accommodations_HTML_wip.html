@@ -134,22 +134,7 @@
   .hero .sub{
     font-size:19px;
     color:var(--text-muted);
-    max-width:34em;
     margin-top:20px;
-  }
-  .hero-grid{
-    display:flex;
-    align-items:flex-start;
-    gap:40px;
-    margin-top:20px;
-  }
-  .hero-text{
-    flex:44 1 0%;
-    min-width:0;
-  }
-  .hero-image{
-    flex:56 1 0%;
-    min-width:0;
   }
   .term-note{
     font-size:14px;
@@ -160,7 +145,6 @@
     margin-top:22px;
   }
   .term-note b{ color:var(--text); font-weight:600; }
-  .hero-image .artifact-frame{ margin-top:0; }
   .hero-stat-row{
     display:flex;
     gap:16px;
@@ -600,12 +584,6 @@
     display:grid;
     grid-template-columns:repeat(3,1fr);
   }
-  .hero-text .snapshot-grid{
-    grid-template-columns:1fr 1fr;
-  }
-  .hero-text .snapshot-item:nth-child(2){ border-right:none; }
-  .hero-text .snapshot-item:nth-child(1),
-  .hero-text .snapshot-item:nth-child(2){ border-bottom:1px solid var(--line); }
   .snapshot-item{
     padding:22px 22px;
     border-right:1px solid var(--line);
@@ -831,9 +809,6 @@
   /* ---------- Responsive ---------- */
   @media (max-width:780px){
     .hero h1{ font-size:36px; }
-    .hero-grid{ flex-direction:column; gap:32px; }
-    .hero-text{ flex-basis:auto; }
-    .hero-text .snapshot-grid{ grid-template-columns:1fr 1fr; }
     .stat-row{ grid-template-columns:1fr; }
     .model-grid{ grid-template-columns:1fr 1fr; }
     .lifecycle{ flex-direction:column; }
@@ -867,9 +842,14 @@
     <div class="role">ACCOMMODATIONS · WAYGROUND · SOLE UX RESEARCHER</div>
     <h1>Legal Mandate. <em>Classroom Reality.</em></h1>
 
-    <div class="hero-grid">
-      <div class="hero-text">
     <p class="sub">A legal requirement existed for accommodations to reach every student who needed them. Adoption on the product stayed low anyway. This is the research that found out why, and who was actually left holding the risk.</p>
+
+    <div class="artifact-frame">
+      <div class="video-embed-wrap">
+        <iframe src="https://www.youtube.com/embed/3-LFRZMT7sg" title="Wayground accommodations walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+      <div class="artifact-caption">THE LIVE PRODUCT · A walkthrough of Wayground's accommodations screen, from read-aloud and extra time to dyslexia fonts and reduced answer choices.</div>
+    </div>
 
     <div class="term-note"><b>IEP</b> (Individualized Education Program) and <b>504 Plan</b>: legal documents that list the specific accommodations a student is entitled to, things like extra time, read-aloud, or reduced answer choices. Federal law requires schools to provide what is listed in them.</div>
 
@@ -878,18 +858,6 @@
         <div class="num">01</div>
         <div class="txt">IEP non-compliance is the number one reason schools and districts get sued.</div>
         <div class="src">SOURCE: WRIGHTSLAW</div>
-      </div>
-    </div>
-
-      </div>
-
-      <div class="hero-image">
-    <div class="artifact-frame">
-      <div class="video-embed-wrap">
-        <iframe src="https://www.youtube.com/embed/3-LFRZMT7sg" title="Wayground accommodations walkthrough" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      </div>
-      <div class="artifact-caption">THE LIVE PRODUCT · A walkthrough of Wayground's accommodations screen, from read-aloud and extra time to dyslexia fonts and reduced answer choices.</div>
-    </div>
       </div>
     </div>
   </div>
