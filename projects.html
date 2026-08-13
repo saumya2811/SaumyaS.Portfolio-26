@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Projects | Saumya Srivastava</title>
+<style>
+  :root {
+    --bg: #0f0f14;
+    --bg-alt: #17171f;
+    --text: #eaeaf0;
+    --muted: #a0a0b0;
+    --accent: #7c9eff;
+    --border: #2a2a35;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+  }
+  header {
+    padding: 5rem 1.5rem 3rem;
+    text-align: center;
+    border-bottom: 1px solid var(--border);
+  }
+  header h1 {
+    font-size: 2.75rem;
+    margin-bottom: 0.5rem;
+  }
+  header p {
+    color: var(--muted);
+    font-size: 1.15rem;
+  }
+  nav {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  nav a {
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+  }
+  nav a:hover { text-decoration: underline; }
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 1.5rem;
+  }
+  .project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 1.25rem;
+  }
+  .card {
+    background: var(--bg-alt);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 1.5rem;
+  }
+  .card h3 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+  }
+  .card p {
+    color: var(--muted);
+    font-size: 0.95rem;
+  }
+  footer {
+    text-align: center;
+    padding: 2rem;
+    color: var(--muted);
+    font-size: 0.9rem;
+    border-top: 1px solid var(--border);
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Projects</h1>
+  <p>A few things I've built</p>
+  <nav>
+    <a href="index.html">Home</a>
+    <a href="projects.html">Projects</a>
+  </nav>
+</header>
+
+<main>
+  <div class="project-grid">
+    <div class="card">
+      <h3>Project One</h3>
+      <p>A short description of this project goes here — what it does and what it's built with.</p>
+    </div>
+    <div class="card">
+      <h3>Project Two</h3>
+      <p>A short description of this project goes here — what it does and what it's built with.</p>
+    </div>
+    <div class="card">
+      <h3>Project Three</h3>
+      <p>A short description of this project goes here — what it does and what it's built with.</p>
+    </div>
+  </div>
+</main>
+
+<footer>
+  &copy; 2026 Saumya Srivastava. All rights reserved.
+</footer>
+
+</body>
+</html>
