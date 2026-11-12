@@ -7,4 +7,4 @@ Saumya Srivastava's UX research portfolio, a static multi-page site published wi
 - `srotabio.html`, `voyagemath.html`, `accommodations.html`: case study pages; their back links go to `work.html`
 - `img/`: images, including `img/tool/` screenshots for the SrotaBio carousel
 
-Preview by opening `index.html` or running `python3 -m http.server`. The "Download resume" link on `index.html` is a placeholder (`RESUME_URL`) until a resume PDF is added.
+Preview by opening `index.html` or running `python3 -m http.server`. The "Download resume" link on `index.html` points to `Saumya-Srivastava-Resume.pdf`; replace that file to update the resume.
