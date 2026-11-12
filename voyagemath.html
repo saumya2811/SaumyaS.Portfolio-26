@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>VoyageMath · Saumya Srivastava</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--navy:#13294B;--brown:#7A5A3B;--sage:#D3D5C2;--soft:#5B677D;--sand:#EFE3CE;--faint:#E9EAE1;
+--head:'Plus Jakarta Sans','Avenir Next','Segoe UI',sans-serif;--sans:'DM Sans','Avenir Next','Segoe UI',sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.8 var(--sans);-webkit-font-smoothing:antialiased;padding:0 20px}
+.col{max-width:1040px;margin:0 auto}
+h1,h2,h3,p{margin:0}
+h1,h2,h3{font-family:var(--head);font-weight:600;letter-spacing:-0.015em}
+header{padding:72px 0 64px;display:flex;flex-direction:column;gap:28px}
+h1{font-size:34px;line-height:1.2}
+.intro{font-size:18px;color:var(--soft)}
+.links{font-size:15px;display:flex;flex-wrap:wrap;gap:6px 24px;margin-top:6px}
+a{color:#2F6FD6;text-decoration:none}
+.co{border-top:1px solid var(--sage);padding:44px 0 8px}
+.label{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brown)}
+.co > .label{margin-bottom:6px}
+.co > h2{font-size:24px;line-height:1.3;margin-bottom:6px}
+.co > .what{font-size:15px;color:var(--soft);margin-bottom:8px}
+.proj{padding:24px 0 32px;display:flex;flex-direction:column;gap:12px}
+.proj + .proj{border-top:1px dashed var(--sage)}
+.proj h3{font-size:20px;line-height:1.35}
+.meta{font-size:14px;color:var(--soft)}
+.row{display:grid;grid-template-columns:120px minmax(0,1fr);gap:4px 20px;font-size:16px}
+.row b{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-top:3px}
+.row ul{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:3px}
+.imp{display:flex;flex-wrap:wrap;gap:10px 28px;margin-top:2px}
+.imp div{font-size:14px;color:var(--soft);max-width:200px;line-height:1.4}
+.imp strong{display:block;font-family:var(--head);font-weight:600;font-size:19px;color:var(--navy)}
+.more{font-size:15px;font-weight:500;align-self:flex-start}
+.proj .more{margin-top:14px}
+.skills{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 32px;margin-top:20px}
+.skills b{display:block;font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brown);margin-bottom:2px}
+.skills p{font-size:15px;line-height:1.5}
+.todo{font-size:15px;color:var(--navy);background:#F8F2E8;padding:10px 14px;border-radius:6px;margin-bottom:8px}
+@media (max-width:600px){.skills{grid-template-columns:minmax(0,1fr)}}
+.cta{align-self:flex-start;margin-top:6px;font-size:15px;font-weight:500}
+.co .proj{border-left:3px solid var(--navy);padding:4px 0 4px 22px;margin:20px 0;display:block}
+.co .proj summary{cursor:pointer;list-style:none;font-family:var(--head);font-weight:600;font-size:17px;line-height:1.4;display:flex;justify-content:space-between;gap:16px;align-items:center}
+.co .proj summary::-webkit-details-marker{display:none}
+.co .proj summary::after{content:"";flex:none;width:8px;height:8px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:translateY(-3px) rotate(45deg);margin-right:4px}
+.co .proj[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.co .proj[open] > p{margin-top:12px}
+.co .proj[open] > .more{display:inline-block;margin-top:14px}
+.co .proj summary:focus-visible{outline:2px solid var(--navy);outline-offset:3px}
+.co .proj + .proj{border-top:0}
+.co .proj h3{font-size:17px;line-height:1.4}
+.co > h2{font-size:18px}
+.proj-link{display:flex;justify-content:space-between;align-items:center;gap:20px;border-left:3px solid var(--navy);padding:10px 14px 10px 22px;margin:32px 0;font-family:var(--head);font-weight:600;font-size:17px;line-height:1.45;color:var(--navy);text-decoration:none}
+.proj-link::after{content:"";flex:none;width:8px;height:8px;border-right:2px solid var(--soft);border-top:2px solid var(--soft);transform:rotate(45deg)}
+.proj-link:hover{background:#F7F7F2}
+.wg{font-size:16px;margin-top:28px;line-height:1.8}
+.co > h2 a{color:#2F6FD6;text-decoration:none}
+.prev-h{font-size:18px}
+.exp{margin:0;padding-left:1.1em;display:flex;flex-direction:column;gap:2px;font-size:16px}
+.links2{display:flex;flex-wrap:wrap;gap:6px 28px}
+.links2 .cta{margin-top:0}
+.prev{border-top:1px solid var(--sage);padding:40px 0 16px;display:flex;flex-direction:column;gap:8px}
+.prev p{font-size:16px}
+footer a{color:inherit;text-decoration:none}
+.pl{display:flex;flex-direction:column;gap:2px}
+.pl-n{font-family:var(--sans);font-weight:500;font-size:13px;color:var(--soft)}
+.wg-list{margin:14px 0 0;padding-left:1.2em;display:flex;flex-direction:column;gap:12px;font-size:16px;line-height:1.8}
+.hi{font-size:20px}
+.pods{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.pod{flex:1 1 120px;max-width:160px;border:1px solid var(--sage);border-radius:6px;padding:10px 12px;display:flex;flex-direction:column;gap:6px;color:var(--soft)}
+.pod.me{border:1.5px solid var(--navy);color:var(--navy)}
+.pod-n{font-family:var(--head);font-weight:600;font-size:14px;line-height:1.3}
+.pod-r{display:flex;align-items:center;gap:6px;font-size:13px}
+.pod.me .pod-r{color:#2F6FD6;font-weight:500}
+.ic{width:14px;height:14px;fill:none;stroke:currentColor;stroke-width:1.5}
+.pods-cap{font-size:13px;color:var(--soft);margin-top:6px}
+.proj-dd{margin:32px 0}
+.proj-dd summary{border-left:3px solid var(--navy);cursor:pointer;list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:10px 14px 10px 22px;font-family:var(--head);font-weight:600;font-size:17px;line-height:1.45;color:var(--navy)}
+.proj-dd summary::-webkit-details-marker{display:none}
+.proj-dd summary::after{content:"";flex:none;width:8px;height:8px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:translateY(-3px) rotate(45deg)}
+.proj-dd[open] summary::after{transform:translateY(2px) rotate(-135deg)}
+.proj-dd summary:hover{background:#F7F7F2}
+.dd-body{padding:6px 14px 14px 22px;display:flex;flex-direction:column;gap:14px}
+.dd-row{display:grid;grid-template-columns:110px minmax(0,1fr);gap:4px 20px;font-size:16px;line-height:1.7}
+.dd-row b{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--soft);padding-top:4px}
+.dd-row ol,.dd-row ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.dd-row strong{font-weight:600}
+.dd-body .more{align-self:flex-start}
+@media (max-width:600px){.dd-row{grid-template-columns:minmax(0,1fr)}}
+.sum{border:1px solid var(--sage);border-radius:8px;background:#F2F5FA;padding:8px 32px;margin-bottom:72px}
+.sum-row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:8px 32px;padding:24px 0;border-top:1px solid var(--sage);font-size:16px;line-height:1.55}
+.sum-row:first-child{border-top:0}
+.sum-row.sum-prod{grid-template-columns:minmax(0,1fr)}
+.sum-intro{margin-bottom:14px !important}
+.sum-ul{margin:0;padding-left:1.2em;display:flex;flex-direction:column;gap:6px}
+.sum-l{font-size:12px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--navy);padding-top:3px}
+.sum-pair{display:grid;grid-template-columns:minmax(0,1fr);gap:32px}
+.sum-pair .logo{display:block;height:22px;width:auto;margin-bottom:12px}
+.sum-pair b{font-family:var(--head);font-weight:600}
+.sum-three{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px}
+.sum-three b{display:block;font-family:var(--head);font-weight:600;font-size:16px;margin-bottom:4px}
+.sum-three p{font-size:15px;color:var(--soft);line-height:1.5}
+.sum-n{display:block;font-family:var(--head);font-weight:600;font-size:22px;color:var(--navy)}
+.imp-hero{display:flex;flex-direction:column}
+.imp-hero .imp-v{margin-top:auto;padding-top:6px}
+.imp-d{font-size:15px;line-height:1.5;color:var(--soft)}
+.imp-v{font-size:15px;color:var(--soft);margin-top:6px}
+.imp-v b{font-family:var(--head);font-weight:600;font-size:20px;color:var(--navy)}
+.imp-bar{position:relative;height:8px;background:var(--faint);border-radius:999px;margin:12px 0 22px}
+.imp-bar .seg{position:absolute;top:0;bottom:0}
+.imp-bar .old{left:0;background:var(--sage);border-radius:999px 0 0 999px}
+.imp-bar .gain{background:var(--navy);border-radius:0 999px 999px 0}
+.imp-bar .tgt{position:absolute;top:-4px;bottom:-4px;border-left:1.5px dashed var(--navy)}
+.imp-bar .tgt i{position:absolute;top:14px;left:-28px;font-style:normal;font-size:11px;color:var(--soft);white-space:nowrap}
+.imp-mini{list-style:none;margin:0;padding:0;display:flex;flex-direction:column}
+.imp-mini li{display:flex;justify-content:space-between;align-items:baseline;gap:20px;padding:10px 0;border-top:1px solid var(--sage);font-size:15px;line-height:1.5;color:var(--soft)}
+.imp-mini li:first-child{border-top:0;padding-top:0}
+.imp-mini b{font-family:var(--head);font-weight:600;color:var(--navy);white-space:nowrap}
+.sum{background:var(--navy);border-color:var(--navy);color:#fff}
+.sum .sum-row{border-top-color:rgba(255,255,255,.2)}
+.sum .sum-l{color:#B9C6DD}
+.sum .sum-three p,.sum .imp-d,.sum .imp-v{color:#C9D3E6}
+.sum .imp-v b,.sum .sum-n{color:#fff}
+.sum .imp-bar{background:rgba(255,255,255,.18)}
+.sum .imp-bar .old{background:#7F90AD}
+.sum .imp-bar .gain{background:#fff}
+.sum .imp-bar .tgt{border-left-color:#fff}
+.sum .imp-bar .tgt i{color:#C9D3E6}
+.sum-pair .logo{filter:brightness(0) invert(1)}
+.imp2{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:32px;align-items:stretch}
+@media (max-width:860px){.imp2{grid-template-columns:minmax(0,1fr);gap:20px}}
+@media (max-width:760px){.sum{padding:4px 20px}.sum-row{grid-template-columns:minmax(0,1fr)}.sum-three{grid-template-columns:minmax(0,1fr);gap:16px}.sum-pair{grid-template-columns:minmax(0,1fr);gap:20px}}
+.dd-body .sum{margin-bottom:0}
+.dd-body .sum-row{grid-template-columns:minmax(0,1fr);gap:12px;padding:30px 0;line-height:1.8}
+.dd-body .sum p + p{margin-top:12px}
+.sum .sum-ul b{font-family:var(--head);font-weight:600;color:#fff}
+.sum-fig{margin:18px 0 0 !important}
+.sum-fig img{display:block;width:100%;height:auto;background:#fff;border-radius:6px;padding:10px;box-sizing:border-box}
+.sum-fig figcaption{font-size:13px;color:#C9D3E6;margin-top:8px}
+.sum-name{font-family:var(--head);font-weight:600;font-size:18px;line-height:22px;margin-bottom:12px !important;color:#fff}
+.dd-body .sum p{margin:0}
+.dd-body{padding:28px 0 14px 0}
+
+.req{border-top:1px solid var(--sage);margin-top:48px;padding:40px 0 16px;display:flex;flex-direction:column;gap:10px}
+.req-h{font-size:18px}
+.req-f{display:flex;flex-wrap:wrap;gap:10px;margin-top:6px}
+.req-f input{flex:1 1 240px;max-width:360px;font:inherit;font-size:16px;color:var(--navy);padding:10px 12px;border:1px solid var(--sage);border-radius:6px;background:#fff}
+.req-f input:focus{outline:2px solid #2F6FD6;outline-offset:1px}
+.req-f button{font:inherit;font-size:15px;font-weight:500;color:var(--navy);background:transparent;border:1.5px solid var(--navy);border-radius:6px;padding:10px 18px;cursor:pointer}
+.req-msg{font-size:14px;color:var(--soft)}
+.chart{width:100%;height:auto;display:block;overflow:visible;border:1px solid rgba(255,255,255,.2);border-radius:6px;padding:20px 24px 12px;box-sizing:border-box;background:transparent}
+.chart text{font-family:var(--sans);fill:#B9C6DD;font-size:12px}
+.chart .v{fill:#fff;font-size:15px;font-weight:500}
+.chart .stage{fill:#E3E9F3;font-size:13px}
+.legend{display:flex;gap:20px;font-size:13px;color:#C9D3E6;margin-bottom:10px}
+.legend span{display:inline-flex;align-items:center;gap:8px}
+.legend .ln{display:inline-block;width:18px;height:2px}
+.legend .ln.jun{background:#7F90AD}
+.legend .ln.sep{background:#9FE0B0}
+.sum-chart{margin:0 !important}
+.sum-chart figcaption{font-size:13px;color:#C9D3E6;margin-top:8px}
+.ft{display:flex;flex-direction:column;font-size:15px;line-height:1.55}
+.ft-r{display:grid;grid-template-columns:1fr 1fr 1.3fr;gap:16px;padding:12px 0;border-top:1px solid rgba(255,255,255,.2)}
+.ft-r:first-child{border-top:0;padding-top:0}
+.ft-h span{font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B9C6DD}
+.ft-r span{color:#E3E9F3}
+.ft-r span:first-child{font-family:var(--head);font-weight:600;color:#fff}
+@media (max-width:760px){.ft-h{display:none}.ft-r{grid-template-columns:minmax(0,1fr);gap:6px}.ft-r span::before{content:attr(data-l);display:block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#B9C6DD}.ft-r:nth-child(2){border-top:0;padding-top:0}}
+.ftab{width:100%;border-collapse:collapse;font-size:15px;line-height:1.75;color:#E3E9F3}
+.ftab th,.ftab td{border:0;border-bottom:1px solid rgba(255,255,255,.15);padding:16px 18px 16px 0;text-align:left;vertical-align:top;width:33.3%}
+.ftab th{border-bottom-color:rgba(255,255,255,.35);padding-top:0}
+.ftab tbody tr:last-child td{border-bottom:0}
+.ftab td:last-child{color:#fff}
+.ship{display:inline-flex;gap:8px;color:#9FE0B0}
+.ship::before{content:"✓";flex:none;font-weight:700;color:#9FE0B0}
+.ftab-wrap{overflow-x:auto}
+.fq{display:block;color:#E3E9F3}
+.fm{display:block;font-size:13px;color:#B9C6DD;margin-top:6px}
+@media (max-width:600px){.ftab{min-width:540px}}
+.ftab th{font-size:12px;font-weight:400;letter-spacing:.08em;text-transform:uppercase;color:#B9C6DD}
+.cbars{display:flex;flex-direction:column;gap:12px;margin-top:4px}
+.cbar{display:grid;grid-template-columns:170px minmax(0,1fr) 80px;gap:14px;align-items:center;font-size:14px}
+.cbar span{color:#C9D3E6}
+.cbar b{font-family:var(--head);font-weight:600;color:#fff;text-align:right}
+.cbar .tr{position:relative;height:10px;background:rgba(255,255,255,.15);border-radius:999px;overflow:hidden}
+.cbar .fl{position:absolute;left:0;top:0;bottom:0;background:#9FE0B0;border-radius:999px}
+.cbar .fl.ext{background:rgba(159,224,176,.45);border-radius:0 999px 999px 0}
+.cbar.base .fl{background:#7F90AD}
+@media (max-width:600px){.cbar{grid-template-columns:minmax(0,1fr) 70px;gap:4px 10px}.cbar .tr{grid-column:1/-1;order:3}}
+.info{display:inline-flex;align-items:center;justify-content:center;width:12px;height:12px;margin:0 1px 0 3px;padding:0;border-radius:50%;border:none;background:#fff;color:var(--navy);font:italic 600 9px/1 Georgia,serif;vertical-align:3px;cursor:pointer}
+.info:focus-visible{outline:2px solid #fff;outline-offset:2px}
+.tip{position:fixed;z-index:50;max-width:min(280px,calc(100vw - 32px));padding:12px 14px;border-radius:8px;background:#fff;color:var(--navy);font:400 14px/1.5 var(--sans);box-shadow:0 8px 24px rgba(19,41,75,.25)}
+.tip[hidden]{display:none}
+.story{margin:0;padding-left:1.3em;display:flex;flex-direction:column;gap:20px;font-size:15px;line-height:1.85;color:#E3E9F3}
+.story b{font-family:var(--head);font-weight:600;color:#fff}
+.story-s{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B9C6DD;margin-top:20px !important}
+.story-ship{list-style:none;margin:10px 0 0;padding:0;display:flex;flex-direction:column;gap:10px;font-size:15px;line-height:1.7}
+.sum-intro + .ftab-wrap{margin-top:22px}
+.sum-pair .logo-inline{display:inline-block;height:17px;width:auto;margin:0 4px 0 0;vertical-align:-2px}
+.acc-name{font-family:var(--head);font-weight:600;font-size:19px;color:#fff;margin-right:2px}
+.sub-l{font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#B9C6DD;margin-top:10px !important}
+.stat-line{display:flex;align-items:center;gap:12px;margin-bottom:18px !important;color:#E3E9F3;font-size:15px;line-height:1.5}
+.stat{font-family:var(--head);font-weight:600;font-size:15px;color:#9FE0B0;white-space:nowrap}
+.dd-body .sum .sum-l{font-family:var(--head);font-size:17px;font-weight:600;letter-spacing:0;text-transform:none;color:#fff;padding-top:0}
+.dd-body .sub-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:#9FB0CC;margin-top:14px !important}
+.dd-body .ftab th{font-size:11px;letter-spacing:.06em;text-transform:none;color:#8FA1C0;font-style:italic}
+/* light summary theme */
+.dd-body .sum{background:#fff;border:1.5px solid #A9AE97;color:var(--navy)}
+.dd-body .sum .sum-row{border-top-color:var(--sage)}
+.dd-body .sum .sum-l{color:var(--navy)}
+.dd-body .sub-l{color:var(--soft)}
+.dd-body .sum p{color:var(--navy)}
+.dd-body .sum-pair .logo{filter:none}
+.acc-name{color:var(--navy) !important}
+.sum-fig img{border:1px solid var(--sage)}
+.sum-fig figcaption,.dd-body .legend{color:var(--soft)}
+.dd-body .ftab{color:var(--navy)}
+.dd-body .ftab th{color:var(--soft)}
+.dd-body .ftab th,.dd-body .ftab td{border-bottom-color:var(--sage)}
+.dd-body .ftab td:last-child{color:var(--navy)}
+.dd-body .fq{color:var(--navy)}
+.dd-body .fm{color:var(--soft)}
+.ship{color:#2A7A4B !important;display:flex !important}
+.ship::before{color:#2E8B57 !important}
+.stat{color:#2E8B57 !important}
+.stat-line{color:var(--navy) !important}
+.dd-body .chart{border-color:var(--sage)}
+.dd-body .chart text{fill:var(--soft)}
+.dd-body .chart .v,.dd-body .chart .stage{fill:var(--navy)}
+.dd-body .legend .ln.jun{background:#7F90AD}
+.dd-body .legend .ln.sep{background:#2E8B57}
+.cbar span{color:var(--soft) !important}
+.cbar b{color:var(--navy) !important}
+.cbar .tr{background:var(--faint) !important}
+.cbar .fl{background:#2E8B57 !important}
+.cbar .fl.ext{background:rgba(46,139,87,.4) !important}
+.cbar.base .fl{background:#B8BBA6 !important}
+.dd-body .sum .sum-ul b{color:var(--navy)}
+.info{background:var(--navy) !important;color:#fff !important}
+.tip{background:var(--navy) !important;color:#fff !important}
+.side-fix{margin-top:20px !important}
+.imp-list{list-style:none;margin:0 0 24px;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.7}
+.imp-h{font-weight:400;color:#2E8B57}
+.ftab .fig-row td{width:auto}
+.ftab tr.no-line td{border-bottom:0;padding-bottom:4px}
+footer{border-top:1px solid var(--sage);margin-top:40px;padding:24px 0 48px;font-size:13px;color:var(--soft)}
+@media (max-width:600px){header{padding-top:48px}h1{font-size:28px}.row{grid-template-columns:minmax(0,1fr)}}
+.intro-list{margin:4px 0 14px;padding-left:20px}.intro-list li{margin:3px 0}
+.ftab ul.fl{margin:0;padding-left:18px}.ftab ul.fl li{margin:0 0 8px}.ftab ul.fl li:last-child{margin-bottom:0}
+header p,section.co>p,section.co>h2,section.co>ul,section.co>figure{max-width:860px}
+.dd-body .sum{padding:8px 28px}
+section.co details.proj-dd:nth-of-type(1)>summary{background:#F3F6FB}
+section.co details.proj-dd:nth-of-type(2)>summary{background:#F4F7EF}
+section.co details.proj-dd .dd-body .sum{border:0}
+section.co details.proj-dd:nth-of-type(1) .dd-body .sum{background:#F3F6FB}
+section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
+.dd-body .ftab tbody td{background:linear-gradient(var(--sage),var(--sage)) left calc(100% - 6px)/100% 1px no-repeat;padding-bottom:22px}
+.dd-body .ftab tbody tr:last-child td,.dd-body .ftab tr.no-line td{background:none}
+.dd-body .ftab tr.no-line td{padding-bottom:4px}
+.dd-close{display:block;margin:16px 4px 0 auto;width:32px;height:32px;background:none;border:0;border-radius:6px;cursor:pointer;position:relative}.dd-close::after{content:"";position:absolute;left:12px;top:13px;width:8px;height:8px;border-right:2px solid var(--soft);border-bottom:2px solid var(--soft);transform:rotate(-135deg)}.dd-close:hover{background:#F7F7F2}
+.dd-body .ftab tbody td{border-bottom:1px dashed #C9CDB6 !important;background:none !important}
+.dd-body .ftab tbody tr:last-child td{border-bottom:0 !important}
+.ftab.flow tbody td:first-child{position:relative}
+.ftab.flow tbody tr:not(:last-child) td:first-child::after{content:"";position:absolute;left:6px;bottom:-6px;width:1.5px;height:20px;background:var(--soft);opacity:.55}
+.ftab.flow tbody tr:not(:last-child) td:first-child::before{content:"";position:absolute;left:3px;bottom:-6px;width:6px;height:6px;border-right:1.5px solid var(--soft);border-bottom:1.5px solid var(--soft);transform:rotate(45deg);opacity:.55}
+.dd-body .ftab td{text-align:justify;-webkit-hyphens:auto;hyphens:auto}
+.dd-body .ftab th,.dd-body .ftab td{padding-right:44px}.dd-body .ftab th:last-child,.dd-body .ftab td:last-child{padding-right:0}
+.thumb{display:block;width:100%;max-width:320px;margin-top:14px;margin-left:24px}.thumb img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--sage);border-radius:4px;padding:4px;box-sizing:border-box}.thumb-cap{display:block;font-size:12px;color:var(--soft);margin:4px 0 0 24px;text-align:left}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(19,41,75,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.lb[hidden]{display:none}.lb img{max-width:min(1200px,100%);max-height:100%;width:auto;height:auto;background:#fff;border-radius:6px;padding:10px;box-sizing:border-box}.lb-x{position:absolute;top:14px;right:18px;width:36px;height:36px;border:0;border-radius:50%;background:rgba(255,255,255,.15);color:#fff;font:400 24px/1 var(--sans);cursor:pointer}.thumb{cursor:zoom-in}
+.lb-tab th:nth-child(1),.lb-tab td:nth-child(1){width:20% !important}.lb-tab th:nth-child(2),.lb-tab td:nth-child(2){width:28% !important}.lb-tab th:nth-child(3),.lb-tab td:nth-child(3){width:52% !important}
+.chart text.inc{fill:#2E8B57;font-size:14px;font-weight:600}
+.map2{display:grid;grid-template-columns:37.3fr 61.9fr;gap:0 0.8%;align-items:end;padding:0 1.5%}
+.map2>div{padding-bottom:12px;border-bottom:3px solid}
+.map2 .m-wg{border-color:#E8499B}.map2 .m-vm{border-color:#5B1B6B}
+.map2 p{margin:0 !important}.map2 .m-wg p{padding-right:16px}.map2 .m-vm p{padding-left:4px}
+.map-fig{margin-top:10px !important}
+@media (max-width:700px){.map2{grid-template-columns:1fr;gap:16px}}
+.mini-funnel{margin:12px 0 0}.mini-funnel svg{display:block;width:100%;max-width:440px;height:auto;overflow:visible}.mini-funnel text{font-family:var(--sans);text-anchor:middle}.mini-funnel .mv{font-size:12px;font-weight:600;fill:var(--navy)}.mini-funnel .ms{font-size:11px;fill:var(--soft)}.mini-funnel .md{font-size:11px;font-weight:600;fill:#C0392B}.mini-funnel figcaption{font-size:12px;color:var(--soft);margin-top:4px;text-align:left}
+</style><style>
+.cs-top{display:flex;justify-content:space-between;align-items:center;padding:28px 0 0}
+a.back{color:var(--soft) !important;text-decoration:none;font-size:15px}
+a.back:hover{color:var(--navy) !important}
+.cs-head{padding:40px 0 8px;display:flex;flex-direction:column;gap:6px}
+.cs-head h1{font-family:var(--head);font-weight:600;font-size:26px;line-height:1.35;color:var(--navy);margin:0;max-width:900px}
+.dd-body{padding:0 !important}
+.dd-body .sum{border:0 !important;background:none !important;padding:0 !important}
+.cs-foot{margin:40px 0 0}
+.dd-body .sum .sum-l{color:#7A5A3B !important;font-size:21px !important;line-height:1.35 !important}
+.dd-body .ftab th{font-size:13px !important;font-style:normal !important;font-weight:600 !important;letter-spacing:.06em;text-transform:uppercase;color:var(--navy) !important;background:#F3EEE4;padding-top:10px !important;padding-bottom:10px !important;border-bottom:0 !important}
+.dd-body .ftab th{padding-left:10px !important}.dd-body .ftab td{padding-left:10px}
+.dd-body .ftab thead tr{border:0}
+</style>
+</head><body><div class="col">
+<div class="cs-top"><a class="back" href="work.html">← Back</a></div>
+<header class="cs-head"><p class="pl-n">Case study 2 · VoyageMath</p><h1>Driving cross-product adoption: combining funnel data and qualitative research to grow VoyageMath adoption among middle school math teachers on Wayground from 5% to 13%</h1></header>
+<div class="dd-body">
+<section class="sum" aria-label="Summary">
+    <div class="sum-row sum-prod">
+      <div class="sum-pair">
+        <div><p><a href="https://wayground.com" target="_blank" rel="noopener"><img class="logo logo-inline" src="img/logo-wg.png" width="467" height="57" alt="Wayground"></a> (formerly Quizizz) is a supplemental curriculum platform that teachers in 90% of US schools use for instruction, reviews and assessments.</p><p><img class="logo logo-inline" src="img/logo-vm.png" width="697" height="117" alt="VoyageMath"> is Wayground's sister platform for math practice, with an <em>adaptive question bank</em><button type="button" class="info" aria-label="What is an adaptive question bank?" data-tip="Practice adapts to the student&#39;s level of knowledge: harder questions when they get everything right, and vice versa.">i</button> and <em>step-by-step guidance</em><button type="button" class="info" aria-label="What is step-by-step guidance?" data-tip="When a student gets stuck on a question, it breaks the problem down without giving away the answer.">i</button>. It caters to middle school math teachers in the US.</p><figure class="sum-fig"><img src="img/vm-in-wayground.jpg" width="1721" height="686" alt="The Wayground sidebar with a VoyageMath link highlighted, with an arrow leading to the VoyageMath website"><figcaption>VoyageMath is surfaced from inside Wayground</figcaption></figure></div>
+      </div>
+    </div>
+    <div class="sum-row">
+      <p class="sum-l">The problem</p>
+      <p>Only 5% of middle school math teachers on Wayground were also active on VoyageMath, against a 20% target for the quarter, with drop-offs at every stage of the funnel.</p>
+      <figure class="mini-funnel"><svg viewBox="0 0 470 130" role="img" aria-label="Early June funnel: 4,005 clicked, about 754 signed up (81% lost), about 86 assigned (89% lost), about 53 played (38% lost)"><polyline fill="none" stroke="#C0392B" stroke-width="1.75" stroke-linejoin="round" points="40,20.0 170,41.8 300,70.0 430,76.3"/><circle cx="40" cy="20.0" r="3.5" fill="#fff" stroke="#C0392B" stroke-width="1.75"/><text class="mv" x="40" y="11.0">4,005</text><text class="ms" x="40" y="122">Clicked</text><circle cx="170" cy="41.8" r="3.5" fill="#fff" stroke="#C0392B" stroke-width="1.75"/><text class="mv" x="170" y="32.8">~754</text><text class="ms" x="170" y="122">Signed up</text><circle cx="300" cy="70.0" r="3.5" fill="#fff" stroke="#C0392B" stroke-width="1.75"/><text class="mv" x="300" y="61.0">~86</text><text class="ms" x="300" y="122">Assigned</text><circle cx="430" cy="76.3" r="3.5" fill="#fff" stroke="#C0392B" stroke-width="1.75"/><text class="mv" x="430" y="67.3">~53</text><text class="ms" x="430" y="122">Played</text><text class="md" x="105.0" y="46.9">−81%</text><text class="md" x="235.0" y="71.9">−89%</text><text class="md" x="365.0" y="89.2">−38%</text></svg><figcaption>Teachers at each stage in early June, and the share lost between stages (log scale)</figcaption></figure>
+    </div>
+    <div class="sum-row">
+      <p class="sum-l">The research</p>
+      <div><p class="sum-intro">A study in five parts, each building on the last: from discovery to design, usability testing and shipping.</p>
+      <div class="ftab-wrap"><table class="ftab">
+        <thead><tr><th>Objective</th><th>What I found</th><th>What we shipped</th></tr></thead>
+        <tbody>
+          <tr><td><span class="fq">Find where VoyageMath fits in a teacher's lessons and units<button type="button" class="info" aria-label="What is a unit?" data-tip="A few weeks of lessons on one topic, like equations, usually ending in a unit test.">i</button>, to know when and where to show it</span><span class="fm">10 semi-structured interviews</span></td><td><ul class="fl"><li>Teachers used it after a lesson, to reinforce skills</li><li>And after a unit review<button type="button" class="info" aria-label="What is a unit review?" data-tip="A test-like activity before a unit test or exam, to see where the class stands and who needs help.">i</button>, to reteach and give struggling students guided practice</li></ul></td><td><span class="ship"><span>VoyageMath practice for each skill<button type="button" class="info" aria-label="What is a skill?" data-tip="The smallest building block of content: one specific thing a student learns to do, like solving equations of the form px = q.">i</button>, inside Wayground units</span></span></td></tr>
+          <tr><td><span class="fq">Understand teachers' Jobs To Be Done after a unit review, to position VoyageMath around them</span><span class="fm">8 semi-structured interviews</span></td><td><ul class="fl"><li>Teachers check which students are struggling most, and on which standards<button type="button" class="info" aria-label="What is a standard?" data-tip="Shared benchmarks for what students should know at each grade, like 7.NS.A.1. Many US states adopt them, and they are used in end-of-year state exams.">i</button> and questions</li><li>Then they reteach, or assign extra practice to those students</li></ul></td><td><span class="ship"><span>Struggling students and relevant activities pre-selected when assigning practice</span></span></td></tr>
+          <tr><td><span class="fq">Use the previous phase's findings to prototype a Wayground post-review email that gets teachers to open it, sign up for VoyageMath and assign practice</span><span class="fm">Prototyping, iterative concept and usability testing with 12 teachers</span></td><td><ul class="fl"><li>Teachers wanted both the questions and the standards students struggled with</li><li>They liked activities and students pre-selected on VoyageMath at sign-up</li><li>They clicked when it read like a Wayground report, not an ad</li></ul></td><td><span class="ship"><span>Post-unit-review email that surfaces VoyageMath</span></span></td></tr>
+          <tr><td><span class="fq">Redesign the Wayground reports page to surface VoyageMath after a unit review</span><span class="fm">Prototyping and usability testing with 6 teachers</span></td><td><ul class="fl"><li>Teachers wanted struggling students pre-selected with the practice sets</li><li>Picking them by hand was too much work</li></ul></td><td><span class="ship"><span>New Wayground post-review reports page that cross-promotes VoyageMath</span></span></td></tr>
+          <tr><td><span class="fq">Find out why teachers who clicked through abandoned VoyageMath onboarding before signing up</span><span class="fm">Usability testing of the onboarding with 8 teachers new to VoyageMath</span></td><td><ul class="fl"><li>It was unclear if VoyageMath fit their grade, curriculum and standards</li><li>The adaptive questions and step-by-step guidance weren't visible</li><li>Teachers didn't know their Wayground classes carry straight over</li></ul></td><td><span class="ship"><span>Rebuilt VoyageMath onboarding</span></span></td></tr>
+        </tbody>
+      </table></div></div>
+    </div>
+    <div class="sum-row">
+      <p class="sum-l">Impact</p>
+      <div><p class="stat-line"><span class="stat">5% → 13%</span>middle school math teachers on Wayground who were also active on VoyageMath</p>
+      <p class="sum-intro">We also saw improvement at every stage of the overall funnel.</p>
+      <figure class="sum-chart">
+      <div class="legend"><span><i class="ln jun"></i>Early June</span><span><i class="ln sep"></i>Late September</span></div>
+      <svg class="chart" viewBox="0 0 640 300" role="img" aria-label="Funnel in early June vs late September. Clicked: 4,005 to about 6,590. Signed up: about 754 to about 2,492. Assigned: about 86 to about 372. Played: about 53 to about 246.">
+        <g stroke="#E9EAE1" stroke-width="1">
+          <line x1="48" y1="40" x2="640" y2="40"/>
+          <line x1="48" y1="106.7" x2="640" y2="106.7"/>
+          <line x1="48" y1="173.3" x2="640" y2="173.3"/>
+          <line x1="48" y1="240" x2="640" y2="240"/>
+        </g>
+        <g text-anchor="end">
+          <text x="38" y="44">10,000</text>
+          <text x="38" y="110.7">1,000</text>
+          <text x="38" y="177.3">100</text>
+          <text x="38" y="244">10</text>
+        </g>
+        <polyline fill="none" stroke="#7F90AD" stroke-width="1.75" stroke-linejoin="round" points="110,66.5 283,114.8 456,177.7 600,191.7"/>
+        <g fill="#FFFFFF" stroke="#7F90AD" stroke-width="1.75">
+          <circle cx="110" cy="66.5" r="4"/><circle cx="283" cy="114.8" r="4"/><circle cx="456" cy="177.7" r="4"/><circle cx="600" cy="191.7" r="4"/>
+        </g>
+        <polyline fill="none" stroke="#2E8B57" stroke-width="2" stroke-linejoin="round" points="110,52.1 283,80.2 456,135.3 600,147.3"/>
+        <g fill="#2E8B57">
+          <circle cx="110" cy="52.1" r="4"/><circle cx="283" cy="80.2" r="4"/><circle cx="456" cy="135.3" r="4"/><circle cx="600" cy="147.3" r="4"/>
+        </g>
+        <g text-anchor="middle">
+          <text class="v" x="110" y="38">~6,590</text>
+          <text class="v" x="283" y="66">~2,492</text>
+          <text class="v" x="456" y="121">~372</text>
+          <text class="v" x="600" y="133">~246</text>
+          <text x="110" y="87">4,005</text>
+          <text x="283" y="135">~754</text>
+          <text x="456" y="198">~86</text>
+          <text x="600" y="212">~53</text>
+          <text class="stage" x="110" y="272">Clicked</text>
+          <text class="stage" x="283" y="272">Signed up</text>
+          <text class="stage" x="456" y="272">Assigned</text>
+          <text class="stage" x="600" y="272">Played</text>
+        </g>
+      </svg>
+    </figure></div>
+    </div>
+    <div class="sum-row">
+      <p class="sum-l">Reflection: what moved each stage of the funnel</p>
+      <p>The June numbers come from the last weeks before summer break, when teachers run a lot of reviews and tests. Late September is the start of the school year, with far fewer reviews, so June had more natural demand for VoyageMath. Even so, every stage improved.</p>
+      <div class="ftab-wrap"><table class="ftab lb-tab">
+        <colgroup><col style="width:20%"><col style="width:28%"><col style="width:52%"></colgroup>
+        <thead><tr><th>Stage</th><th>Change</th><th>What drove it</th></tr></thead>
+        <tbody>
+          <tr><td>Clicked</td><td>4,005 → ~6,590 (+65%)</td><td>Surfacing VoyageMath at the right time, in the right places: the post-review email, the reports page on Wayground and Wayground units</td></tr>
+          <tr><td>Signed up</td><td>~19% → ~38% of clicks</td><td>The new positioning and the rebuilt onboarding made the value clear, so twice as many teachers finished signing up</td></tr>
+          <tr><td>Assigned and played</td><td>~11% → ~15% assigned<br>~62% → ~66% played</td><td>Both went up, even with fewer reviews happening on Wayground than in June</td></tr>
+        </tbody>
+      </table></div>
+    </div>
+  </section>
+    </div>
+<p class="cs-foot"><a class="back" href="work.html">← Back to all case studies</a></p>
+<footer>© 2026 Saumya Srivastava · <a href="https://www.linkedin.com/in/saumya2811">LinkedIn</a></footer>
+</div><div class="tip" id="tip" role="tooltip" hidden></div>
+<script>
+(function(){
+  var tip=document.getElementById('tip'),cur=null,pinned=false;
+  function show(b){cur=b;tip.textContent=b.getAttribute('data-tip');tip.hidden=false;
+    var r=b.getBoundingClientRect(),t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(16,r.left+r.width/2-t.width/2),window.innerWidth-t.width-16);
+    var y=r.top-t.height-10;if(y<12)y=r.bottom+10;tip.style.left=x+'px';tip.style.top=y+'px';}
+  function hide(){cur=null;pinned=false;tip.hidden=true;}
+  document.querySelectorAll('.info').forEach(function(b){
+    b.addEventListener('mouseenter',function(){if(!pinned)show(b)});
+    b.addEventListener('mouseleave',function(){if(!pinned)hide()});
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(pinned&&cur===b){hide()}else{show(b);pinned=true}});
+  });
+  document.addEventListener('click',function(e){if(cur&&!tip.contains(e.target))hide()});
+  window.addEventListener('scroll',function(){if(cur)hide()},{passive:true});
+})();
+</script>
+<div class="lb" id="lb" hidden><button type="button" class="lb-x" aria-label="Close">×</button><img alt=""></div>
+<script>
+(function(){var lb=document.getElementById('lb'),im=lb.querySelector('img');
+function close(){lb.hidden=true;im.removeAttribute('src');}
+document.querySelectorAll('a.thumb').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.querySelector('img');im.src=t.src;im.alt=t.alt;lb.hidden=false;});});
+lb.addEventListener('click',close);
+document.addEventListener('keydown',function(e){if(e.key==='Escape'&&!lb.hidden)close();});})();
+</script>
+</body></html>
