@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta name="robots" content="noindex"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>SrotaBio · Saumya Srivastava</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--navy:#13294B;--brown:#7A5A3B;--sage:#D3D5C2;--soft:#5B677D;--faint:#E9EAE1;
+--head:'Plus Jakarta Sans','Avenir Next','Segoe UI',sans-serif;--sans:'DM Sans','Avenir Next','Segoe UI',sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.8 var(--sans);-webkit-font-smoothing:antialiased;padding:0 20px}
+.col{max-width:1040px;margin:0 auto}
+h1,h2,h3,p{margin:0}
+a{color:#2F6FD6;text-decoration:none}
+.cs-top{padding:28px 0 0}
+a.back{color:var(--soft);font-size:15px}
+a.back:hover{color:var(--navy)}
+.cs-head{padding:40px 0 8px;display:flex;flex-direction:column;gap:6px}
+.pl-n{font-weight:500;font-size:13px;color:var(--soft)}
+.cs-head h1{font-family:var(--head);font-weight:600;font-size:26px;line-height:1.35;letter-spacing:-0.015em;max-width:900px}
+.sum-row{padding:30px 0;border-top:1px solid var(--sage);display:flex;flex-direction:column;gap:12px;font-size:16px}
+.sum-row:first-child{border-top:0}
+.sum-l{font-family:var(--head);font-weight:600;font-size:21px;line-height:1.35;color:var(--brown)}
+.sub-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:14px}
+.logo{display:block;height:24px;width:133px;margin-bottom:6px}
+.sum-fig{margin:18px 0 0}
+.sum-fig img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--sage);border-radius:6px;padding:10px}
+.sum-fig figcaption{font-size:13px;color:var(--soft);margin-top:8px}
+.team{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.team li{border:1px solid var(--sage);border-radius:6px;padding:10px 14px;font-size:14px;line-height:1.5;color:var(--soft)}
+.team b{display:block;font-family:var(--head);font-weight:600;font-size:15px;color:var(--navy)}
+.team li.cm{border:1.5px solid var(--navy)}
+@media (max-width:700px){.team{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.ftab-wrap{overflow-x:auto;margin-top:8px}
+.ftab{width:100%;border-collapse:collapse;font-size:15px;line-height:1.75;color:var(--navy)}
+.ftab th{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:left;background:#F3EEE4;padding:10px 44px 10px 10px}
+.ftab td{vertical-align:top;text-align:left;padding:16px 44px 22px 10px;border-bottom:1px dashed #C9CDB6;width:33.3%}
+.ftab th:last-child,.ftab td:last-child{padding-right:0}
+.ftab tbody tr:last-child td{border-bottom:0}
+.fq{display:block}
+.nowtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2A7A4B;background:#EAF6EF;border:1px solid #2E8B57;border-radius:999px;padding:1px 9px;margin-bottom:6px}
+.fm{display:block;font-size:13px;color:var(--soft);margin-top:6px}
+ul.fl{margin:0;padding-left:18px}ul.fl li{margin:0 0 8px}ul.fl li:last-child{margin-bottom:0}
+.ship{display:flex;gap:8px;color:#2A7A4B}
+.ship::before{content:"✓";flex:none;font-weight:700;color:#2E8B57}
+.ship + .ship{margin-top:8px}
+@media (max-width:600px){.ftab{min-width:600px}}
+.thumb{display:block;width:100%;max-width:280px;margin-top:14px;cursor:zoom-in}
+.thumb img{display:block;width:100%;height:auto;max-height:260px;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--sage);border-radius:4px;padding:4px}
+.thumb-cap{display:block;font-size:12px;color:var(--soft);margin-top:4px}
+.stat-line{display:flex;align-items:center;gap:12px;font-size:15px;line-height:1.5}
+.stat{font-family:var(--head);font-weight:600;font-size:15px;color:#2E8B57;white-space:nowrap}
+.imp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.7}
+.imp-list li{position:relative;padding-left:22px}
+.imp-list li::before{content:"✓";position:absolute;left:0;top:0;font-weight:700;color:#2E8B57}
+.imp-h{color:#2A7A4B;font-weight:600}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:6px}
+.phases li{position:relative;list-style:none;padding:0 24px 0 0}
+.phases li:not(:last-child)::after{content:"→";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--soft)}
+.pbox{height:100%;border:1px solid var(--sage);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.5}
+.pbox b{display:block;font-family:var(--head);font-weight:600;font-size:15px;margin-bottom:2px}
+.tk{color:#2E8B57;font-weight:700;margin-right:6px}
+.pbox.now{border:1.5px solid #2E8B57;background:#F4F9F5}
+.phases ol{margin:0;padding:0}
+@media (max-width:760px){.phases{grid-template-columns:minmax(0,1fr);gap:12px}.phases li{padding:0}.phases li:not(:last-child)::after{content:none}}
+.info{display:inline-flex;align-items:center;justify-content:center;width:12px;height:12px;margin:0 1px 0 3px;padding:0;border-radius:50%;border:none;background:var(--navy);color:#fff;font:italic 600 9px/1 Georgia,serif;vertical-align:3px;cursor:pointer}
+.tip{position:fixed;z-index:50;max-width:min(280px,calc(100vw - 32px));padding:12px 14px;border-radius:8px;background:var(--navy);color:#fff;font:400 14px/1.5 var(--sans);box-shadow:0 8px 24px rgba(19,41,75,.25)}
+.tip[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(19,41,75,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.lb[hidden]{display:none}
+.lb img{max-width:min(1200px,100%);max-height:100%;width:auto;height:auto;background:#fff;border-radius:6px;padding:10px}
+.show{background:#F4F5EF;border:1px solid var(--sage);border-radius:10px;padding:16px 16px 10px;margin-top:6px}
+.show-stage{position:relative}
+.show .sl{display:none;margin:0;flex-direction:column;gap:8px}
+.show .sl.on{display:flex}
+.show .sl img{display:block;width:100%;height:auto;border-radius:6px;background:#fff;border:1px solid var(--sage)}
+.show .sl figcaption{color:var(--soft);font-size:14px;text-align:center}
+.show-btn{position:absolute;top:calc(50% - 36px);width:40px;height:40px;border-radius:50%;border:1px solid var(--sage);background:#fff;color:var(--navy);font:600 24px/1 var(--sans);cursor:pointer;box-shadow:0 2px 8px rgba(19,41,75,.15);display:flex;align-items:center;justify-content:center;padding-bottom:3px}
+.show-btn.prev{left:-8px}.show-btn.next{right:-8px}
+.show-count{color:var(--soft);font-size:13px;text-align:center;margin-top:2px}
+@media (max-width:640px){.show{padding:10px 8px 8px}.show-btn{width:32px;height:32px;font-size:20px}}
+.cs-foot{margin:40px 0 0}
+footer{border-top:1px solid var(--sage);margin-top:40px;padding:24px 0 48px;font-size:13px;color:var(--soft)}
+footer a{color:inherit}
+</style></head><body><div class="col">
+<div class="cs-top"><a class="back" href="index.html">← Back</a></div>
+<header class="cs-head"><p class="pl-n">Case study 3 · SrotaBio</p><h1>Building a care service from zero: turning a patient journey SOP into a PRD and a prototype, then testing it with a low-cost pilot before investing heavily in engineering</h1></header>
+
+<section>
+  <div class="sum-row">
+    <svg class="logo" viewBox="0 0 889 161" role="img" aria-label="Srota Bio"><path fill="#AE340E" d="M 396 160 C 389 160 383 158 378 155 C 372 151 368 147 365 141 C 362 135 360 128 360 120 L 360 23 C 360 20 361 17 363 15 C 365 13 367 12 370 12 C 373 12 376 13 378 15 C 380 17 381 20 381 23 L 381 120 C 381 126 382 130 385 134 C 388 138 392 140 396 140 L 403 140 C 406 140 408 140 409 142 C 411 144 412 147 412 150 C 412 153 411 155 409 157 C 406 159 404 160 400 160 Z M 351 70 C 348 70 346 69 344 67 C 342 66 341 64 341 61 C 341 58 342 56 344 55 C 346 53 348 52 351 52 L 398 52 C 401 52 403 53 405 55 C 407 56 408 58 408 61 C 408 64 407 66 405 67 C 403 69 401 70 398 70 Z M 351 70 M 268 161 C 257 161 247 158 239 154 C 230 149 224 142 219 134 C 214 125 211 115 211 104 C 211 93 214 83 219 75 C 224 66 230 59 239 55 C 247 50 257 47 268 47 C 279 47 289 50 297 55 C 306 59 312 66 317 75 C 322 83 324 93 324 104 C 324 115 322 125 317 134 C 312 142 306 149 297 154 C 289 158 279 161 268 161 Z M 268 142 C 275 142 281 141 287 137 C 292 134 297 130 300 124 C 303 118 304 112 304 104 C 304 97 303 90 300 84 C 297 78 292 74 287 70 C 281 67 275 66 268 66 C 261 66 255 67 249 70 C 244 74 239 78 236 84 C 233 90 232 97 232 104 C 232 112 233 118 236 124 C 239 130 244 134 249 137 C 255 141 261 142 268 142 Z M 268 142 M 136 90 C 136 82 138 74 142 68 C 146 61 151 56 158 52 C 165 49 173 47 181 47 C 189 47 195 48 199 51 C 203 53 205 57 204 60 C 203 62 202 64 201 65 C 200 66 199 66 197 67 C 196 67 194 67 192 66 C 184 65 176 64 169 66 C 162 67 156 70 152 74 C 148 78 146 84 146 90 Z M 136 160 C 133 160 130 159 128 158 C 127 156 126 153 126 150 L 126 58 C 126 55 127 52 128 51 C 130 49 133 48 136 48 C 139 48 142 49 144 51 C 145 52 146 55 146 58 L 146 150 C 146 153 145 156 144 157 C 142 159 139 160 136 160 Z M 136 160 M 484 161 C 474 161 466 159 458 154 C 450 149 443 142 439 134 C 434 125 432 115 432 105 C 432 94 434 84 439 76 C 444 67 451 60 460 55 C 468 50 478 48 489 48 C 499 48 509 50 517 55 C 526 60 532 67 537 76 C 542 84 545 94 545 105 L 537 105 C 537 115 535 125 530 134 C 525 142 519 149 511 154 C 503 159 494 161 484 161 Z M 489 143 C 496 143 502 141 507 138 C 513 135 517 130 520 124 C 523 118 525 112 525 105 C 525 97 523 91 520 85 C 517 79 513 75 507 71 C 502 68 496 66 489 66 C 482 66 476 68 470 71 C 464 75 460 79 457 85 C 454 91 452 97 452 105 C 452 112 454 118 457 124 C 460 130 464 135 470 138 C 476 141 482 143 489 143 Z M 534 161 C 531 161 529 160 527 158 C 525 156 524 153 524 150 L 524 119 L 528 97 L 545 105 L 545 150 C 545 153 544 156 542 158 C 540 160 537 161 534 161 Z M 534 161 M 500 77 C 500 62 484 58 466 57 C 467 55 474 52 494 52 C 514 52 530 66 535 72 L 535 161 C 506 161 500 134 500 121 Z M 500 77 M 501 86 L 500 86 C 501 85 501 85 501 84 C 501 74 492 65 481 65 C 481 65 480 65 480 65 L 480 65 L 501 65 Z M 501 86 M 475 85 C 479 85 482 86 485 88 C 488 90 490 93 490 97 C 490 100 487 102 484 102 C 481 102 479 100 479 97 C 479 97 479 97 478 96 C 478 96 477 95 475 95 C 474 95 473 96 472 96 C 472 97 472 97 472 97 C 472 100 469 102 466 102 C 463 102 461 100 461 97 C 461 93 463 90 466 88 C 468 86 472 85 475 85 Z M 475 85 M 54 161 C 46 161 38 160 31 157 C 24 155 18 151 13 147 C 8 143 4 138 1 132 C 0 129 0 127 1 125 C 3 123 5 121 8 121 C 10 120 12 120 14 122 C 16 123 18 124 19 127 C 21 130 23 133 26 135 C 30 138 34 140 39 141 C 43 143 48 144 54 144 C 60 144 65 143 70 141 C 75 139 79 137 82 133 C 85 130 87 125 87 120 C 87 114 84 108 79 103 C 74 98 66 95 54 93 C 39 92 27 87 18 80 C 9 73 5 63 5 53 C 5 45 7 38 12 32 C 16 27 23 22 30 19 C 38 16 47 15 56 15 C 64 15 70 16 76 18 C 81 20 86 23 90 27 C 95 30 98 35 101 40 C 103 42 104 45 103 47 C 103 50 102 51 100 53 C 97 54 95 54 92 54 C 90 53 88 51 86 49 C 84 45 82 42 79 40 C 76 38 73 36 69 34 C 65 33 61 32 56 32 C 47 32 39 34 33 37 C 27 41 24 46 24 53 C 24 57 25 60 27 64 C 28 67 32 70 37 72 C 42 75 49 76 59 77 C 74 79 85 83 93 91 C 101 98 105 108 105 120 C 105 127 104 133 101 138 C 98 143 94 147 89 151 C 85 154 79 157 73 158 C 67 160 60 161 54 161 Z M 54 161"/><path fill="#332E2D" d="M 833 161 C 822 161 812 158 803 154 C 795 149 788 142 783 134 C 779 125 776 115 776 104 C 776 93 779 83 783 75 C 788 66 795 59 803 55 C 812 50 822 47 833 47 C 844 47 853 50 862 55 C 870 59 877 66 882 75 C 887 83 889 93 889 104 C 889 115 887 125 882 134 C 877 142 870 149 862 154 C 854 158 844 161 833 161 Z M 833 142 C 840 142 846 141 852 137 C 857 134 861 130 864 124 C 867 118 869 112 869 104 C 869 97 867 90 864 84 C 861 78 857 74 852 70 C 846 67 840 66 833 66 C 826 66 819 67 814 70 C 808 74 804 78 801 84 C 798 90 796 97 796 104 C 796 112 798 118 801 124 C 804 130 808 134 814 137 C 819 141 826 142 833 142 Z M 833 142 M 733 161 C 730 161 728 160 726 158 C 724 156 723 153 723 150 L 723 58 C 723 55 724 53 726 51 C 728 49 730 48 733 48 C 736 48 739 49 740 51 C 742 53 743 55 743 58 L 743 150 C 743 153 742 156 740 158 C 739 160 736 161 733 161 Z M 733 161 M 746 13 C 746 20 740 26 733 26 C 726 26 720 20 720 13 C 720 6 726 0 733 0 C 740 0 746 6 746 13 Z M 746 13 M 586 161 C 583 161 581 160 579 158 C 577 156 576 153 576 150 L 576 11 C 576 8 577 5 579 3 C 581 1 583 0 586 0 L 636 0 C 645 0 653 2 660 6 C 667 9 673 14 677 21 C 681 27 683 34 683 43 C 683 50 681 56 677 61 C 674 67 669 71 663 74 C 672 76 679 80 684 87 C 690 93 693 102 693 112 C 693 122 690 130 686 137 C 682 145 675 150 667 155 C 659 159 650 161 640 161 Z M 597 141 L 640 141 C 646 141 652 140 657 138 C 661 136 665 132 668 128 C 671 124 672 119 672 112 C 672 106 671 101 668 98 C 665 94 661 91 657 89 C 652 87 646 86 640 86 L 597 86 Z M 597 66 L 636 66 C 643 66 650 64 655 60 C 660 56 662 51 662 43 C 662 35 660 29 655 26 C 650 22 643 20 636 20 L 597 20 Z M 597 66"/></svg>
+    <p>SrotaBio is a 0→1 women's health startup building end-to-end care for PCOS/PMOS<button type="button" class="info" aria-label="What is PCOS/PMOS?" data-tip="Polycystic ovary syndrome, recently renamed PMOS to reflect that it affects hormones and metabolism across the body, not just the ovaries. About 1 in 5 women of reproductive age in India have it.">i</button> in India: doctor-led diagnosis and care plans, lab tests, health coaching, medicines, and a care manager who stays with each patient throughout.</p>
+    <p>I joined as a product and research consultant while the company was still pre-launch.</p>
+    <p class="sub-l">The care team every patient moves between</p>
+    <ul class="team">
+      <li><b>Doctor</b>A gynaecologist leads diagnosis, tests and the care plan</li>
+      <li><b>Health coach</b>Nutrition and workouts</li>
+      <li><b>Endocrinologist</b>When the patient needs one</li>
+      <li><b>Lab and pharmacy</b>Partners for tests and medicines</li>
+      <li class="cm"><b>Care manager</b>Books everything, follows up, and is the patient's single point of contact</li>
+    </ul>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">The problem</p>
+    <p>SrotaBio had a care idea, but no care model yet. The next step was to map the whole patient journey as a care SOP: what happens at each step, who does it, and what information gets passed on, so nothing gets lost between the people involved.</p>
+    <p>Building the tool to run it was the other risk: too little and the operations fall apart within a few patients, too much and we spend months of engineering before a single patient tells us what they actually need.</p>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">How I approached it</p>
+    <p>Five stages, each building on the last: from mapping the service, to working through it with the doctor, to requirements, a prototype and a pilot.</p>
+    <div class="ftab-wrap"><table class="ftab">
+      <thead><tr><th>Objective</th><th>What I found</th><th>What I delivered</th></tr></thead>
+      <tbody>
+        <tr><td><span class="fq">Map the whole service end to end, from a patient's first enquiry to follow-ups</span><span class="fm">Market research, online competitor analysis, and going through a competitor's onboarding myself</span></td>
+          <td><ul class="fl"><li>Care breaks down in the gaps between appointments: tests not followed up, results not explained, no one checking in</li><li>Competitors bring in a care manager only after payment, so the patient is on their own while deciding</li><li>People with and without a diagnosis need different paths, because PCOS can't be confirmed without tests</li></ul></td>
+          <td><span class="ship"><span>Patient journey SOP<button type="button" class="info" aria-label="What is an SOP?" data-tip="Standard operating procedure: every step of the service, who does it, and the documents, messages and records it needs.">i</button> in three phases, with a flowchart for each, and a list of the documents and comms needed at every step</span></span><a class="thumb" href="../img/sop-flow.jpg"><img src="../img/sop-flow.jpg" width="1398" height="1403" alt="The start of the Phase 1 flowchart in the patient journey SOP: enquiry, discovery form, and the split by diagnosis"></a><span class="thumb-cap">The start of Phase 1. Click to enlarge</span></td></tr>
+        <tr><td><span class="fq">Refine the SOP with the Chief Medical Advisor and the founder</span><span class="fm">Working sessions with the Chief Medical Advisor and the founder</span></td>
+          <td><ul class="fl"><li>Taking payment before eligibility is confirmed would mean refunds and broken trust</li><li>The doctor and health coach need to agree on a plan before the patient sees it</li></ul></td>
+          <td><span class="ship"><span>Two routes into the programme: diagnosed patients enrol after the first call; others get a paid doctor visit and tests first</span></span><span class="ship"><span>A care team meeting before every care plan appointment</span></span></td></tr>
+        <tr><td><span class="fq">Turn the SOP into a PRD for an internal case management tool</span><span class="fm">Section-by-section reviews with the founder</span></td>
+          <td><ul class="fl"><li>We decided building the tool in-house was a better choice than running it scrappy on spreadsheets and WhatsApp, which would get out of hand very quickly</li><li>We identified Marley Health, an open-source healthcare system built on Frappe, as the best base, as it already supported many of the features we needed</li></ul></td>
+          <td><span class="ship"><span>A journey-led PRD<button type="button" class="info" aria-label="What is a PRD?" data-tip="Product requirements document: what the tool needs to show and do, and why.">i</button> for the care manager, in 14 steps: trigger, action and outcome for each patient group, plus documents, messages, automation and open questions</span></span><a class="thumb" href="../img/prd-step.jpg"><img src="../img/prd-step.jpg" width="1300" height="1724" alt="Step 2 of the PRD, the first call: trigger, actions and outcomes for each group, screens, documents, comms and open questions"></a><span class="thumb-cap">Step 2 of 14, the first call. Click to enlarge</span></td></tr>
+        <tr><td><span class="fq">Prototype the case management tool and the doctor's side of the tool within what Marley Health<button type="button" class="info" aria-label="What is Marley Health?" data-tip="An open-source healthcare system built on the Frappe framework, which the founder chose as the base for SrotaBio's tool.">i</button> supports, so it could be built as designed</span></td>
+          <td><ul class="fl"><li>Labelling every part as "comes with Frappe", "set up in settings" or "needs code" showed how much could be configured instead of built</li></ul></td>
+          <td><span class="ship"><span>Case management tool prototype, handed to engineering</span></span><span class="ship"><span>Doctor-side PRD and prototype</span></span><a class="thumb" href="../img/tool/01.jpg"><img src="../img/tool/01.jpg" width="1600" height="964" alt="The care manager home page in the prototype: what needs action now, today's calls and today's to-dos"></a><span class="thumb-cap">The care manager's home page. Click to enlarge</span></td></tr>
+        <tr><td><span class="nowtag">Happening now</span><span class="fq">Test the journey with 5–10 real patients before investing heavily in engineering</span><span class="fm">A scrappy MVP of the tool for the pilot, built on Google Apps Script</span></td>
+          <td><ul class="fl"><li>The pilot tests the whole service we designed, including the SOP: what's working, what isn't, and what can be improved, before we build the entire tool and fully launch</li></ul></td>
+          <td><span class="ship"><span>A pilot board on Google Apps Script<button type="button" class="info" aria-label="What is Apps Script?" data-tip="Google's built-in scripting tool. It turned a Google Sheet into a web page with a board, forms and reminders, with no new software to buy.">i</button>: patients by stage, a form after every first call, calendar reminders and a daily email of what's due</span></span></td></tr>
+      </tbody>
+    </table></div>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">Impact</p>
+    <ul class="imp-list">
+      <li><span class="imp-h">Created an extremely fine-grained patient journey SOP that does several jobs:</span> it goes down to who does each step, what they send and what gets recorded, so it's used to train care managers, to write the PRD, and to plan the pilot</li>
+      <li><span class="imp-h">Prototyped and iterated on the entire case management tool, end to end:</span> built around SrotaBio's own care model, and refined with the doctor and the founder into the version we're now testing and building</li>
+    </ul>
+    <div class="show" aria-roledescription="carousel" aria-label="Screens from the case management tool prototype"><div class="show-stage"><figure class="sl on"><img src="../img/tool/01.jpg" width="1600" height="964" alt="Home: only what needs action now, today's calls and today's to-dos"><figcaption>Home: only what needs action now, today's calls and today's to-dos</figcaption></figure><figure class="sl"><img src="../img/tool/02.jpg" width="1600" height="964" alt="Enquiries board: everyone who hasn't enrolled yet, by journey stage"><figcaption>Enquiries board: everyone who hasn't enrolled yet, by journey stage</figcaption></figure><figure class="sl"><img src="../img/tool/03.jpg" width="1600" height="964" alt="Patients board: everyone enrolled, by journey stage" loading="lazy"><figcaption>Patients board: everyone enrolled, by journey stage</figcaption></figure><figure class="sl"><img src="../img/tool/04.jpg" width="1600" height="964" alt="A patient profile: one place for everything about them" loading="lazy"><figcaption>A patient profile: one place for everything about them</figcaption></figure><figure class="sl"><img src="../img/tool/05.jpg" width="1600" height="964" alt="Documents: medical history and forms" loading="lazy"><figcaption>Documents: medical history and forms</figcaption></figure><figure class="sl"><img src="../img/tool/06.jpg" width="1600" height="964" alt="Notes from the doctor, health coach and care manager" loading="lazy"><figcaption>Notes from the doctor, health coach and care manager</figcaption></figure><figure class="sl"><img src="../img/tool/07.jpg" width="1600" height="964" alt="Tests from the doctor, each with its status and report" loading="lazy"><figcaption>Tests from the doctor, each with its status and report</figcaption></figure><figure class="sl"><img src="../img/tool/08.jpg" width="1600" height="964" alt="The care plan, with medicines to order" loading="lazy"><figcaption>The care plan, with medicines to order</figcaption></figure><figure class="sl"><img src="../img/tool/09.jpg" width="1600" height="964" alt="Metrics the doctor and health coach want tracked" loading="lazy"><figcaption>Metrics the doctor and health coach want tracked</figcaption></figure><figure class="sl"><img src="../img/tool/10.jpg" width="1600" height="964" alt="Accountability: regular check-ins against their goals" loading="lazy"><figcaption>Accountability: regular check-ins against their goals</figcaption></figure><figure class="sl"><img src="../img/tool/11.jpg" width="1600" height="964" alt="Follow-ups with each expert" loading="lazy"><figcaption>Follow-ups with each expert</figcaption></figure><figure class="sl"><img src="../img/tool/12.jpg" width="1600" height="964" alt="ToDo: this week, day by day, and what's waiting on others" loading="lazy"><figcaption>ToDo: this week, day by day, and what's waiting on others</figcaption></figure><figure class="sl"><img src="../img/tool/13.jpg" width="1600" height="964" alt="Calendar: calls and appointments in one place" loading="lazy"><figcaption>Calendar: calls and appointments in one place</figcaption></figure><figure class="sl"><img src="../img/tool/14.jpg" width="1600" height="964" alt="Archive: did not enrol, dropped out, or completed the programme" loading="lazy"><figcaption>Archive: did not enrol, dropped out, or completed the programme</figcaption></figure><button type="button" class="show-btn prev" aria-label="Previous screen">‹</button><button type="button" class="show-btn next" aria-label="Next screen">›</button></div><p class="show-count"><span class="cur">1</span> / 14 · Screens from the case management tool, with details blurred because of an NDA</p></div>
+    <ul class="imp-list">
+      <li><span class="imp-h">A pilot at almost no cost:</span> the board runs on Google Workspace, which the team already uses, so the first patients go through the journey before the bigger engineering spend</li>
+    </ul>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">Reflection: knowing when to be scrappy</p>
+    <p>After designing the full system, stepping back to test the whole journey by hand with a small pilot, before building it, was the right call. What we build next will come from real patients, not assumptions.</p>
+    <p>I also found how much I love designing service experiences: using my research background to go from understanding people to shaping the care they actually get.</p>
+  </div>
+</section>
+
+<p class="cs-foot"><a class="back" href="index.html">← Back to all case studies</a></p>
+<footer>© 2026 Saumya Srivastava · <a href="https://www.linkedin.com/in/saumya2811">LinkedIn</a></footer>
+</div><div class="tip" id="tip" role="tooltip" hidden></div>
+<div class="lb" id="lb" hidden><img alt=""></div>
+<script>
+(function(){
+  var tip=document.getElementById('tip'),cur=null,pinned=false;
+  function show(b){cur=b;tip.textContent=b.getAttribute('data-tip');tip.hidden=false;
+    var r=b.getBoundingClientRect(),t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(16,r.left+r.width/2-t.width/2),window.innerWidth-t.width-16);
+    var y=r.top-t.height-10;if(y<12)y=r.bottom+10;tip.style.left=x+'px';tip.style.top=y+'px';}
+  function hide(){cur=null;pinned=false;tip.hidden=true;}
+  document.querySelectorAll('.info').forEach(function(b){
+    b.addEventListener('mouseenter',function(){if(!pinned)show(b)});
+    b.addEventListener('mouseleave',function(){if(!pinned)hide()});
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(pinned&&cur===b){hide()}else{show(b);pinned=true}});
+  });
+  document.addEventListener('click',function(e){if(cur&&!tip.contains(e.target))hide()});
+  window.addEventListener('scroll',function(){if(cur)hide()},{passive:true});
+  var lb=document.getElementById('lb'),im=lb.querySelector('img');
+  document.querySelectorAll('a.thumb').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.querySelector('img');im.src=t.src;im.alt=t.alt;lb.hidden=false;});});
+  lb.addEventListener('click',function(){lb.hidden=true;im.removeAttribute('src');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true;});
+})();
+(function(){document.querySelectorAll('.show').forEach(function(w){var sl=w.querySelectorAll('.sl'),cur=w.querySelector('.cur'),i=0;function go(n){sl[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');cur.textContent=i+1;}w.querySelector('.prev').addEventListener('click',function(){go(i-1)});w.querySelector('.next').addEventListener('click',function(){go(i+1)});});})();
+</script>
+<script>(function(){try{history.scrollRestoration='manual'}catch(e){}function t(){window.scrollTo(0,0)}t();window.addEventListener('load',t);window.addEventListener('pageshow',t);})();</script>
+</body></html>
