@@ -213,6 +213,7 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
 .print{padding-bottom:9px}
 .print figcaption{position:static;white-space:normal;overflow:visible;text-overflow:clip;padding:8px 2px 0;line-height:1.15;text-wrap:balance}
 @media (max-width:680px){.print figcaption{font-size:14px}}
+a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thickness:1px;text-underline-offset:3px}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -282,7 +283,7 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
     <div class="head rv"><div><h2 class="t-her"><i>places I've</i>been</h2></div></div>
     <div class="head rv" id="kerala" style="margin-bottom:30px">
       <div><p class="cap">My most memorable solo trip</p><h3 class="t-caps">Kerala<span>കേരളം</span></h3></div>
-      <div class="body"><p>I went on my own, during the Biennale. I stayed at a homestay, spent my days by the sea, and made a close friend from Amsterdam, more than twice my age.</p><p class="note">Draft line, rewrite it in your words.</p></div>
+      <div class="body"><p>I went on a solo trip to Kochi for 7 days. It was <a class="inl" href="https://kochimuzirisbiennale.org" target="_blank" rel="noopener">Biennale</a> time. I stayed at a homestay, went to the beach thrice a day, ate rice in some form at every meal, and made best friends with an old woman from Amsterdam.</p></div>
     </div>
     <div class="prints">
       <figure class="print rv" style="--r:-2deg;--i:0"><div class="ph"><img src="img/outside/gajra.jpg" alt="Saumya from behind, with jasmine and roses in her hair, looking out of an auto" loading="lazy"></div><figcaption>out the window</figcaption></figure>
@@ -339,10 +340,14 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
     var sec=document.getElementById(id);
     if(sec){[].forEach.call(sec.querySelectorAll('.rv'),function(el){setTimeout(function(){el.classList.add('in')},60)})}
     try{history.replaceState(null,'',id?'#'+id:location.pathname)}catch(e){}
+    try{sessionStorage.setItem('ow-place',JSON.stringify({id:id,y:scrollY}))}catch(e){}
     if(scroll&&sec){var y=sec.getBoundingClientRect().top+scrollY-bar.offsetHeight;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.getAttribute('href').slice(1);open(t.classList.contains('on')?'':id,true)})});
-  var h=(location.hash||'').slice(1);if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
+  var h=(location.hash||'').slice(1);
+  if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
+  else{try{var mem=JSON.parse(sessionStorage.getItem('ow-place')||'null');if(mem&&mem.id&&document.getElementById(mem.id)){open(mem.id,false);setTimeout(function(){scrollTo(0,mem.y)},60)}}catch(e){}}
+  var saveT;addEventListener('scroll',function(){clearTimeout(saveT);saveT=setTimeout(function(){try{var o=document.querySelector('.sec.open');sessionStorage.setItem('ow-place',JSON.stringify({id:o?o.id:'',y:scrollY}))}catch(e){}},200)},{passive:true});
 
 
   // welcome, in a few languages
