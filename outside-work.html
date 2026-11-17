@@ -208,6 +208,9 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
 .contents a:nth-child(2){font-family:var(--hi)}
 .made-pic .shim{background:none!important;padding:0;box-shadow:none!important;transform:rotate(-2deg)}
 .made-pic .shim img{display:block;width:100%;height:auto}
+.divider{display:flex;align-items:center;gap:18px;margin:90px 0 40px}
+.divider:before,.divider:after{content:"";flex:1;height:1px;background:var(--line)}
+.divider span{font:italic 500 clamp(26px,3.6vw,32px)/1 var(--thin);color:var(--acc,var(--soft))}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -285,7 +288,7 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
       <figure class="print rv" style="--r:-1deg;--y:0px;--i:2"><div class="ph"><img src="img/outside/sadya.jpg" alt="A Kerala sadya on a banana leaf" loading="lazy"></div><figcaption>sadya</figcaption></figure>
       <figure class="print rv" style="--r:3deg;--y:8px;--i:3"><div class="ph"><img src="img/outside/friend.jpg" alt="Saumya and her friend from Amsterdam by the water" loading="lazy"></div><figcaption>a new old friend</figcaption></figure>
     </div>
-      <p class="cap rv" id="elsewhere" style="margin:70px 0 26px">And elsewhere</p>
+      <div class="divider rv" id="elsewhere"><span>and elsewhere</span></div>
     <div class="prints">
       <figure class="print rv" style="--r:-3deg;--i:0"><div class="ph"><img src="img/outside/archery.jpg" alt="Saumya drawing a traditional bow in a green valley in Bhutan" loading="lazy"></div><figcaption>archery, Bhutan</figcaption></figure>
       <figure class="print rv" style="--r:2deg;--y:14px;--i:1"><div class="ph"><img src="img/outside/paris.jpg" alt="The Eiffel Tower lit up at dusk, seen from the Seine" loading="lazy"></div><figcaption>Paris, from the river</figcaption></figure>
