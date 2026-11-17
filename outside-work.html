@@ -168,16 +168,6 @@ html[data-theme="ajrakh"] .contents a[href="#made"]{--tab:#F7B6C8}html[data-them
 .intro{background:#2B1F2D;box-shadow:0 0 0 100vmax #2B1F2D;clip-path:inset(0 -100vmax)}
 .contents{box-shadow:0 0 0 100vmax var(--bar);clip-path:inset(0 -100vmax);padding:16px 0 32px;margin-bottom:0;border-bottom:0}
 .sec{padding-top:56px}
-html[data-sec="made"]{--made:1}
-html[data-sec] body{transition:background .6s ease}
-html[data-sec="made"] body{background:#F7ECE8}
-html[data-sec="kitchen"] body{background:#F8EFDB}
-html[data-sec="places"] body{background:#4A2440}
-html[data-sec="flowers"] body{background:#8A3A57}
-html[data-sec="made"] .sec,html[data-sec="made"] .end{--paper:#F7ECE8;--ink:#2E2520;--soft:#8A7468;--line:rgba(46,37,32,.14);--acc:#B8285E}
-html[data-sec="kitchen"] .sec,html[data-sec="kitchen"] .end{--paper:#F8EFDB;--ink:#2E2520;--soft:#8A7468;--line:rgba(46,37,32,.14);--acc:#B5600F}
-html[data-sec="places"] .sec,html[data-sec="places"] .end{--paper:#4A2440;--ink:#F6E9DA;--soft:#D8BFC8;--line:rgba(246,233,218,.18);--acc:#F4B942}
-html[data-sec="flowers"] .sec,html[data-sec="flowers"] .end{--paper:#8A3A57;--ink:#FBEFE6;--soft:#F1CBD6;--line:rgba(251,239,230,.2);--acc:#FFD3DE}
 .sec,.end{color:var(--ink)}
 .end .go{color:var(--acc,var(--red))}
 html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme="dusk"] .contents a[href="#kitchen"]{--tab:#F4B942}html[data-theme="dusk"] .contents a[href="#places"]{--tab:#C9A0D6}html[data-theme="dusk"] .contents a[href="#flowers"]{--tab:#F7A8BE}
@@ -189,19 +179,25 @@ html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme=
 .contents a:nth-child(2){font-size:17px;padding-top:5px}
 .contents a:hover{color:#F3E7D6;border-color:rgba(243,231,214,.5)}
 .contents a.on{color:#2E2520;border-color:transparent}
-.contents a[href="#made"].on{background:#F7ECE8}
-.contents a[href="#kitchen"].on{background:#F8EFDB}
-.contents a[href="#places"].on,.contents a[href="#flowers"].on{background:#4A3550;color:#F3E7D6}
-html[data-sec="places"] body,html[data-sec="flowers"] body{background:#2B1F2D}
-html[data-sec="places"] .sec,html[data-sec="places"] .end{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#C7B3A4;--line:rgba(243,231,214,.16);--acc:#F4B942}
-html[data-sec="flowers"] .sec,html[data-sec="flowers"] .end{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#C7B3A4;--line:rgba(243,231,214,.16);--acc:#F2A0C0}
-html[data-sec="places"] .contents,html[data-sec="flowers"] .contents{border-bottom:1px solid rgba(243,231,214,.12)}
 @media (max-width:680px){.contents{gap:6px;flex-wrap:nowrap;justify-content:safe center;overflow-x:auto;scrollbar-width:none;margin:0 -28px;padding-left:14px;padding-right:14px;gap:5px}.contents::-webkit-scrollbar{display:none}.contents a{flex:none;height:31px;padding:0 9px;font-size:14px}.contents a:nth-child(2){font-size:13px;padding-top:4px}}
 
 /* intro: words only, centred */
 .hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;grid-template-columns:none;min-height:0;padding:22vh 0 52px}
 .hero .welcome{font:italic 500 clamp(44px,7vw,64px)/1 var(--tight);color:#F2A0C0;margin:0 0 18px}
 .hero .sub{margin:0 auto;font:italic 400 clamp(22px,3.2vw,28px)/1.45 var(--thin);max-width:460px}
+
+/* one purple page; each section gets its own accent */
+.sec.open{animation:none}
+.sec,.end{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#CDB9C4;--line:rgba(243,231,214,.16);color:var(--ink)}
+#made{--acc:#F2A0C0}#kitchen{--acc:#F4B942}#places{--acc:#9FD3C2}#flowers{--acc:#F7A8BE}
+html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4B942}html[data-sec="places"] .end{--acc:#9FD3C2}html[data-sec="flowers"] .end{--acc:#F7A8BE}
+.sec .t-her{color:var(--ink)}.sec .t-her i,.sec .cap,.sec .note{color:var(--soft)}
+.sec .t-caps{color:var(--ink)}
+.contents a.on{color:#2B1F2D;border-color:transparent}
+.contents a[href="#made"].on{background:#F2A0C0}.contents a[href="#kitchen"].on{background:#F4B942}.contents a[href="#places"].on{background:#9FD3C2}.contents a[href="#flowers"].on{background:#F7A8BE}
+.print figcaption,.lb figcaption{color:#5E4A40}
+.slot .ph{color:#6E5A50}
+.made-item+.made-item{border-top-color:var(--line)}
 </style></head>
 <body>
 <div class="grain" aria-hidden="true"></div>
