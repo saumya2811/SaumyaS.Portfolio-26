@@ -39,6 +39,18 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .contents a:hover{color:var(--red)}
 
 .sec{padding:70px 0 40px;border-bottom:1px solid var(--line)}
+/* one section at a time, opened from the bar */
+.hero{min-height:calc(100svh - 150px)}
+.contents{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.94);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);margin-bottom:0}
+.contents a{position:relative;padding-bottom:2px}
+.contents a:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--red);transform:scaleX(0);transition:transform .4s ease}
+.contents a.on{color:var(--red)}.contents a.on:after{transform:scaleX(1)}
+.sec{display:none;border-bottom:0}
+.sec.open{display:block;animation:unfold .9s cubic-bezier(.2,.8,.2,1)}
+@keyframes unfold{from{opacity:0;transform:translateY(-14px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
+.end{padding:50px 0 80px}
+.end:not(.shown){display:none}
+
 .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:38px}
 .head .cap{margin-bottom:12px}
 .head .body{max-width:360px;justify-self:end}
@@ -117,6 +129,7 @@ h3{margin:0}
 @keyframes fall{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(var(--dx,60px),112vh) rotate(var(--r,540deg))}}
 
 @media (max-width:680px){
+  .contents{gap:6px 16px}.contents a{font-size:16px}.contents a:nth-child(2){font-size:15px}
   .made-item{grid-template-columns:1fr;gap:36px;padding:40px 0}.made-pic{width:250px;margin:0 auto}.made-pic.pair{height:230px}
   .t-her{font-size:34px}.t-her.small{font-size:26px}
   .hero{grid-template-columns:1fr;gap:36px;padding:40px 0 56px}
@@ -135,7 +148,7 @@ h3{margin:0}
 <div class="petals" id="petals" aria-hidden="true"></div>
 
 <div class="page">
-  <nav class="top"><a href="index.html">← Back to work</a><a href="#made">Come in ↓</a></nav>
+  <nav class="top"><a href="index.html">← Back to work</a><span></span></nav>
 
   <header class="hero">
     <div>
@@ -223,7 +236,7 @@ h3{margin:0}
   </section>
 
 
-  <footer class="end rv">
+  <footer class="end">
     <a class="go" href="index.html">← Back to work</a>
   </footer>
 </div>
@@ -236,6 +249,20 @@ h3{margin:0}
   var els=document.querySelectorAll('.rv');
   if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});[].forEach.call(els,function(el){io.observe(el)})}
   else{[].forEach.call(els,function(el){el.classList.add('in')})}
+
+  // one section at a time
+  var secs=[].slice.call(document.querySelectorAll('.sec')),tabs=[].slice.call(document.querySelectorAll('.contents a')),bar=document.querySelector('.contents'),end=document.querySelector('.end');
+  function open(id,scroll){
+    secs.forEach(function(x){x.classList.toggle('open',x.id===id)});
+    tabs.forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+id)});
+    end.classList.toggle('shown',!!id);
+    var sec=document.getElementById(id);
+    if(sec){[].forEach.call(sec.querySelectorAll('.rv'),function(el){setTimeout(function(){el.classList.add('in')},60)})}
+    try{history.replaceState(null,'',id?'#'+id:location.pathname)}catch(e){}
+    if(scroll&&sec){var y=bar.getBoundingClientRect().top+scrollY;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}
+  }
+  tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.getAttribute('href').slice(1);open(t.classList.contains('on')?'':id,true)})});
+  var h=(location.hash||'').slice(1);if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
   [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
