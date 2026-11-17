@@ -2,7 +2,7 @@
 
 Saumya Srivastava's UX research portfolio, a static multi-page site published with GitHub Pages. No build step.
 
-- `index.html`: About (home page)
+- `index.html`: About (home page), ending with a "Get in touch" block (`.contact`): connect@saumyasri.in and LinkedIn; a calendar booking link is to be added there. Footer Email links on index, product and work pages go to connect@saumyasri.in
 - `product.html`: product-role front page (same layout as `index.html`, PM-oriented copy); not linked from the nav, shared directly with PM applications. It links to `Saumya-Srivastava-Senior-Product-Researcher.pdf`. `work.html`'s back link returns to whichever front page the visitor came from (sessionStorage key `front`)
 - `work.html`: the five case studies, grouped by SrotaBio, Wayground and Rush (by Hike), with "More about my work" dropdowns
 - `srotabio.html`, `voyagemath.html`, `accommodations.html`, `hike-revenue.html`, `hike-immersion.html`: case study pages; their back links go to `work.html`, with a "Next" link to the following case study
