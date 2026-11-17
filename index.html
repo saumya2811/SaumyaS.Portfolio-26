@@ -377,7 +377,7 @@ html{scroll-behavior:smooth}
 @media (min-width:901px){
 .co-grid{position:relative}
 .co-more .more-dd{position:static}
-.co-more .more-dd > .more-body{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:20;background:#fff;border:1px solid var(--sage);border-radius:10px;box-shadow:0 18px 40px -12px rgba(19,41,75,.22);padding:22px 56px 24px 28px !important;max-height:70vh;overflow:auto}
+.co-more .more-dd > .more-body{position:absolute;left:0;right:0;top:calc(100% + 10px);z-index:20;background:#fff;border:1px solid var(--sage);border-radius:10px;box-shadow:0 18px 40px -12px rgba(19,41,75,.22);padding:22px 56px 24px 28px !important}
 .co-more .more-dd > .more-body .wg,.co-more .more-dd > .more-body .wg-list{font-size:15.5px !important;color:var(--navy);max-width:none}
 .co-more .more-dd > .more-body .wg-list{gap:10px !important}
 .co-more .more-dd > .more-body .li-fig{grid-template-columns:minmax(0,1fr) 240px !important;gap:28px}
@@ -476,7 +476,8 @@ html{scroll-behavior:smooth}
 <script>try{sessionStorage.setItem('front','index.html')}catch(e){}</script>
 <script>(function(){var dds=[].slice.call(document.querySelectorAll('.co-more details'));
 dds.forEach(function(d){var b=d.querySelector('.more-body');if(!b)return;var x=document.createElement('button');x.type='button';x.className='dd-x';x.setAttribute('aria-label','Close');x.innerHTML='&times;';x.addEventListener('click',function(){d.open=false});b.appendChild(x);
-d.addEventListener('toggle',function(){if(d.open){dds.forEach(function(o){if(o!==d)o.open=false})}})});
+d.addEventListener('toggle',function(){if(d.open){dds.forEach(function(o){if(o!==d)o.open=false})}fit()})});
+function fit(){dds.forEach(function(d){var g=d.closest('.co-grid'),b=d.querySelector('.more-body');if(!g||!b)return;g.style.marginBottom=(d.open&&window.innerWidth>900)?(b.offsetHeight+24)+'px':''})}window.addEventListener('resize',fit);
 document.addEventListener('click',function(e){if(window.innerWidth<=900)return;dds.forEach(function(d){if(d.open&&!d.contains(e.target))d.open=false})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')dds.forEach(function(d){d.open=false})});})();</script>
 </body></html>
