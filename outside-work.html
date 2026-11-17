@@ -181,6 +181,22 @@ html[data-sec="flowers"] .sec,html[data-sec="flowers"] .end{--paper:#8A3A57;--in
 .sec,.end{color:var(--ink)}
 .end .go{color:var(--acc,var(--red))}
 html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme="dusk"] .contents a[href="#kitchen"]{--tab:#F4B942}html[data-theme="dusk"] .contents a[href="#places"]{--tab:#C9A0D6}html[data-theme="dusk"] .contents a[href="#flowers"]{--tab:#F7A8BE}
+
+/* tabs as small pills; two light rooms, two purple rooms */
+.contents{gap:10px;align-items:center}
+.contents a{display:inline-flex;align-items:center;height:36px;padding:0 16px;border-radius:999px;border:1px solid rgba(243,231,214,.22);line-height:1;transition:background .4s,color .4s,border-color .4s}
+.contents a:after{display:none}
+.contents a:nth-child(2){font-size:17px;padding-top:5px}
+.contents a:hover{color:#F3E7D6;border-color:rgba(243,231,214,.5)}
+.contents a.on{color:#2E2520;border-color:transparent}
+.contents a[href="#made"].on{background:#F7ECE8}
+.contents a[href="#kitchen"].on{background:#F8EFDB}
+.contents a[href="#places"].on,.contents a[href="#flowers"].on{background:#4A3550;color:#F3E7D6}
+html[data-sec="places"] body,html[data-sec="flowers"] body{background:#2B1F2D}
+html[data-sec="places"] .sec,html[data-sec="places"] .end{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#C7B3A4;--line:rgba(243,231,214,.16);--acc:#F4B942}
+html[data-sec="flowers"] .sec,html[data-sec="flowers"] .end{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#C7B3A4;--line:rgba(243,231,214,.16);--acc:#F2A0C0}
+html[data-sec="places"] .contents,html[data-sec="flowers"] .contents{border-bottom:1px solid rgba(243,231,214,.12)}
+@media (max-width:680px){.contents{gap:6px;flex-wrap:nowrap;justify-content:flex-start;overflow-x:auto;scrollbar-width:none;margin:0 -28px;padding-left:14px;padding-right:14px;gap:5px}.contents::-webkit-scrollbar{display:none}.contents a{flex:none;height:31px;padding:0 9px;font-size:14px}.contents a:nth-child(2){font-size:13px;padding-top:4px}}
 </style></head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -301,7 +317,7 @@ html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme=
     var sec=document.getElementById(id);
     if(sec){[].forEach.call(sec.querySelectorAll('.rv'),function(el){setTimeout(function(){el.classList.add('in')},60)})}
     try{history.replaceState(null,'',id?'#'+id:location.pathname)}catch(e){}
-    if(scroll&&sec){var y=bar.getBoundingClientRect().top+scrollY;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}
+    if(scroll&&sec){var y=sec.getBoundingClientRect().top+scrollY-bar.offsetHeight;scrollTo({top:y,behavior:reduce?'auto':'smooth'})}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.getAttribute('href').slice(1);open(t.classList.contains('on')?'':id,true)})});
   var h=(location.hash||'').slice(1);if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
