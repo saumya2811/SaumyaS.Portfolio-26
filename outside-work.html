@@ -345,6 +345,14 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
   var h=(location.hash||'').slice(1);
   if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
   else{try{var mem=JSON.parse(sessionStorage.getItem('ow-place')||'null');if(mem&&mem.id&&document.getElementById(mem.id)){open(mem.id,false);setTimeout(function(){scrollTo(0,mem.y)},60)}}catch(e){}}
+  // scrolling all the way back up closes the open section, so the front is just the welcome again
+  var wentDown=false,openedAt=0;
+  tabs.forEach(function(t){t.addEventListener('click',function(){openedAt=Date.now();wentDown=false})});
+  addEventListener('scroll',function(){
+    var o=document.querySelector('.sec.open');if(!o)return;
+    if(scrollY>40)wentDown=true;
+    if(wentDown&&scrollY<=2&&Date.now()-openedAt>1200){open('',false);wentDown=false}
+  },{passive:true});
   var saveT;addEventListener('scroll',function(){clearTimeout(saveT);saveT=setTimeout(function(){try{var o=document.querySelector('.sec.open');sessionStorage.setItem('ow-place',JSON.stringify({id:o?o.id:'',y:scrollY}))}catch(e){}},200)},{passive:true});
 
 
