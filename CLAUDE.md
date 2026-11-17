@@ -2,11 +2,11 @@
 
 Saumya Srivastava's UX research portfolio, a static multi-page site published with GitHub Pages. No build step.
 
-- `index.html`: home page. First screen (`.home`, ~82vh): photo, "Hello, I'm Saumya." and a short personal about on the left; link list on the right (`.hls` > `.grp` > `.hl`): Work ↓ (scrolls to `#work`) and Resume, then Email (connect@saumyasri.in) and LinkedIn. "Book a 1-1" (`#book-1-1`) currently opens a prefilled email; swap its href for the calendar link once Saumya sends it. "Outside of work" is planned but not added yet. Below, `#work` holds a COPY of the `work.html` case study sections and end note, so edit titles/cards in both files. Footer Email links on index, product and work pages go to connect@saumyasri.in
+- `index.html`: home page. First screen (`.home`, ~82vh): photo, "Hello, I'm Saumya." and a short personal about on the left; link list on the right (`.hls` > `.grp` > `.hl`): Work ↓ (scrolls to `#work`) and Resume, then Email (connect@saumyasri.in) and LinkedIn. "Book a 1-1" (`#book-1-1`) links to her Calendly (https://calendly.com/connect-saumyasri/30min). "Outside of work" is planned but not added yet. Below, `#work` holds a COPY of the `work.html` case study sections and end note, so edit titles/cards in both files. Footer Email links on index, product and work pages go to connect@saumyasri.in
 - `product.html`: product-role front page (same layout as `index.html`, PM-oriented copy); not linked from the nav, shared directly with PM applications. It links to `Saumya-Srivastava-Senior-Product-Researcher.pdf`. `work.html`'s back link returns to whichever front page the visitor came from (sessionStorage key `front`)
 - `work.html`: the five case studies, grouped by SrotaBio, Wayground and Rush (by Hike), with "More about my work" dropdowns
 - `srotabio.html`, `voyagemath.html`, `accommodations.html`, `hike-revenue.html`, `hike-immersion.html`: case study pages; their back links go to `work.html`, with a "Next" link to the following case study
-- `work.html` ends with a plain, low-key line (`.end-note`): "These are just the highlights. Curious about my process? Let's talk: drop me an email." linking to connect@saumyasri.in. A calendar booking link may be added to it. The case study pages no longer have their own contact note
+- `work.html` ends with a plain, low-key line (`.end-note`): "These are just the highlights. Curious about my process? Let's talk: drop me an email or book a 1-1." (email → connect@saumyasri.in, 1-1 → Calendly). The case study pages no longer have their own contact note
 - `CNAME`: custom domain (saumyasri.in) for GitHub Pages; don't remove it
 - `img/`: images, including `img/tool/` screenshots for the SrotaBio carousel
 
