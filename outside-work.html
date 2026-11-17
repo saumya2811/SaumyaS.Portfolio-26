@@ -26,7 +26,6 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .hero{display:grid;grid-template-columns:1fr 230px;gap:48px;align-items:center;padding:70px 0 80px}
 .her{font:italic 500 23px/1 var(--thin);color:var(--soft);display:block;margin-bottom:10px}
 .hero h1{font:300 clamp(44px,8vw,78px)/.98 var(--thin);letter-spacing:.07em;text-transform:uppercase}
-.hero .hi{display:block;font:400 clamp(26px,4.4vw,38px)/1.5 var(--hi);color:var(--red);letter-spacing:0;text-transform:none;margin-top:4px;padding-left:2.2em}
 .hero .sub{max-width:380px;margin-top:22px;font:italic 400 20px/1.5 var(--thin)}
 .hero .corner{display:flex;justify-content:space-between;margin-top:40px;max-width:380px}
 .portrait .ph{aspect-ratio:3/4;overflow:hidden;border-radius:999px 999px 6px 6px;box-shadow:0 20px 40px -22px rgba(46,37,32,.6)}
@@ -185,9 +184,9 @@ html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme=
 .hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;grid-template-columns:none;min-height:0;padding:22vh 0 52px}
 .hero .welcome{font:500 clamp(30px,4.6vw,40px)/1 var(--tight);color:#F4B942;margin:0 0 18px;height:1.6em;display:flex;align-items:center;justify-content:center}
 #hello{display:block;line-height:1;will-change:transform;text-align:center;font-style:normal;color:#F4B942;transition:opacity .25s ease}
-#hello.hi{font-family:"Noto Serif Devanagari",serif}#hello.ml{font-family:"Noto Serif Malayalam",serif}
-#hello.bn{font-family:"Noto Serif Bengali",serif}#hello.ta{font-family:"Noto Serif Tamil",serif}#hello.te{font-family:"Noto Serif Telugu",serif}#hello.kn{font-family:"Noto Serif Kannada",serif}#hello.gu{font-family:"Noto Serif Gujarati",serif}#hello.pa{font-family:"Noto Serif Gurmukhi",serif}#hello.ur{font-family:"Noto Naskh Arabic",serif}#hello.zh{font-family:"Noto Serif SC",serif}
-#hello.hi,#hello.bn,#hello.ml,#hello.pa,#hello.ur,#hello.zh{font-size:.8em}
+#hello.l-hi{font-family:"Noto Serif Devanagari",serif}#hello.l-ml{font-family:"Noto Serif Malayalam",serif}
+#hello.l-bn{font-family:"Noto Serif Bengali",serif}#hello.l-ta{font-family:"Noto Serif Tamil",serif}#hello.l-te{font-family:"Noto Serif Telugu",serif}#hello.l-kn{font-family:"Noto Serif Kannada",serif}#hello.l-gu{font-family:"Noto Serif Gujarati",serif}#hello.l-pa{font-family:"Noto Serif Gurmukhi",serif}#hello.l-ur{font-family:"Noto Naskh Arabic",serif}#hello.l-zh{font-family:"Noto Serif SC",serif}
+#hello.l-hi,#hello.l-bn,#hello.l-ml,#hello.l-pa,#hello.l-ur,#hello.l-zh{font-size:.8em}
 
 .hero .sub{margin:0 auto;font:italic 400 clamp(22px,3.2vw,28px)/1.45 var(--thin);max-width:460px}
 
@@ -203,6 +202,10 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
 .print figcaption,.lb figcaption{color:#5E4A40}
 .slot .ph{color:#6E5A50}
 .made-item+.made-item{border-top-color:var(--line)}
+
+/* menu: rectangles, upright type */
+.contents a{border-radius:3px;font-style:normal;font-family:var(--thin);font-weight:500;letter-spacing:.02em}
+.contents a:nth-child(2){font-family:var(--hi)}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -347,7 +350,14 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
   }
   if(document.fonts&&document.fonts.ready)document.fonts.ready.then(inkCentre);
 
-  if(!reduce)setInterval(function(){hello.style.opacity=0;setTimeout(function(){wi=(wi+1)%words.length;hello.textContent=words[wi][0];hello.className=words[wi][1];inkCentre();hello.style.opacity=1},250)},1500);
+  // load every script's font up front, so no word is measured with a stand-in font
+  var FONT={hi:'"Noto Serif Devanagari"',pa:'"Noto Serif Gurmukhi"',ur:'"Noto Naskh Arabic"',bn:'"Noto Serif Bengali"',ml:'"Noto Serif Malayalam"',zh:'"Noto Serif SC"'};
+  function start(){if(!reduce)setInterval(function(){hello.style.opacity=0;setTimeout(function(){wi=(wi+1)%words.length;hello.textContent=words[wi][0];hello.className=words[wi][1]?'l-'+words[wi][1]:'';inkCentre();hello.style.opacity=1},250)},1500)}
+  try{
+    var loads=words.filter(function(w){return FONT[w[1]]}).map(function(w){return document.fonts.load('32px '+FONT[w[1]],w[0])});
+    Promise.race([Promise.all(loads),new Promise(function(r){setTimeout(r,2500)})]).then(start);
+    document.fonts.addEventListener('loadingdone',inkCentre);
+  }catch(e){start()}
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
   [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
