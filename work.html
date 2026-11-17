@@ -330,9 +330,6 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
 .co-more .dd-x:hover{background:#F3F4EE;color:var(--navy)}
 }
 @media (max-width:900px){.co-more .dd-x{display:none}}
-.ig-row{display:flex;flex-wrap:wrap;gap:16px;margin:14px 0 4px}
-.ig-row .instagram-media,.ig-row iframe{width:300px !important;min-width:0 !important;max-width:100% !important;margin:0 !important}
-.ig-row blockquote.instagram-media{border:1px solid var(--sage);border-radius:8px;padding:14px;font-size:14px}
 </style></head><body><div class="col">
 <div class="top"><a class="back" id="back-front" href="index.html">← About</a></div>
 
@@ -352,7 +349,7 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
   <p class="wg">Alongside the care service, I get to try many things out:</p>
   <ul class="wg-list">
     <li>Researched where SrotaBio should sit on social media. Through competitor and market research, I landed on two personas and one central idea that runs through our messaging and positioning: hope fatigue, after years of figuring PCOS out alone</li>
-    <li>Set up an AI agent the team uses to make science carousels without a designer. A few examples, and more on <a href="https://www.instagram.com/srotabio/" target="_blank" rel="noopener">SrotaBio's Instagram</a>:<div class="ig-row"><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De4C1MKtsHA/" data-instgrm-version="14"><a href="https://www.instagram.com/p/De4C1MKtsHA/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/DeYv09kmDsu/" data-instgrm-version="14"><a href="https://www.instagram.com/p/DeYv09kmDsu/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote><blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/p/De14Il0kVo3/" data-instgrm-version="14"><a href="https://www.instagram.com/p/De14Il0kVo3/" target="_blank" rel="noopener">View this post on Instagram</a></blockquote></div></li>
+    <li>Set up an AI agent the team uses to make science carousels without a designer. See examples on Instagram: <a href="https://www.instagram.com/p/DeYv09kmDsu/" target="_blank" rel="noopener">Carousel 1</a>, <a href="https://www.instagram.com/p/De14Il0kVo3/" target="_blank" rel="noopener">Carousel 2</a> and a <a href="https://www.instagram.com/p/De4C1MKtsHA/" target="_blank" rel="noopener">video</a></li>
     <li>Designed patient-facing materials, like the info pack every enquiry gets after their first call, and co-designed the website with our designer</li>
   </ul>
 </div></details></aside></div>
@@ -407,5 +404,4 @@ d.addEventListener('toggle',function(){if(d.open){dds.forEach(function(o){if(o!=
 function fit(){dds.forEach(function(d){var g=d.closest('.co-grid'),b=d.querySelector('.more-body');if(!g||!b)return;g.style.marginBottom=(d.open&&window.innerWidth>900)?(b.offsetHeight+24)+'px':''})}window.addEventListener('resize',fit);if(window.ResizeObserver){var ro=new ResizeObserver(fit);dds.forEach(function(d){var b=d.querySelector('.more-body');if(b)ro.observe(b)})}
 document.addEventListener('click',function(e){if(window.innerWidth<=900)return;dds.forEach(function(d){if(d.open&&!d.contains(e.target))d.open=false})});
 document.addEventListener('keydown',function(e){if(e.key==='Escape')dds.forEach(function(d){d.open=false})});})();</script>
-<script async src="https://www.instagram.com/embed.js"></script>
 </body></html>
