@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Outside work · Saumya Srivastava</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,500;1,600;1,700&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Malayalam:wght@400&family=Jost:wght@300;400&display=swap">
+<style>
+:root{--paper:#F5F0E8;--ink:#2E2520;--soft:#857467;--line:rgba(46,37,32,.14);--red:#A8322A;--leaf:#4F6340;
+  --thin:'Cormorant Garamond',Georgia,serif;--tight:'Playfair Display',Georgia,serif;--hi:'Tiro Devanagari Hindi',serif;--ml:'Noto Serif Malayalam',serif;--sans:'Jost','Avenir Next',sans-serif}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font:300 16px/1.75 var(--sans);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,p,figure{margin:0}
+a{color:inherit}
+img{display:block;width:100%;height:100%;object-fit:cover}
+.cap{font:400 10.5px/1.7 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
+.grain{position:fixed;inset:-50%;z-index:40;pointer-events:none;opacity:.09;mix-blend-mode:multiply;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .15 0 0 0 0 .1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  animation:grain 1s steps(4) infinite}
+@keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
+
+.page{max-width:860px;margin:0 auto;padding:0 28px}
+.top{display:flex;justify-content:space-between;padding:26px 0 0}
+.top a{font:400 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--soft);padding-bottom:4px;border-bottom:1px solid transparent;transition:color .3s,border-color .3s}
+.top a:hover{color:var(--red);border-color:var(--red)}
+
+.hero{display:grid;grid-template-columns:1fr 230px;gap:48px;align-items:center;padding:70px 0 80px}
+.her{font:italic 500 23px/1 var(--thin);color:var(--soft);display:block;margin-bottom:10px}
+.hero h1{font:300 clamp(44px,8vw,78px)/.98 var(--thin);letter-spacing:.07em;text-transform:uppercase}
+.hero .hi{display:block;font:400 clamp(26px,4.4vw,38px)/1.5 var(--hi);color:var(--red);letter-spacing:0;text-transform:none;margin-top:4px;padding-left:2.2em}
+.hero .sub{max-width:380px;margin-top:22px;font:italic 400 20px/1.5 var(--thin)}
+.hero .corner{display:flex;justify-content:space-between;margin-top:40px;max-width:380px}
+.portrait .ph{aspect-ratio:3/4;overflow:hidden;border-radius:999px 999px 6px 6px;box-shadow:0 20px 40px -22px rgba(46,37,32,.6)}
+.fade{opacity:0;transform:translateY(10px);animation:rise 1.6s cubic-bezier(.2,.8,.2,1) forwards}
+.f2{animation-delay:.35s}.f3{animation-delay:.7s}.f4{animation-delay:1.05s}
+@keyframes rise{to{opacity:1;transform:none}}
+
+.contents{display:flex;flex-wrap:wrap;gap:8px 26px;justify-content:center;border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:14px 0;margin-bottom:24px}
+.contents a{font:italic 500 18px/1.4 var(--thin);text-decoration:none;color:var(--soft);transition:color .3s}
+.contents a:hover{color:var(--red)}
+
+.sec{padding:70px 0 40px;border-bottom:1px solid var(--line)}
+.head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:38px}
+.head .cap{margin-bottom:12px}
+.head .body{max-width:360px;justify-self:end}
+.go{display:inline-block;margin-top:14px;font:400 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--red);border-bottom:1px solid currentColor;padding-bottom:5px}
+.note{font:italic 400 15px/1.4 var(--thin);color:var(--soft);margin-top:8px}
+
+.t-mehek{font:italic 700 clamp(44px,6.6vw,58px)/.95 var(--tight);color:var(--red)}
+.t-mehek small{display:block;font:500 18px/1.4 var(--thin);color:var(--ink);margin-top:8px}
+.t-her{font:500 clamp(38px,5.6vw,50px)/.95 var(--tight);letter-spacing:-.02em}
+.t-her i{display:inline;font:italic 500 .62em/1 var(--thin);color:var(--soft);letter-spacing:0;margin-right:.18em}
+.t-her{white-space:nowrap}
+.t-caps{font:300 clamp(40px,6.4vw,56px)/1 var(--thin);letter-spacing:.1em;text-transform:uppercase}
+.t-caps span{display:block;font:400 clamp(20px,3.4vw,26px)/1.7 var(--ml);color:var(--red);letter-spacing:0;text-transform:none;padding-left:1.6em}
+.t-caps span.hi{font-family:var(--hi)}
+.t-rasoi{font:400 clamp(48px,8vw,72px)/1.3 var(--hi);color:var(--red)}
+h3{margin:0}
+.t-her.small{font-size:clamp(30px,4.4vw,38px)}
+
+/* things I've made: two entries, same structure */
+.made-item{display:grid;grid-template-columns:280px 1fr;gap:64px;align-items:center;padding:48px 0}
+.made-item+.made-item{border-top:1px solid var(--line)}
+.made-txt{max-width:400px}
+.made-txt p{margin-top:18px}
+.made-txt .t-her.small{font-size:clamp(28px,3.6vw,32px)}
+.made-txt .t-mehek{font-size:clamp(30px,4vw,36px)}
+.made-txt .t-mehek small{font-size:16px;margin-top:4px}
+.made-pic .shim{width:100%}
+.made-pic.pair{position:relative;height:250px}
+.made-pic.pair .print{position:absolute;width:56%;top:0}
+.made-pic.pair .print:first-child{left:0}
+.made-pic.pair .print:last-child{right:0;top:22px}
+.made-pic.pair .ph{aspect-ratio:4/5}
+
+.contents a:nth-child(2){font-family:var(--hi);font-style:normal;font-size:17px}
+
+.prints{display:grid;grid-template-columns:repeat(auto-fill,minmax(150px,1fr));gap:30px 22px;align-items:start}
+.print{background:#FCFAF6;padding:7px 7px 30px;box-shadow:0 12px 24px -14px rgba(46,37,32,.5);position:relative;cursor:zoom-in;
+  transform:rotate(var(--r,0deg)) translateY(var(--y,0));transition:transform .6s cubic-bezier(.2,.9,.3,1.3),box-shadow .4s}
+.print .ph{aspect-ratio:4/5;overflow:hidden;background:#E9E1D4}
+.print img{filter:sepia(.12) saturate(.92) contrast(1.02)}
+.print figcaption{position:absolute;left:6px;right:6px;bottom:6px;text-align:center;font:italic 500 15px/1.1 var(--thin);color:var(--soft);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.slot,.slot .ph{cursor:default}
+
+.slot .ph{display:grid;place-items:center;background:repeating-linear-gradient(45deg,#EEE6D9 0 10px,#E7DECF 10px 20px);font:400 9.5px/1.6 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--soft);text-align:center;padding:10px}
+
+.shimwrap{display:grid;grid-template-columns:260px 1fr;gap:44px;align-items:center}
+.shim{display:block;background:#FCFAF6;padding:7px;box-shadow:0 14px 28px -16px rgba(46,37,32,.45);transform:rotate(-3deg);animation:float 6s ease-in-out infinite}
+@keyframes float{50%{transform:rotate(-1.5deg) translateY(-6px)}}
+.shim b{font:italic 600 24px/1 var(--tight);color:var(--red)}
+.shim .d{display:flex;gap:6px;margin:12px 0 10px}
+.shim .d i{width:22px;height:22px;border-radius:50%;border:2px solid #FCFAF6;box-shadow:0 0 0 1px rgba(46,37,32,.3)}
+.shim .r{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding:7px 0 3px;font:400 13px/1.4 var(--sans)}
+.shim .r em{font-style:normal;color:var(--red)}
+
+.rv{opacity:0;filter:blur(5px);transition:opacity 1.3s ease,filter 1.5s ease,transform .6s cubic-bezier(.2,.9,.3,1.3),box-shadow .4s}
+.rv:not(.print){transform:translateY(22px);transition:opacity 1.3s ease,transform 1.3s cubic-bezier(.2,.9,.3,1),filter 1.5s ease}
+.rv.in{opacity:1;filter:none}
+.rv.in:not(.print){transform:none}
+.print.rv{transition-delay:calc(var(--i,0)*.08s),calc(var(--i,0)*.08s),0s,0s}
+.print:hover{transform:rotate(0) translateY(-4px) scale(1.04);box-shadow:0 18px 30px -14px rgba(46,37,32,.55);z-index:3}
+
+.lb{position:fixed;inset:0;z-index:60;background:rgba(30,24,20,.86);display:none;place-items:center;padding:28px;cursor:zoom-out}
+.lb.on{display:grid;animation:fadein .4s ease}
+@keyframes fadein{from{opacity:0}}
+.lb figure{background:#FCFAF6;padding:10px 10px 44px;max-width:min(560px,92vw);position:relative}
+.lb img{max-height:76vh;width:auto;max-width:100%;height:auto;object-fit:contain;margin:0 auto}
+.lb figcaption{position:absolute;left:0;right:0;bottom:12px;text-align:center;font:italic 500 19px/1 var(--thin);color:var(--soft)}
+
+.end{text-align:center;padding:70px 0 90px}
+.end h2{font:italic 500 38px/1 var(--thin)}
+.end .cap{margin-top:12px}
+.end .go{margin-top:0}
+
+.petals{position:fixed;inset:0;pointer-events:none;z-index:30;overflow:hidden}
+.petals svg{position:absolute;top:-30px;opacity:.9;animation:fall linear infinite;filter:drop-shadow(0 1px 1px rgba(0,0,0,.06))}
+@keyframes fall{0%{transform:translate(0,0) rotate(0)}100%{transform:translate(var(--dx,60px),112vh) rotate(var(--r,540deg))}}
+
+@media (max-width:680px){
+  .made-item{grid-template-columns:1fr;gap:36px;padding:40px 0}.made-pic{width:250px;margin:0 auto}.made-pic.pair{height:230px}
+  .t-her{font-size:34px}.t-her.small{font-size:26px}
+  .hero{grid-template-columns:1fr;gap:36px;padding:40px 0 56px}
+  .portrait{width:180px;margin:0 auto;order:-1}
+  .head{grid-template-columns:1fr;gap:16px}.head .body{justify-self:start}
+  .prints{grid-template-columns:1fr 1fr;gap:26px 16px}
+  .shimwrap{grid-template-columns:1fr;gap:34px}.shim{width:250px;margin:0 auto}
+}
+@media (prefers-reduced-motion:reduce){
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .fade,.rv{opacity:1!important;filter:none!important}.petals{display:none}
+}
+</style></head>
+<body>
+<div class="grain" aria-hidden="true"></div>
+<div class="petals" id="petals" aria-hidden="true"></div>
+
+<div class="page">
+  <nav class="top"><a href="index.html">← Back to work</a><a href="#made">Come in ↓</a></nav>
+
+  <header class="hero">
+    <div>
+      <p class="sub fade f2" style="margin-top:0;font-size:clamp(24px,3.6vw,30px);line-height:1.4;max-width:420px">A little library of what's been occupying my mind and my life lately.</p>
+    </div>
+    <figure class="portrait fade f2"><div class="ph"><img src="img/outside/me.jpg" alt="Saumya in a rust ajrakh-print dress and round sunglasses, sitting by a white window"></div></figure>
+  </header>
+
+  <nav class="contents" aria-label="On this page">
+    <a href="#made">things I've made</a><a href="#kitchen">रसोई</a><a href="#places">places I've been</a><a href="#trying">just to see</a>
+  </nav>
+
+  <section class="sec" id="made">
+    <div class="head rv"><div><h2 class="t-her"><i>things I've</i>made</h2></div></div>
+
+    <article class="made-item rv" id="shimmy">
+      <div class="made-pic"><a class="shim" href="shimmy.html" aria-label="Shimmy"><img src="img/outside/shimmy-card.jpg" alt="Shimmy: a tiny tracker for friends across the ocean"></a></div>
+      <div class="made-txt">
+        <h3 class="t-mehek">Shimmy<small>shimmy shimmy</small></h3>
+        <p>I built my friends and me our own customized tiny social media over a weekend.</p>
+        <a class="go" href="shimmy.html">Have a look →</a>
+      </div>
+    </article>
+
+    <article class="made-item rv" id="brother">
+      <div class="made-pic pair">
+        <figure class="print" style="--r:-4deg"><div class="ph"><img src="img/outside/brother-plate.jpg" alt="A paper-plate food chart with tiny clay foods sorted into protein and roughage" loading="lazy"></div><figcaption>a balanced plate</figcaption></figure>
+        <figure class="print slot" style="--r:4deg"><div class="ph">Another</div><figcaption>for fun</figcaption></figure>
+      </div>
+      <div class="made-txt">
+        <h3 class="t-her small"><i>projects for my</i>little brother</h3>
+        <p>He's in 4th grade, and making his crafts and school projects has become one of my favourite things to do.</p>
+      </div>
+    </article>
+  </section>
+
+  <section class="sec" id="kitchen">
+    <div class="head rv"><div><h2 class="t-rasoi">रसोई</h2></div></div>
+    <div class="prints">
+      <figure class="print rv" style="--r:-3deg;--i:0"><div class="ph"><img src="img/outside/kadhi.jpg" alt="Kadhi in a pot with dried red chillies and coriander" loading="lazy"></div><figcaption>kadhi</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:18px;--i:1"><div class="ph"><img src="img/outside/fish.jpg" alt="Three masala-rubbed fish frying in a pan" loading="lazy"></div><figcaption>fried fish</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--i:2"><div class="ph"><img src="img/outside/cake.jpg" alt="A cake topped with almonds, pistachios and chocolate chips" loading="lazy"></div><figcaption>a nutty cake</figcaption></figure>
+      <figure class="print rv" style="--r:3deg;--y:10px;--i:3"><div class="ph"><img src="img/outside/straw.jpg" alt="Chocolate-dipped strawberries on a pink plate" loading="lazy"></div><figcaption>strawberries</figcaption></figure>
+      <figure class="print rv" style="--r:-2deg;--y:4px;--i:4"><div class="ph"><img src="img/outside/mango.jpg" alt="Mango sticky rice on a green and gold plate" loading="lazy"></div><figcaption>mango sticky rice</figcaption></figure>
+      <figure class="print rv" style="--r:1deg;--y:12px;--i:5"><div class="ph"><img src="img/outside/kheer.jpg" alt="Kheer topped with chopped nuts" loading="lazy"></div><figcaption>kheer</figcaption></figure>
+      <figure class="print rv" style="--r:-2deg;--y:0px;--i:6"><div class="ph"><img src="img/outside/aloo-gobi.jpg" alt="Aloo gobi in a kadhai" loading="lazy"></div><figcaption>aloo gobi</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:8px;--i:7"><div class="ph"><img src="img/outside/pulao.jpg" alt="Chicken pulao with fried onions on a blue floral cloth" loading="lazy"></div><figcaption>chicken pulao</figcaption></figure>
+      <figure class="print rv" style="--r:-3deg;--y:0px;--i:8"><div class="ph"><img src="img/outside/pasta.jpg" alt="Prawn pasta in a pan, a little pear lamp beside it" loading="lazy"></div><figcaption>prawn pasta</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:14px;--i:9"><div class="ph"><img src="img/outside/breakfast.jpg" alt="Two breakfast thalis in the sun: omelette, toast, chai, curd and blueberries" loading="lazy"></div><figcaption>sunday breakfast</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--y:4px;--i:10"><div class="ph"><img src="img/outside/brunch.jpg" alt="A brunch spread: omelettes, crêpes, mushrooms, dragon fruit, blueberries" loading="lazy"></div><figcaption>brunch for two</figcaption></figure>
+    </div>
+  </section>
+
+  <section class="sec" id="places">
+    <div class="head rv"><div><h2 class="t-her"><i>places I've</i>been</h2></div></div>
+    <div class="head rv" id="kerala" style="margin-bottom:30px">
+      <div><p class="cap">My most memorable solo trip</p><h3 class="t-caps">Kerala<span>കേരളം</span></h3></div>
+      <div class="body"><p>I went on my own, during the Biennale. I stayed at a homestay, spent my days by the sea, and made a close friend from Amsterdam, more than twice my age.</p><p class="note">Draft line, rewrite it in your words.</p></div>
+    </div>
+    <div class="prints">
+      <figure class="print rv" style="--r:-2deg;--i:0"><div class="ph"><img src="img/outside/gajra.jpg" alt="Saumya from behind, with jasmine and roses in her hair, looking out of an auto" loading="lazy"></div><figcaption>out the window</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:16px;--i:1"><div class="ph"><img src="img/outside/kathakali.jpg" alt="Kathakali artists putting on their makeup behind a brass lamp" loading="lazy"></div><figcaption>Kathakali, before the show</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--y:0px;--i:2"><div class="ph"><img src="img/outside/sadya.jpg" alt="A Kerala sadya on a banana leaf" loading="lazy"></div><figcaption>sadya</figcaption></figure>
+      <figure class="print rv" style="--r:3deg;--y:8px;--i:3"><div class="ph"><img src="img/outside/friend.jpg" alt="Saumya and her friend from Amsterdam by the water" loading="lazy"></div><figcaption>a new old friend</figcaption></figure>
+    </div>
+      <p class="cap rv" id="elsewhere" style="margin:70px 0 26px">And elsewhere</p>
+    <div class="prints">
+      <figure class="print rv" style="--r:-3deg;--i:0"><div class="ph"><img src="img/outside/archery.jpg" alt="Saumya drawing a traditional bow in a green valley in Bhutan" loading="lazy"></div><figcaption>archery, Bhutan</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:14px;--i:1"><div class="ph"><img src="img/outside/paris.jpg" alt="The Eiffel Tower lit up at dusk, seen from the Seine" loading="lazy"></div><figcaption>Paris, from the river</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--i:2"><div class="ph"><img src="img/outside/jungfrau.jpg" alt="A tiny bottle of Heuschnaps from Jungfrau, Switzerland" loading="lazy"></div><figcaption>Jungfrau, Switzerland</figcaption></figure>
+      <figure class="print rv" style="--r:3deg;--y:8px;--i:3"><div class="ph"><img src="img/outside/phonebox.jpg" alt="A red telephone box under plane trees" loading="lazy"></div><figcaption>a red phone box</figcaption></figure>
+      <figure class="print rv" style="--r:-2deg;--y:4px;--i:4"><div class="ph"><img src="img/outside/dubai.jpg" alt="Saumya sitting by a window high above Dubai at night" loading="lazy"></div><figcaption>Dubai, from up high</figcaption></figure>
+      <figure class="print rv" style="--r:1deg;--y:16px;--i:5"><div class="ph"><img src="img/outside/cars.jpg" alt="Rows of vintage cars under old enamel signs" loading="lazy"></div><figcaption>vintage cars</figcaption></figure>
+      <figure class="print rv" style="--r:-2deg;--y:0px;--i:6"><div class="ph"><img src="img/outside/restaurant.jpg" alt="An old dining room with yellow walls, wooden arches and a chandelier" loading="lazy"></div><figcaption>an old dining room</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:10px;--i:7"><div class="ph"><img src="img/outside/cafe.jpg" alt="A mirror selfie in an old café with wooden frames" loading="lazy"></div><figcaption>an old café</figcaption></figure>
+    </div>
+  </section>
+
+
+  <section class="sec" id="trying">
+    <div class="head rv"><div><h2 class="t-mehek" style="color:var(--leaf)">just to see<small>what happens</small></h2></div></div>
+    <div class="prints">
+      <figure class="print rv" style="--r:-2deg;--i:0"><div class="ph"><img src="img/outside/target.jpg" alt="A shooting target with a cluster of hits near the centre" loading="lazy"></div><figcaption>at the range</figcaption></figure>
+      <figure class="print rv" style="--r:3deg;--y:12px;--i:1"><div class="ph"><img src="img/outside/paint.jpg" alt="A watercolour of purple flowers on green stems" loading="lazy"></div><figcaption>watercolours</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--y:4px;--i:2"><div class="ph"><img src="img/outside/mystery.jpg" alt="Murder mystery case files laid out on a striped rug" loading="lazy"></div><figcaption>a murder mystery</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:16px;--i:3"><div class="ph"><img src="img/outside/secret.jpg" alt="A white envelope stamped Top Secret" loading="lazy"></div><figcaption>top secret</figcaption></figure>
+      <figure class="print rv" style="--r:-1deg;--y:0px;--i:4"><div class="ph"><img src="img/outside/huescues.jpg" alt="A board of colour squares from a game of Hues and Cues" loading="lazy"></div><figcaption>Hues and Cues</figcaption></figure>
+      <figure class="print rv" style="--r:3deg;--y:10px;--i:5"><div class="ph"><img src="img/outside/codenames.jpg" alt="Codenames cards laid out on a table" loading="lazy"></div><figcaption>Codenames</figcaption></figure>
+      <figure class="print rv" style="--r:-2deg;--y:4px;--i:6"><div class="ph"><img src="img/outside/urli-balcony.jpg" alt="An urli of floating flowers on the balcony" loading="lazy"></div><figcaption>an urli on the balcony</figcaption></figure>
+      <figure class="print rv" style="--r:2deg;--y:0px;--i:7"><div class="ph"><img src="img/outside/urli-roses.jpg" alt="Roses and chrysanthemums floating in an urli" loading="lazy"></div><figcaption>roses in an urli</figcaption></figure>
+      <figure class="print rv" style="--r:-3deg;--y:12px;--i:8"><div class="ph"><img src="img/outside/rangoli.jpg" alt="A flower rangoli of marigolds, rose petals and mango leaves around a diya" loading="lazy"></div><figcaption>a flower rangoli</figcaption></figure>
+    </div>
+  </section>
+
+
+  <footer class="end rv">
+    <a class="go" href="index.html">← Back to work</a>
+  </footer>
+</div>
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Photo"><figure><img id="lbimg" alt=""><figcaption id="lbcap"></figcaption></figure></div>
+
+<script>
+(function(){
+  var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var els=document.querySelectorAll('.rv');
+  if('IntersectionObserver' in window&&!reduce){var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}})},{threshold:.15});[].forEach.call(els,function(el){io.observe(el)})}
+  else{[].forEach.call(els,function(el){el.classList.add('in')})}
+  var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
+  [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
+  lb.addEventListener('click',function(){lb.classList.remove('on')});
+  addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
+  if(reduce)return;
+  var P=document.getElementById('petals');
+  function daisy(c,k){return '<svg viewBox="0 0 24 24"><g fill="'+c+'">'+[0,45,90,135,180,225,270,315].map(function(a){return '<ellipse cx="12" cy="5" rx="2.4" ry="5" transform="rotate('+a+' 12 12)"/>'}).join('')+'</g><circle cx="12" cy="12" r="3" fill="'+k+'"/></svg>'}
+  var kinds=[daisy('#F2C4BC','#F3D9A4'),daisy('#F6DDAE','#E8BE7A'),daisy('#FFFDF8','#F3D9A4'),daisy('#CFDCC4','#F3E2B8')];
+  for(var i=0;i<14;i++){var d=document.createElement('div');d.innerHTML=kinds[i%kinds.length];var s=d.firstChild,sz=9+Math.random()*12;
+    s.style.width=s.style.height=sz+'px';s.style.left=(Math.random()*100)+'vw';s.style.animationDuration=(16+Math.random()*16)+'s';s.style.animationDelay=(-Math.random()*30)+'s';
+    s.style.setProperty('--dx',(Math.random()*160-80)+'px');s.style.setProperty('--r',(Math.random()*720-360)+'deg');P.appendChild(s)}
+})();
+</script>
+</body></html>
