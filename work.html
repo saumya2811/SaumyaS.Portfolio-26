@@ -310,6 +310,15 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
 .page-h h1{font-size:34px}
 .page-h p{font-size:18px;color:var(--soft);max-width:760px}
 .co + .co{margin-top:40px}
+.co-grid{display:grid;grid-template-columns:minmax(0,1fr) 320px;gap:56px;align-items:start;margin-top:8px}
+.co-cards .proj-card:first-child{margin-top:12px}
+.co-more{padding-top:22px}
+.co-more .more-dd{margin:0}
+.co-more .wg,.co-more .wg-list{font-size:14.5px !important;line-height:1.65 !important;color:var(--soft)}
+.co-more .wg{margin-top:12px !important}
+.co-more .wg-list{gap:8px !important;margin-top:8px !important}
+.co-more .li-fig{grid-template-columns:minmax(0,1fr) !important}
+@media (max-width:900px){.co-grid{grid-template-columns:1fr;gap:4px}.co-more{padding-top:0}}
 </style></head><body><div class="col">
 <div class="top"><a class="back" id="back-front" href="index.html">← About</a></div>
 
@@ -320,8 +329,10 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
 <section class="co">
   <h2>My work at <a href="https://srotabio.com/" target="_blank" rel="noopener">SrotaBio</a></h2>
   <p class="what">A 0→1 women's health startup building end-to-end PMOS (PCOS) care in India.</p>
+  <div class="co-grid"><div class="co-cards">
   <a class="proj-card sb" href="srotabio.html"><span class="pl">Mapping the patient journey and building the case management tool to match from scratch</span></a>
-  <details class="more-dd"><summary>More about my work at SrotaBio</summary><div class="more-body">
+  </div>
+  <aside class="co-more"><details class="more-dd"><summary>More about my work at SrotaBio</summary><div class="more-body">
   <p class="wg">I joined as a product and service design consultant. On a small team, I get to wear many hats.</p>
 
   <p class="wg">Alongside the care service, I get to try many things out:</p>
@@ -330,15 +341,17 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
     <li>Set up an AI tool the team uses to make science carousels without a designer</li>
     <li>Designed patient-facing materials, like the info pack every enquiry gets after their first call, and co-designed the website with our designer</li>
   </ul>
-</div></details>
+</div></details></aside></div>
 </section>
 
 <section class="co">
   <h2>My work at <a href="https://wayground.com" target="_blank" rel="noopener">Wayground</a> / formerly Quizizz</h2>
   <p class="what">A supplemental curriculum platform that teachers in 90% of US schools use for instruction, reviews and assessments.</p>
+  <div class="co-grid"><div class="co-cards">
   <a class="proj-card vm" href="voyagemath.html"><span class="pl">Fixing the cross-product funnel from Wayground to VoyageMath <span class="num">→ activation grew from 5% to 13%</span></span></a>
   <a class="proj-card acc" href="accommodations.html"><span class="pl">Uncovering how special education really works in US classrooms <span class="num">→ led to one of Wayground's best-adopted flows</span></span></a>
-  <details class="more-dd"><summary>More about my work at Wayground</summary><div class="more-body">
+  </div>
+  <aside class="co-more"><details class="more-dd"><summary>More about my work at Wayground</summary><div class="more-body">
 
   <p class="wg">Beyond research projects, and with limited research resources, I helped shape the overall research culture at Wayground by:</p>
   <ul class="wg-list">
@@ -347,15 +360,17 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
     <li>Building recruitment practices and long-term relationships with hard-to-reach users like SPED teachers, as part of the Accommodations pod</li>
     <li><div class="li-fig"><span>Developing subject-specific frameworks for differentiating math and English content through secondary research, teacher task analysis and iterative co-design with special education teachers, drawing on long-term partnerships I had established</span><figure><a href="img/wg-differentiated.jpg" target="_blank" rel="noopener"><img src="img/wg-differentiated.jpg" width="1400" height="818" alt="Wayground help page: Create and Assign Differentiated Versions of the Same Resource" loading="lazy"></a><figcaption>Differentiated versions on Wayground</figcaption></figure></div></li>
   </ul>
-</div></details>
+</div></details></aside></div>
 </section>
 
 <section class="co">
   <h2>My work at Rush (by <a href="https://hike.in" target="_blank" rel="noopener">Hike</a>)</h2>
   <p class="what">A gaming app with 5 crore+ players, most of them in Tier 2 and 3 cities across India.</p>
+  <div class="co-grid"><div class="co-cards">
   <a class="proj-card hk" href="hike-revenue.html"><span class="pl">Keeping revenue in the system after a new tax law <span class="num">→ revenue retention doubled the next quarter</span></span></a>
   <a class="proj-card hk2" href="hike-immersion.html"><span class="pl">Running twice-yearly user immersions with leadership, which shaped the quarterly roadmap</span></a>
-  <details class="more-dd"><summary>More about my work at Hike</summary><div class="more-body">
+  </div>
+  <aside class="co-more"><details class="more-dd"><summary>More about my work at Hike</summary><div class="more-body">
 
   <p class="wg">Beyond the case studies, I:</p>
   <ul class="wg-list">
@@ -365,7 +380,7 @@ section.co details.proj-dd:nth-of-type(2) .dd-body .sum{background:#F4F7EF}
     <li>Made a fortnightly Insider report on high roller issues, and worked with the teams concerned to solve them</li>
     <li>Trained with YourDOST as a first responder in empathetic listening, and was the point of contact for distress calls from players about game addiction</li>
   </ul>
-</div></details>
+</div></details></aside></div>
 </section>
 
 <p class="end-note" style="margin:36px 0 8px;font-size:15px;color:var(--soft)">These are just the highlights. Curious about my process? Let's talk: <a href="mailto:connect@saumyasri.in?body=Hi%20Saumya%2C%0A%0AI%27ve%20been%20going%20through%20your%20case%20studies%20and%20would%20love%20to%20know%20more.">drop me an email</a> or <a href="https://calendly.com/connect-saumyasri/30min" target="_blank" rel="noopener">book a 1-1</a>.</p>
