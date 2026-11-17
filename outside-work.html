@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<html lang="en" data-theme="dusk"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Outside work · Saumya Srivastava</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,400;1,500&family=Playfair+Display:ital,wght@0,500;1,600;1,700&family=Tiro+Devanagari+Hindi&family=Noto+Serif+Malayalam:wght@400&family=Jost:wght@300;400&display=swap">
@@ -13,7 +13,7 @@ h1,h2,p,figure{margin:0}
 a{color:inherit}
 img{display:block;width:100%;height:100%;object-fit:cover}
 .cap{font:400 10.5px/1.7 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--soft)}
-.grain{position:fixed;inset:-50%;z-index:40;pointer-events:none;opacity:.09;mix-blend-mode:multiply;
+.grain{position:fixed;inset:-50%;z-index:40;pointer-events:none;opacity:var(--grain,.09);mix-blend-mode:var(--gblend,multiply);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='3'/%3E%3CfeColorMatrix values='0 0 0 0 .2 0 0 0 0 .15 0 0 0 0 .1 0 0 0 1 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   animation:grain 1s steps(4) infinite}
 @keyframes grain{25%{transform:translate(-3%,2%)}50%{transform:translate(2%,-3%)}75%{transform:translate(-2%,-1%)}}
@@ -41,10 +41,10 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .sec{padding:70px 0 40px;border-bottom:1px solid var(--line)}
 /* one section at a time, opened from the bar */
 .hero{min-height:calc(100svh - 150px)}
-.contents{position:sticky;top:0;z-index:20;background:rgba(245,240,232,.94);backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);margin-bottom:0}
+.contents{position:sticky;top:0;z-index:20;background:var(--bar,rgba(245,240,232,.94));backdrop-filter:blur(6px);-webkit-backdrop-filter:blur(6px);margin-bottom:0}
 .contents a{position:relative;padding-bottom:2px}
-.contents a:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--red);transform:scaleX(0);transition:transform .4s ease}
-.contents a.on{color:var(--red)}.contents a.on:after{transform:scaleX(1)}
+.contents a:after{content:"";position:absolute;left:0;right:0;bottom:-3px;height:1px;background:var(--tab,var(--red));transform:scaleX(0);transition:transform .4s ease}
+.contents a.on{color:var(--tab,var(--red))}.contents a.on:after{transform:scaleX(1)}
 .sec{display:none;border-bottom:0}
 .sec.open{display:block;animation:unfold .9s cubic-bezier(.2,.8,.2,1)}
 @keyframes unfold{from{opacity:0;transform:translateY(-14px);clip-path:inset(0 0 100% 0)}to{opacity:1;transform:none;clip-path:inset(0 0 0 0)}}
@@ -54,18 +54,18 @@ img{display:block;width:100%;height:100%;object-fit:cover}
 .head{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:end;margin-bottom:38px}
 .head .cap{margin-bottom:12px}
 .head .body{max-width:360px;justify-self:end}
-.go{display:inline-block;margin-top:14px;font:400 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--red);border-bottom:1px solid currentColor;padding-bottom:5px}
+.go{display:inline-block;margin-top:14px;font:400 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;text-decoration:none;color:var(--acc,var(--red));border-bottom:1px solid currentColor;padding-bottom:5px}
 .note{font:italic 400 15px/1.4 var(--thin);color:var(--soft);margin-top:8px}
 
-.t-mehek{font:italic 700 clamp(44px,6.6vw,58px)/.95 var(--tight);color:var(--red)}
+.t-mehek{font:italic 700 clamp(44px,6.6vw,58px)/.95 var(--tight);color:var(--acc,var(--red))}
 .t-mehek small{display:block;font:500 18px/1.4 var(--thin);color:var(--ink);margin-top:8px}
 .t-her{font:500 clamp(38px,5.6vw,50px)/.95 var(--tight);letter-spacing:-.02em}
 .t-her i{display:inline;font:italic 500 .62em/1 var(--thin);color:var(--soft);letter-spacing:0;margin-right:.18em}
 .t-her{white-space:nowrap}
 .t-caps{font:300 clamp(40px,6.4vw,56px)/1 var(--thin);letter-spacing:.1em;text-transform:uppercase}
-.t-caps span{display:block;font:400 clamp(20px,3.4vw,26px)/1.7 var(--ml);color:var(--red);letter-spacing:0;text-transform:none;padding-left:1.6em}
+.t-caps span{display:block;font:400 clamp(20px,3.4vw,26px)/1.7 var(--ml);color:var(--red);letter-spacing:0;text-transform:none;padding-left:1.6em;color:var(--acc,var(--red))}
 .t-caps span.hi{font-family:var(--hi)}
-.t-rasoi{font:400 clamp(48px,8vw,72px)/1.3 var(--hi);color:var(--red)}
+.t-rasoi{font:400 clamp(48px,8vw,72px)/1.3 var(--hi);color:var(--acc,var(--red))}
 h3{margin:0}
 .t-her.small{font-size:clamp(30px,4.4vw,38px)}
 
@@ -142,12 +142,52 @@ h3{margin:0}
   *,*:before,*:after{animation:none!important;transition:none!important}
   .fade,.rv{opacity:1!important;filter:none!important}.petals{display:none}
 }
+
+/* colour experiments */
+html,body{transition:background .6s ease,color .6s ease}
+.t-her{color:var(--ink)}
+html[data-theme="dusk"]{--paper:#2B1F2D;--ink:#F3E7D6;--soft:#C7B3A4;--line:rgba(243,231,214,.16);--red:#F28C7B;--bar:#2B1F2D;--grain:.12;--gblend:overlay}
+html[data-theme="indigo"]{--paper:#1E2A47;--ink:#F4EDE1;--soft:#B9C0D3;--line:rgba(244,237,225,.16);--red:#F0A23B;--bar:rgba(30,42,71,.92);--grain:.12;--gblend:overlay}
+html[data-theme="indigo"] #made{--acc:#E86C9E}html[data-theme="indigo"] #kitchen{--acc:#F0A23B}html[data-theme="indigo"] #places{--acc:#A7CF86}html[data-theme="indigo"] #flowers{--acc:#F49A86}
+html[data-theme="ajrakh"]{--paper:#6E2A1C;--ink:#F6E8D5;--soft:#E2BFA0;--line:rgba(246,232,213,.18);--red:#F3C26B;--bar:rgba(110,42,28,.92);--grain:.14;--gblend:overlay}
+html[data-theme="ajrakh"] #made{--acc:#F7B6C8}html[data-theme="ajrakh"] #kitchen{--acc:#F3C26B}html[data-theme="ajrakh"] #places{--acc:#9FD3C2}html[data-theme="ajrakh"] #flowers{--acc:#F7B6C8}
+html[data-theme] .print,html[data-theme] .shim{box-shadow:0 16px 30px -12px rgba(0,0,0,.55)}
+/* tabs take their section's colour */
+html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme="dusk"] .contents a[href="#kitchen"]{--tab:#F4B942}html[data-theme="dusk"] .contents a[href="#places"]{--tab:#8CC7B4}html[data-theme="dusk"] .contents a[href="#flowers"]{--tab:#F28C7B}
+html[data-theme="indigo"] .contents a[href="#made"]{--tab:#E86C9E}html[data-theme="indigo"] .contents a[href="#kitchen"]{--tab:#F0A23B}html[data-theme="indigo"] .contents a[href="#places"]{--tab:#A7CF86}html[data-theme="indigo"] .contents a[href="#flowers"]{--tab:#F49A86}
+html[data-theme="ajrakh"] .contents a[href="#made"]{--tab:#F7B6C8}html[data-theme="ajrakh"] .contents a[href="#kitchen"]{--tab:#F3C26B}html[data-theme="ajrakh"] .contents a[href="#places"]{--tab:#9FD3C2}html[data-theme="ajrakh"] .contents a[href="#flowers"]{--tab:#F7B6C8}
+/* preview-only colour picker */
+.swatch{position:fixed;right:14px;bottom:14px;z-index:70;display:flex;gap:8px;align-items:center;background:rgba(255,255,255,.88);border-radius:999px;padding:7px 12px;box-shadow:0 6px 20px -8px rgba(0,0,0,.4);font:400 10px/1 var(--sans);letter-spacing:.2em;text-transform:uppercase;color:#5a4a40}
+.swatch button{width:22px;height:22px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.2);cursor:pointer;padding:0}
+.swatch button.on{box-shadow:0 0 0 2px #2E2520}
+.print figcaption,.lb figcaption,.slot .ph{color:#857467}
+.shim .r{color:#2E2520}
+
+
+/* each section brings its own colour to the rest of the page */
+.intro{background:#2B1F2D;box-shadow:0 0 0 100vmax #2B1F2D;clip-path:inset(0 -100vmax)}
+.contents{box-shadow:0 0 0 100vmax var(--bar);clip-path:inset(0 -100vmax);padding:16px 0 32px;margin-bottom:0;border-bottom:0}
+.sec{padding-top:56px}
+html[data-sec="made"]{--made:1}
+html[data-sec] body{transition:background .6s ease}
+html[data-sec="made"] body{background:#F7ECE8}
+html[data-sec="kitchen"] body{background:#F8EFDB}
+html[data-sec="places"] body{background:#4A2440}
+html[data-sec="flowers"] body{background:#8A3A57}
+html[data-sec="made"] .sec,html[data-sec="made"] .end{--paper:#F7ECE8;--ink:#2E2520;--soft:#8A7468;--line:rgba(46,37,32,.14);--acc:#B8285E}
+html[data-sec="kitchen"] .sec,html[data-sec="kitchen"] .end{--paper:#F8EFDB;--ink:#2E2520;--soft:#8A7468;--line:rgba(46,37,32,.14);--acc:#B5600F}
+html[data-sec="places"] .sec,html[data-sec="places"] .end{--paper:#4A2440;--ink:#F6E9DA;--soft:#D8BFC8;--line:rgba(246,233,218,.18);--acc:#F4B942}
+html[data-sec="flowers"] .sec,html[data-sec="flowers"] .end{--paper:#8A3A57;--ink:#FBEFE6;--soft:#F1CBD6;--line:rgba(251,239,230,.2);--acc:#FFD3DE}
+.sec,.end{color:var(--ink)}
+.end .go{color:var(--acc,var(--red))}
+html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme="dusk"] .contents a[href="#kitchen"]{--tab:#F4B942}html[data-theme="dusk"] .contents a[href="#places"]{--tab:#C9A0D6}html[data-theme="dusk"] .contents a[href="#flowers"]{--tab:#F7A8BE}
 </style></head>
 <body>
 <div class="grain" aria-hidden="true"></div>
 <div class="petals" id="petals" aria-hidden="true"></div>
 
 <div class="page">
+  <div class="intro">
   <nav class="top"><a href="index.html">← Back to work</a><span></span></nav>
 
   <header class="hero">
@@ -156,6 +196,7 @@ h3{margin:0}
     </div>
     <figure class="portrait fade f2"><div class="ph"><img src="img/outside/me.jpg" alt="Saumya in a rust ajrakh-print dress and round sunglasses, sitting by a white window"></div></figure>
   </header>
+  </div>
 
   <nav class="contents" aria-label="On this page">
     <a href="#made">things I've made</a><a href="#kitchen">रसोई</a><a href="#places">places I've been</a><a href="#flowers">flowers</a>
@@ -256,6 +297,7 @@ h3{margin:0}
     secs.forEach(function(x){x.classList.toggle('open',x.id===id)});
     tabs.forEach(function(t){t.classList.toggle('on',t.getAttribute('href')==='#'+id)});
     end.classList.toggle('shown',!!id);
+    if(id)document.documentElement.setAttribute('data-sec',id);else document.documentElement.removeAttribute('data-sec');
     var sec=document.getElementById(id);
     if(sec){[].forEach.call(sec.querySelectorAll('.rv'),function(el){setTimeout(function(){el.classList.add('in')},60)})}
     try{history.replaceState(null,'',id?'#'+id:location.pathname)}catch(e){}
@@ -263,6 +305,7 @@ h3{margin:0}
   }
   tabs.forEach(function(t){t.addEventListener('click',function(e){e.preventDefault();var id=t.getAttribute('href').slice(1);open(t.classList.contains('on')?'':id,true)})});
   var h=(location.hash||'').slice(1);if(document.getElementById(h)&&document.getElementById(h).classList.contains('sec'))open(h,true);
+
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
   [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
