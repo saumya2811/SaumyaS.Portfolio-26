@@ -8,7 +8,6 @@ Saumya Srivastava's UX research portfolio, a static multi-page site published wi
 - `srotabio.html`, `voyagemath.html`, `accommodations.html`, `hike-revenue.html`, `hike-immersion.html`: case study pages; their back links go to `work.html`. Each ends with a short note asking visitors to email connect@saumyasri.in for the full case study
 - `work.html` opens with a "glimpse" note (`.glimpse`) saying these are condensed case studies, with a mailto button to connect@saumyasri.in
 - `CNAME`: custom domain (saumyasri.in) for GitHub Pages; don't remove it
-- `easygenerator/`: tailored, unlisted (noindex) page for Patrick at Easygenerator, with its own copies of the three case studies (back links to `easygenerator/index.html`, images from `../img/`). Not linked from the site
 - `img/`: images, including `img/tool/` screenshots for the SrotaBio carousel
 
 Preview by opening `index.html` or running `python3 -m http.server`. The "Resume" link on `index.html` points to `Saumya-Srivastava-Senior-UX-Researcher.pdf`; replace that file to update the resume (UX version). Bump the `?v=` query on resume links after replacing a PDF so cached copies aren't served.
