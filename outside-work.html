@@ -184,7 +184,7 @@ html[data-theme="dusk"] .contents a[href="#made"]{--tab:#F2A0C0}html[data-theme=
 /* intro: words only, centred */
 .hero{display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;grid-template-columns:none;min-height:0;padding:22vh 0 52px}
 .hero .welcome{font:500 clamp(30px,4.6vw,40px)/1 var(--tight);color:#F4B942;margin:0 0 18px;height:1.6em;display:flex;align-items:center;justify-content:center}
-#hello{display:block;line-height:1;text-align:center;font-style:normal;color:#F4B942;transition:opacity .25s ease}
+#hello{display:block;line-height:1;will-change:transform;text-align:center;font-style:normal;color:#F4B942;transition:opacity .25s ease}
 #hello.hi{font-family:"Noto Serif Devanagari",serif}#hello.ml{font-family:"Noto Serif Malayalam",serif}
 #hello.bn{font-family:"Noto Serif Bengali",serif}#hello.ta{font-family:"Noto Serif Tamil",serif}#hello.te{font-family:"Noto Serif Telugu",serif}#hello.kn{font-family:"Noto Serif Kannada",serif}#hello.gu{font-family:"Noto Serif Gujarati",serif}#hello.pa{font-family:"Noto Serif Gurmukhi",serif}#hello.ur{font-family:"Noto Naskh Arabic",serif}#hello.zh{font-family:"Noto Serif SC",serif}
 #hello.hi,#hello.bn,#hello.ml,#hello.pa,#hello.ur,#hello.zh{font-size:.8em}
@@ -203,12 +203,12 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
 .print figcaption,.lb figcaption{color:#5E4A40}
 .slot .ph{color:#6E5A50}
 .made-item+.made-item{border-top-color:var(--line)}
-</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&text=%E0%A6%B8%E0%A7%8D%E0%A6%AC%E0%A6%BE%E0%A6%97%E0%A6%A4%E0%A6%AE&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&text=%E0%A8%9C%E0%A9%80%20%E0%A8%86%E0%A8%87%E0%A8%86%E0%A8%82%20%E0%A8%A8%E0%A9%82%E0%A9%B0&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&text=%D8%AE%D9%88%D8%B4%20%D8%A2%D9%85%D8%AF%DB%8C%D8%AF&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&text=%E0%A4%B8%E0%A5%8D%E0%A4%B5%E0%A4%BE%E0%A4%97%E0%A4%A4%20%E0%A4%B9%E0%A5%88&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam&text=%E0%B4%B8%E0%B5%8D%E0%B4%B5%E0%B4%BE%E0%B4%97%E0%B4%A4%E0%B4%82&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&text=%E6%AC%A2%E8%BF%8E&display=swap">
+</style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Malayalam&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+SC&display=swap">
 </head>
 <body>
 <div class="grain" aria-hidden="true"></div>
@@ -336,8 +336,18 @@ html[data-sec="made"] .end{--acc:#F2A0C0}html[data-sec="kitchen"] .end{--acc:#F4
 
 
   // welcome, in a few languages
-  var hello=document.getElementById('hello'),words=[["Welcome", "en"], ["स्वागत है", "hi"], ["ਜੀ ਆਇਆਂ ਨੂੰ", "pa"], ["خوش آمدید", "ur"], ["স্বাগতম", "bn"], ["സ്വാഗതം", "ml"], ["Bienvenue", "en"], ["Bienvenidos", "en"], ["欢迎", "zh"], ["Willkommen", "en"]],wi=0;
-  if(!reduce)setInterval(function(){hello.style.opacity=0;setTimeout(function(){wi=(wi+1)%words.length;hello.textContent=words[wi][0];hello.className=words[wi][1];hello.style.opacity=1},250)},1500);
+  var hello=document.getElementById('hello'),words=[["Welcome", "en"], ["स्वागत है", "hi"], ["Bienvenue", "en"], ["ਜੀ ਆਇਆਂ ਨੂੰ", "pa"], ["欢迎", "zh"], ["স্বাগতম", "bn"], ["Bienvenidos", "en"], ["خوش آمدید", "ur"], ["Willkommen", "en"], ["സ്വാഗതം", "ml"]],wi=0;
+  var cv=document.createElement('canvas').getContext('2d');
+  function inkCentre(){
+    hello.style.transform='';
+    try{var cs=getComputedStyle(hello);cv.font=cs.fontStyle+' '+cs.fontWeight+' '+cs.fontSize+' '+cs.fontFamily;
+      var m=cv.measureText(hello.textContent);if(!m.actualBoundingBoxAscent||!m.fontBoundingBoxAscent)return;
+      var ink=(m.actualBoundingBoxAscent-m.actualBoundingBoxDescent)/2,box=(m.fontBoundingBoxAscent-m.fontBoundingBoxDescent)/2;
+      hello.style.transform='translateY('+(ink-box).toFixed(1)+'px)'}catch(e){}
+  }
+  if(document.fonts&&document.fonts.ready)document.fonts.ready.then(inkCentre);
+
+  if(!reduce)setInterval(function(){hello.style.opacity=0;setTimeout(function(){wi=(wi+1)%words.length;hello.textContent=words[wi][0];hello.className=words[wi][1];inkCentre();hello.style.opacity=1},250)},1500);
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
   [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
