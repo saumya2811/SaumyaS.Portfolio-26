@@ -93,7 +93,7 @@ footer a{color:inherit}
 .steps li b::before{content:counter(s) " · ";color:var(--brown)}
 @media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
 </style></head><body><div class="col">
-<div class="cs-top"><a class="back" href="work.html">← Back</a></div>
+<div class="cs-top"><a class="back" href="index.html#work">← Back</a></div>
 <header class="cs-head"><h1>Keeping revenue in the system after a new tax law → revenue retention doubled the next quarter</h1></header>
 
 <section>
@@ -152,7 +152,7 @@ footer a{color:inherit}
   </div>
 </section>
 
-<p class="cs-foot" style="margin-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px"><a class="back" href="work.html">← Back to all case studies</a><a href="hike-immersion.html" style="font-size:15px;font-weight:500">Next: User Immersion →</a></p>
+<p class="cs-foot" style="margin-top:16px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:8px 24px"><a class="back" href="index.html#work">← Back to all case studies</a><a href="hike-immersion.html" style="font-size:15px;font-weight:500">Next: User Immersion →</a></p>
 <footer>© 2026 Saumya Srivastava · <a href="https://www.linkedin.com/in/saumya2811">LinkedIn</a></footer>
 </div>
 <div class="tip" id="tip" role="tooltip" hidden></div>
@@ -179,4 +179,5 @@ footer a{color:inherit}
 })();
 (function(){if(!document.querySelector('.show'))return;document.querySelectorAll('.show').forEach(function(w){var sl=w.querySelectorAll('.sl'),cur=w.querySelector('.cur'),i=0;function go(n){sl[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');cur.textContent=i+1;}w.querySelector('.prev').addEventListener('click',function(){go(i-1)});w.querySelector('.next').addEventListener('click',function(){go(i+1)});});})();
 </script>
+<script>try{if(sessionStorage.getItem('front')==='product.html'){[].forEach.call(document.querySelectorAll('a.back'),function(a){a.href='work.html'})}}catch(e){}</script>
 </body></html>
