@@ -224,21 +224,9 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
 .odd.got .found{opacity:1}
 .flower-q p+p{margin-top:12px}
 .hl-pink{color:#F7A8BE}
-/* रसोई: one dish at a time */
-.rasoi{max-width:440px;margin:0 auto;text-align:center}
-.frame-r{background:#FCFAF6;padding:10px;border-radius:4px;box-shadow:0 18px 36px -16px rgba(0,0,0,.6)}
-.reel{display:flex;overflow-x:auto;scroll-snap-type:x mandatory;scrollbar-width:none}
-.reel::-webkit-scrollbar{display:none}
-.dish{flex:0 0 100%;margin:0;scroll-snap-align:center;aspect-ratio:4/5;overflow:hidden}
-.dish img{width:100%;height:100%;object-fit:cover;display:block}
-.rasoi-bar{display:flex;align-items:center;justify-content:space-between;margin-top:22px}
-.arw{all:unset;cursor:pointer;width:40px;height:40px;display:grid;place-items:center;font:300 34px/1 var(--thin);color:var(--soft);transition:color .2s}
-.arw:hover,.arw:focus-visible{color:var(--acc)}
-.dish-name{margin:0;font:italic 500 clamp(24px,3.4vw,28px)/1.2 var(--thin);color:var(--ink)}
-.dots{display:flex;justify-content:center;gap:8px;margin-top:12px}
-.dots button{all:unset;cursor:pointer;width:7px;height:7px;border-radius:50%;background:rgba(243,231,214,.25);transition:background .3s,transform .3s}
-.dots button.on{background:var(--acc);transform:scale(1.25)}
-.ask{display:inline-block;margin-top:26px;font:400 10.5px/1 var(--sans);letter-spacing:.3em;text-transform:uppercase;color:var(--acc);text-decoration:none;border-bottom:1px solid currentColor;padding-bottom:5px}
+.recipe{position:absolute;top:14px;right:14px;z-index:2;width:34px;height:34px;border-radius:50%;display:grid;place-items:center;background:rgba(252,250,246,.94);box-shadow:0 3px 10px rgba(0,0,0,.25);transition:transform .25s,background .25s}
+.recipe svg{width:18px;height:18px;fill:none;stroke:#B5600F;stroke-width:1.7;stroke-linejoin:round;stroke-linecap:round}
+.recipe:hover,.recipe:focus-visible{transform:scale(1.1);background:#F4B942}.recipe:hover svg{stroke:#2B1F2D}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -289,15 +277,15 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
   </section>
 
   <section class="sec" id="kitchen">
-    <div class="rasoi rv">
-      <div class="frame-r"><div class="reel" id="reel" tabindex="0" aria-label="Dishes, swipe to see more"><figure class="dish" data-name="kadhi"><img src="img/outside/kadhi.jpg" alt="Kadhi in a pot with dried red chillies and coriander"></figure><figure class="dish" data-name="a nutty cake"><img src="img/outside/cake.jpg" alt="A cake topped with almonds, pistachios and chocolate chips" loading="lazy"></figure><figure class="dish" data-name="strawberries"><img src="img/outside/straw.jpg" alt="Chocolate-dipped strawberries on a pink plate" loading="lazy"></figure><figure class="dish" data-name="mango sticky rice"><img src="img/outside/mango.jpg" alt="Mango sticky rice on a green and gold plate" loading="lazy"></figure><figure class="dish" data-name="kheer"><img src="img/outside/kheer.jpg" alt="Kheer topped with chopped nuts" loading="lazy"></figure><figure class="dish" data-name="chicken pulao"><img src="img/outside/pulao.jpg" alt="Chicken pulao with fried onions on a blue floral cloth" loading="lazy"></figure><figure class="dish" data-name="sunday breakfast"><img src="img/outside/breakfast.jpg" alt="Two breakfast thalis in the sun: omelette, toast, chai, curd and blueberries" loading="lazy"></figure><figure class="dish" data-name="pickled onions"><img src="img/outside/pickled-onions.jpg" alt="Pink pickled onions in a steel bowl on the balcony" loading="lazy"></figure></div></div>
-      <div class="rasoi-bar">
-        <button type="button" class="arw" id="prevD" aria-label="Previous dish">&#8249;</button>
-        <p class="dish-name" id="dishName" aria-live="polite">kadhi</p>
-        <button type="button" class="arw" id="nextD" aria-label="Next dish">&#8250;</button>
-      </div>
-      <div class="dots" id="dots"><button type="button" aria-label="kadhi"></button><button type="button" aria-label="a nutty cake"></button><button type="button" aria-label="strawberries"></button><button type="button" aria-label="mango sticky rice"></button><button type="button" aria-label="kheer"></button><button type="button" aria-label="chicken pulao"></button><button type="button" aria-label="sunday breakfast"></button><button type="button" aria-label="pickled onions"></button></div>
-      <a class="ask" id="askRecipe" href="#">ask me for the recipe &#8594;</a>
+    <div class="prints">
+      <figure class="print rv" style="--r:-3deg;--i:0"><div class="ph"><img src="img/outside/kadhi.jpg" alt="Kadhi in a pot with dried red chillies and coriander" loading="lazy"></div><figcaption>kadhi</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20kadhi&body=Hi%20Saumya%2C%20I%20saw%20the%20kadhi%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="kadhi" title="Get the recipe" aria-label="Get the recipe for kadhi"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:-1deg;--i:2"><div class="ph"><img src="img/outside/cake.jpg" alt="A cake topped with almonds, pistachios and chocolate chips" loading="lazy"></div><figcaption>a nutty cake</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20a%20nutty%20cake&body=Hi%20Saumya%2C%20I%20saw%20the%20a%20nutty%20cake%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="a nutty cake" title="Get the recipe" aria-label="Get the recipe for a nutty cake"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:3deg;--y:10px;--i:3"><div class="ph"><img src="img/outside/straw.jpg" alt="Chocolate-dipped strawberries on a pink plate" loading="lazy"></div><figcaption>strawberries</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20strawberries&body=Hi%20Saumya%2C%20I%20saw%20the%20strawberries%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="strawberries" title="Get the recipe" aria-label="Get the recipe for strawberries"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:-2deg;--y:4px;--i:4"><div class="ph"><img src="img/outside/mango.jpg" alt="Mango sticky rice on a green and gold plate" loading="lazy"></div><figcaption>mango sticky rice</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20mango%20sticky%20rice&body=Hi%20Saumya%2C%20I%20saw%20the%20mango%20sticky%20rice%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="mango sticky rice" title="Get the recipe" aria-label="Get the recipe for mango sticky rice"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:1deg;--y:12px;--i:5"><div class="ph"><img src="img/outside/kheer.jpg" alt="Kheer topped with chopped nuts" loading="lazy"></div><figcaption>kheer</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20kheer&body=Hi%20Saumya%2C%20I%20saw%20the%20kheer%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="kheer" title="Get the recipe" aria-label="Get the recipe for kheer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:2deg;--y:8px;--i:7"><div class="ph"><img src="img/outside/pulao.jpg" alt="Chicken pulao with fried onions on a blue floral cloth" loading="lazy"></div><figcaption>chicken pulao</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20chicken%20pulao&body=Hi%20Saumya%2C%20I%20saw%20the%20chicken%20pulao%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="chicken pulao" title="Get the recipe" aria-label="Get the recipe for chicken pulao"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:2deg;--y:14px;--i:9"><div class="ph"><img src="img/outside/breakfast.jpg" alt="Two breakfast thalis in the sun: omelette, toast, chai, curd and blueberries" loading="lazy"></div><figcaption>sunday breakfast</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20sunday%20breakfast&body=Hi%20Saumya%2C%20I%20saw%20the%20sunday%20breakfast%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="sunday breakfast" title="Get the recipe" aria-label="Get the recipe for sunday breakfast"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
+      <figure class="print rv" style="--r:2deg;--y:6px;--i:8"><div class="ph"><img src="img/outside/pickled-onions.jpg" alt="Pink pickled onions in a steel bowl on the balcony" loading="lazy"></div><figcaption>pickled onions</figcaption><a class="recipe" href="mailto:connect@saumyasri.in?subject=Recipe%3A%20pickled%20onions&body=Hi%20Saumya%2C%20I%20saw%20the%20pickled%20onions%20on%20your%20site.%20Could%20I%20have%20the%20recipe%3F" data-dish="pickled onions" title="Get the recipe" aria-label="Get the recipe for pickled onions"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5.5C6.5 4.3 9.3 4.3 12 6c2.7-1.7 5.5-1.7 8-.5v13c-2.5-1.2-5.3-1.2-8 .5-2.7-1.7-5.5-1.7-8-.5z"/><path d="M12 6v13.5"/></svg></a></figure>
     </div>
   </section>
 
@@ -409,22 +397,8 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
     Promise.race([Promise.all(loads),new Promise(function(r){setTimeout(r,2500)})]).then(start);
     document.fonts.addEventListener('loadingdone',inkCentre);
   }catch(e){start()}
-
-  // रसोई carousel
-  var reel=document.getElementById('reel');
-  if(reel){
-    var dn=document.getElementById('dishName'),dts=[].slice.call(document.querySelectorAll('#dots button')),ask=document.getElementById('askRecipe'),cur=0,n=dts.length;
-    function mail(name){return 'mailto:connect@saumyasri.in?subject='+encodeURIComponent('Recipe: '+name)+'&body='+encodeURIComponent('Hi Saumya, I saw the '+name+' on your site. Could I have the recipe?')}
-    function show(i){cur=i;var name=reel.children[i].getAttribute('data-name');dn.textContent=name;ask.href=mail(name);dts.forEach(function(d,j){d.classList.toggle('on',j===i)})}
-    function go(i){i=(i+n)%n;reel.scrollTo({left:reel.children[i].offsetLeft-reel.children[0].offsetLeft,behavior:reduce?'auto':'smooth'});show(i)}
-    document.getElementById('prevD').addEventListener('click',function(){go(cur-1)});
-    document.getElementById('nextD').addEventListener('click',function(){go(cur+1)});
-    dts.forEach(function(d,j){d.addEventListener('click',function(){go(j)})});
-    var st;reel.addEventListener('scroll',function(){clearTimeout(st);st=setTimeout(function(){var i=Math.round(reel.scrollLeft/reel.clientWidth);if(i!==cur&&i>=0&&i<n)show(i)},80)},{passive:true});
-    reel.addEventListener('keydown',function(e){if(e.key==='ArrowRight'){e.preventDefault();go(cur+1)}if(e.key==='ArrowLeft'){e.preventDefault();go(cur-1)}});
-    show(0);
-  }
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
+  [].forEach.call(document.querySelectorAll('.recipe'),function(r){r.addEventListener('click',function(e){e.stopPropagation()})});
   [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){if(p.classList.contains('odd')){p.classList.toggle('got');return}var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
   addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
