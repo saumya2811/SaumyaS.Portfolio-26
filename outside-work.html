@@ -223,6 +223,15 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
 .odd .found span{font:italic 400 17px/1.3 var(--thin)}
 .odd.got .found{opacity:1}
 .flower-q p+p{margin-top:12px}
+.spot{all:unset;cursor:pointer;color:var(--acc);border-bottom:1px dashed currentColor;padding-bottom:1px}
+.spot:hover,.spot:focus-visible{border-bottom-style:solid}
+.spot-msg{font:400 11px/1.6 var(--sans);letter-spacing:.24em;text-transform:uppercase;color:var(--soft);min-height:1.6em;margin-top:14px!important}
+#flowers.picking .print{cursor:pointer}
+#flowers.picking .print:after{content:"";position:absolute;inset:-5px;border:2px dashed rgba(247,168,190,.55);border-radius:4px;pointer-events:none}
+#flowers.picking .print:hover:after{border-style:solid;border-color:#F7A8BE}
+#flowers .print.nope{animation:nope .5s}
+@keyframes nope{20%,60%{transform:translateX(-6px)}40%,80%{transform:translateX(6px)}}
+#flowers .print.nope .ph{opacity:.45;transition:opacity .4s}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -313,7 +322,7 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
 
 
   <section class="sec" id="flowers" style="border-bottom:0">
-    <div class="flower-q rv"><p>What can I say? I just love flowers.</p><p>Also, can you spot the odd one out?</p></div>
+    <div class="flower-q rv"><p>What can I say? I just love flowers.</p><p>Also, can you <button type="button" class="spot" id="spot">spot the odd one out?</button></p><p class="spot-msg" id="spotMsg" aria-live="polite"></p></div>
     <div class="prints">
       <figure class="print rv" style="--r:-2deg;--y:4px;--i:0"><div class="ph"><img src="img/outside/urli-balcony.jpg" alt="An urli of floating flowers on the balcony" loading="lazy"></div><figcaption>flowers I collected, in an urli on the balcony</figcaption></figure>
       <figure class="print rv" style="--r:2deg;--y:0px;--i:1"><div class="ph"><img src="img/outside/urli-roses.jpg" alt="Roses and chrysanthemums floating in an urli" loading="lazy"></div><figcaption>roses in an urli</figcaption></figure>
@@ -393,8 +402,20 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
     Promise.race([Promise.all(loads),new Promise(function(r){setTimeout(r,2500)})]).then(start);
     document.fonts.addEventListener('loadingdone',inkCentre);
   }catch(e){start()}
+
+  // spot the odd one out
+  var FL=document.getElementById('flowers'),spot=document.getElementById('spot'),msg=document.getElementById('spotMsg');
+  var NOTIFY_URL=''; // where to send a ping when someone makes a guess; set once a notification service is chosen
+  function notify(guess,right){if(!NOTIFY_URL)return;try{fetch(NOTIFY_URL,{method:'POST',body:'Someone played spot the odd one out: picked "'+guess+'" ('+(right?'right':'wrong')+')'})}catch(e){}}
+  spot.addEventListener('click',function(){FL.classList.add('picking');[].forEach.call(FL.querySelectorAll('.print'),function(p){p.classList.remove('nope','got')});msg.textContent='Tap the one you think doesn\u2019t belong';});
+  function pick(p){
+    var cap=p.querySelector('figcaption').textContent,right=p.classList.contains('odd');
+    notify(cap,right);
+    if(right){p.classList.add('got');FL.classList.remove('picking');msg.textContent='You got it \u2014 that one\u2019s a painting';}
+    else{p.classList.remove('nope');void p.offsetWidth;p.classList.add('nope');msg.textContent='Not that one \u2014 try again';}
+  }
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
-  [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){if(p.classList.contains('odd')){p.classList.toggle('got');return}var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
+  [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){if(document.getElementById('flowers').classList.contains('picking')){pick(p);return}var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
   addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
   if(reduce)return;
