@@ -217,6 +217,11 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
 .sub-h{margin:0;font:500 clamp(20px,2.4vw,22px)/1.25 var(--tight);letter-spacing:-.01em;color:var(--acc,var(--ink))}
 .made-txt p{margin-top:14px}
 #kerala .cap{margin-bottom:8px}
+.flower-q{font:italic 400 clamp(20px,2.6vw,24px)/1.4 var(--thin);color:var(--ink);margin:0 0 34px}
+.odd .found{position:absolute;inset:7px 7px auto 7px;aspect-ratio:4/5;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:4px;text-align:center;background:rgba(43,31,45,.86);color:#F3E7D6;opacity:0;transition:opacity .35s;pointer-events:none}
+.odd .found b{font:500 20px/1.2 var(--tight);color:#F7A8BE}
+.odd .found span{font:italic 400 17px/1.3 var(--thin)}
+.odd.got .found{opacity:1}
 </style><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Bengali&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Gurmukhi&display=swap">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Naskh+Arabic&display=swap">
@@ -307,13 +312,14 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
 
 
   <section class="sec" id="flowers" style="border-bottom:0">
+    <p class="flower-q rv">I just love flowers. Can you spot the odd one out?</p>
     <div class="prints">
       <figure class="print rv" style="--r:-2deg;--y:4px;--i:0"><div class="ph"><img src="img/outside/urli-balcony.jpg" alt="An urli of floating flowers on the balcony" loading="lazy"></div><figcaption>flowers I collected, in an urli on the balcony</figcaption></figure>
       <figure class="print rv" style="--r:2deg;--y:0px;--i:1"><div class="ph"><img src="img/outside/urli-roses.jpg" alt="Roses and chrysanthemums floating in an urli" loading="lazy"></div><figcaption>roses in an urli</figcaption></figure>
       <figure class="print rv" style="--r:-3deg;--y:12px;--i:2"><div class="ph"><img src="img/outside/rangoli.jpg" alt="A flower rangoli of marigolds, rose petals and mango leaves around a diya" loading="lazy"></div><figcaption>a flower rangoli</figcaption></figure>
       <figure class="print rv" style="--r:2deg;--y:8px;--i:3"><div class="ph"><img src="img/outside/gerbera-pink.jpg" alt="Pink gerberas and baby's breath at night" loading="lazy"></div><figcaption>pink gerberas</figcaption></figure>
       <figure class="print rv" style="--r:-2deg;--y:0px;--i:4"><div class="ph"><img src="img/outside/wildflowers-bhutan.jpg" alt="Yellow, white and purple wildflowers held up in a green field" loading="lazy"></div><figcaption>wildflowers, Bhutan</figcaption></figure>
-      <figure class="print rv" style="--r:3deg;--y:12px;--i:5"><div class="ph"><img src="img/outside/paint.jpg" alt="A watercolour of purple flowers on green stems" loading="lazy"></div><figcaption>watercolours</figcaption></figure>
+      <figure class="print rv odd" style="--r:3deg;--y:12px;--i:5"><div class="ph"><img src="img/outside/paint.jpg" alt="Purple flowers on green stems" loading="lazy"></div><figcaption>purple flowers</figcaption><div class="found" aria-live="polite"><b>You found it!</b><span>I painted this one.</span></div></figure>
       <figure class="print rv" style="--r:1deg;--y:10px;--i:6"><div class="ph"><img src="img/outside/roses-pink.jpg" alt="Soft pink roses with orange poppies behind" loading="lazy"></div><figcaption>pink roses</figcaption></figure>
       <figure class="print rv" style="--r:-3deg;--y:0px;--i:7"><div class="ph"><img src="img/outside/chrysanthemums.jpg" alt="White and purple chrysanthemums with sea lavender" loading="lazy"></div><figcaption>chrysanthemums</figcaption></figure>
       <figure class="print rv" style="--r:3deg;--y:6px;--i:8"><div class="ph"><img src="img/outside/gerbera-night.jpg" alt="Orange gerberas and baby's breath on a night street" loading="lazy"></div><figcaption>gerberas at night</figcaption></figure>
@@ -387,7 +393,7 @@ a.inl{color:var(--acc,var(--red));text-decoration:underline;text-decoration-thic
     document.fonts.addEventListener('loadingdone',inkCentre);
   }catch(e){start()}
   var lb=document.getElementById('lb'),li=document.getElementById('lbimg'),lc=document.getElementById('lbcap');
-  [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
+  [].forEach.call(document.querySelectorAll('.print:not(.slot)'),function(p){p.addEventListener('click',function(){if(p.classList.contains('odd')){p.classList.toggle('got');return}var im=p.querySelector('img');li.src=im.src;li.alt=im.alt;lc.textContent=p.querySelector('figcaption').textContent;lb.classList.add('on')})});
   lb.addEventListener('click',function(){lb.classList.remove('on')});
   addEventListener('keydown',function(e){if(e.key==='Escape')lb.classList.remove('on')});
   if(reduce)return;
