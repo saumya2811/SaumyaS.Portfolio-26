@@ -119,12 +119,18 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 @media (max-width:720px){.pc-frame{--bw:0.45cm}}
 @media (prefers-reduced-motion:reduce){.pc-frame .bd{animation:none}}
 
-/* ---------- geometric frame (saree photo): crisp diamond-lattice band, gently drifting ---------- */
-.slot.geo{--gw:6.5%;border:none;border-radius:0;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%23efe0bf'/%3E%3Cpath d='M10 3 17 10 10 17 3 10Z' fill='none' stroke='%237a2e2a' stroke-width='1.6'/%3E%3Ccircle cx='10' cy='10' r='1.6' fill='%237a2e2a'/%3E%3C/svg%3E") 0 0/var(--gt,16px) var(--gt,16px);
-  animation:geo-drift 12s linear infinite;box-shadow:0 0 0 1.5px #7a2e2a}
-.slot.geo img.ph{inset:var(--gw);width:calc(100% - 2*var(--gw));height:calc(100% - 2*var(--gw));box-shadow:0 0 0 1.5px #7a2e2a}
-@keyframes geo-drift{to{background-position:calc(var(--gt,16px)*4) 0}}
-@media (prefers-reduced-motion:reduce){.slot.geo{animation:none}}
+/* ---------- saree frame: one-colour orange band, pattern travelling around ---------- */
+.slot.geo{--gw:6.5%;--gt:16px;border:none;border-radius:0;background:#e0782a}
+.slot.geo img.ph{inset:var(--gw);width:calc(100% - 2*var(--gw));height:calc(100% - 2*var(--gw))}
+.slot.geo .gb{position:absolute;display:block;background:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='20' height='20' viewBox='0 0 20 20'%3E%3Crect width='20' height='20' fill='%23e0782a'/%3E%3Cpath d='M10 3 17 10 10 17 3 10Z' fill='none' stroke='%23b4521a' stroke-width='1.8'/%3E%3Ccircle cx='10' cy='10' r='1.8' fill='%23b4521a'/%3E%3C/svg%3E") 0 0/var(--gt) var(--gt);z-index:0}
+.slot.geo .gb-t{left:0;right:0;top:0;height:var(--gw);animation:gb-x 8s linear infinite}
+.slot.geo .gb-b{left:0;right:0;bottom:0;height:var(--gw);animation:gb-x 8s linear infinite reverse}
+.slot.geo .gb-r{top:0;bottom:0;right:0;width:var(--gw);animation:gb-y 8s linear infinite}
+.slot.geo .gb-l{top:0;bottom:0;left:0;width:var(--gw);animation:gb-y 8s linear infinite reverse}
+@keyframes gb-x{from{background-position:0 0}to{background-position:calc(var(--gt) * 6) 0}}
+@keyframes gb-y{from{background-position:0 0}to{background-position:0 calc(var(--gt) * 6)}}
+.slot:not(.geo) .gb{display:none}
+@media (prefers-reduced-motion:reduce){.slot.geo .gb{animation:none}}
 /* photographic texture: plaster mottling, film grain, soft lens falloff */
 .plaster{position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;filter:blur(1.5px);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");background-size:600px 600px}
@@ -348,6 +354,7 @@ function setV(v){
     s.className='slot has-photo '+shape; if(ar) s.style.setProperty('--ar',ar); else s.style.removeProperty('--ar');
     let img=s.querySelector('img.ph');
     if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
+    if(!s.querySelector('.gb')) ['t','r','b','l'].forEach(k=>{const d=document.createElement('i');d.className='gb gb-'+k;s.appendChild(d);});
     img.src=P+f+'?v=13';
   }
   
