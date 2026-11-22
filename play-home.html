@@ -255,6 +255,8 @@ function setV(v){
   }
   
 document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+  document.querySelectorAll('.board .piece').forEach(p=>{p.style.removeProperty('--dx');p.style.removeProperty('--dy');});
+  if(typeof shadeAll==='function') requestAnimationFrame(shadeAll);
 }
 document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
 setV('A');
