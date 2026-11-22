@@ -86,7 +86,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
 /* ---------- board ---------- */
 .board{position:relative;width:min(1180px,96vw);margin:0 auto;aspect-ratio:16/9.6;z-index:2}
-.piece{position:absolute;left:var(--x);top:var(--y);width:var(--w);z-index:var(--z,2);
+.piece{position:absolute;left:var(--x);top:var(--y);width:calc(var(--w) * var(--sc,1));z-index:var(--z,2);
   transform:translate(var(--dx,0px),var(--dy,0px));cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
 .piece.dragging{cursor:grabbing;z-index:60}
 .piece.static{cursor:default;touch-action:auto;pointer-events:none}
@@ -150,7 +150,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
 @media (max-width:720px){
   .board{aspect-ratio:3/4.6}
-  .piece{left:var(--mx,var(--x));top:var(--my,var(--y));width:var(--mw,var(--w))}
+  .piece{left:var(--mx,var(--x));top:var(--my,var(--y));width:calc(var(--mw,var(--w)) * var(--sc,1))}
   .scene::before{background:linear-gradient(180deg,#4f6a67 0%,var(--slate) 30%,#4a615e 44%,#3a221c 44%,var(--wood) 46.5%,#24140f 47.5%,#8a705a 47.5%,var(--stone) 64%,#93795f 100%)}
   .window{-webkit-mask:linear-gradient(180deg,#000 0 42%,transparent 44%);mask:linear-gradient(180deg,#000 0 42%,transparent 44%)}
   .sign{height:40%;width:50px;font-size:22px;left:3%}
@@ -259,14 +259,15 @@ const V={
      's-extra':['window-orange.jpg','torn','1'], 's-flowers':['chai-cut.png','png']},
   B:{'s-tokri':['wildflowers-hi.jpg','round','1'], 's-portrait':['gajra.jpg','oval','3/4'], 's-cut':['sadya-cut.png','png'],
      's-extra':['codenames.jpg','torn','4/3'], 's-flowers':['paris-map.jpg','torn','4/5']},
-  C:{'s-tokri':['urli-balcony.jpg','round','1'], 's-portrait':['saree.jpg','oval','3/4'], 's-cut':['maggi.jpg','torn','1'],
+  C:{'s-tokri':['urli-balcony.jpg','round','1'], 's-portrait':['saree.jpg','oval','3/4'], 's-cut':['maggi.jpg','torn','1',.8],
      's-extra':['rumi.jpg','torn','4/5'], 's-flowers':['earrings.jpg','torn','4/5']}
 };
 function setV(v){
   for(const id of ['s-tokri','s-portrait','s-cut','s-extra','s-flowers']){
     const s=document.getElementById(id);
     if(!V[v][id]){ const o=s.querySelector('img.ph'); if(o) o.remove(); s.querySelectorAll('.light,.glare').forEach(x=>x.remove()); s.className='slot torn'; s.style.setProperty('--ar','1'); continue; }
-    const [f,shape,ar]=V[v][id];
+    const [f,shape,ar,sc]=V[v][id];
+    s.closest('.piece').style.setProperty('--sc',sc||1);
     s.className='slot has-photo '+shape; if(ar) s.style.setProperty('--ar',ar); else s.style.removeProperty('--ar');
     let img=s.querySelector('img.ph');
     if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
