@@ -73,8 +73,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   background:
     radial-gradient(3px 3px at 18% 72%, rgba(120,80,40,.35), transparent),radial-gradient(4px 3px at 77% 22%, rgba(120,80,40,.3), transparent),
     radial-gradient(5px 4px at 62% 84%, rgba(120,80,40,.25), transparent),radial-gradient(60% 55% at 30% 30%, rgba(255,245,220,.35), transparent 70%),
-    radial-gradient(90% 80% at 50% 50%, transparent 60%, rgba(110,70,30,.35) 100%),#d9c094;
-  box-shadow:inset 0 0 0 1px rgba(90,60,30,.25);}
+    #d9c094;}
 .postcard::before{content:"";position:absolute;inset:5%;border:2px dotted rgba(122,46,42,.6);pointer-events:none}
 .postcard::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;border-left:1.5px dashed rgba(58,42,34,.45)}
 .pc-left,.pc-right{position:relative;padding:9% 6% 7% 12%;display:flex;flex-direction:column}
@@ -229,7 +228,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
     <!-- old Indian postcard -->
     <div class="piece static" style="--x:31.25%;--y:29.2%;--w:37.5%;--z:1;--r:0deg;--i:0;--mx:10%;--my:32.6%;--mw:80%">
-      <div class="paper" style="animation:none"><div class="postcard">
+      <div class="paper" style="animation:none;filter:none"><div class="postcard">
         <div class="pc-left">
           <div class="pc-kicker">POST CARD</div>
           <h1 class="pc-head">खेल<span>·</span>कूद<span>·</span>मस्ती</h1>
