@@ -160,11 +160,15 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     <div class="piece" style="--x:83%;--y:24%;--w:14%;--r:-6deg;--z:3;--i:2;--mx:22%;--my:5%;--mw:27%">
       <div class="paper"><div id="s-portrait" class="slot oval" style="--fill:var(--lilac);--ar:3/4"><span class="lbl" style="color:#5a2c4a"><b>photo 3</b>a little portrait</span></div></div>
     </div>
-    <div class="piece" style="--x:12%;--y:52%;--w:24%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:55%;--mw:50%">
+    <div class="piece" style="--x:15%;--y:62%;--w:17%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:62%;--mw:40%">
       <div class="paper"><div id="s-cut" class="slot cutout" style="--fill:var(--wood);--ar:5/4"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
     </div>
     <div class="piece" style="--x:70%;--y:66%;--w:11%;--r:-8deg;--z:5;--i:6;--mx:70%;--my:78%;--mw:22%">
-      <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>7</b>flowers</span></div></div>
+      <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>new</b>photo</span></div></div>
+    </div>
+
+    <div class="piece" style="--x:6%;--y:30%;--w:14%;--r:4deg;--z:5;--i:6;--mx:50%;--my:57%;--mw:34%">
+      <div class="paper"><div id="s-extra" class="slot torn" style="--fill:var(--olive);--ar:4/5"><span class="lbl"><b>new</b>your next photo</span></div></div>
     </div>
 
     <!-- title -->
@@ -207,11 +211,11 @@ const V={
   A:{'s-tokri':'urli-roses.jpg','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'rangoli-2.jpg'},
   B:{'s-tokri':'kheer.jpg','s-portrait':'friend.jpg','s-cut':'board-game-cut.png','s-flowers':'gerbera-pink.jpg'},
   C:{'s-tokri':'urli-balcony.jpg','s-portrait':'kathakali.jpg','s-cut':'sadya-cut.png','s-flowers':'chrysanthemums.jpg'},
-  D:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'urli-roses.jpg'},
+  D:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png'},
   '0':{}
 };
 function setV(v){
-  for(const id of ['s-tokri','s-portrait','s-cut','s-flowers']){
+  for(const id of ['s-tokri','s-portrait','s-cut','s-flowers','s-extra']){
     const s=document.getElementById(id); let img=s.querySelector('img.ph');
     const f=V[v][id];
     if(!f){ if(img) img.remove(); s.classList.remove('has-photo','png'); continue; }
