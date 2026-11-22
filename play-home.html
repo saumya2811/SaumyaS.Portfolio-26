@@ -149,7 +149,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   <div class="top">
     <a href="index.html">← Saumya Srivastava</a>
     <span class="drag">drag anything around</span>
-    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="A" class="on">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
+    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="D" class="on">D</button><button data-v="A">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
   </div>
 
   <div class="board">
@@ -207,6 +207,7 @@ const V={
   A:{'s-tokri':'urli-roses.jpg','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'rangoli-2.jpg'},
   B:{'s-tokri':'kheer.jpg','s-portrait':'friend.jpg','s-cut':'board-game-cut.png','s-flowers':'gerbera-pink.jpg'},
   C:{'s-tokri':'urli-balcony.jpg','s-portrait':'kathakali.jpg','s-cut':'sadya-cut.png','s-flowers':'chrysanthemums.jpg'},
+  D:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'urli-roses.jpg'},
   '0':{}
 };
 function setV(v){
@@ -220,7 +221,7 @@ function setV(v){
   document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
 }
 document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
-setV('A');
+setV('D');
 </script>
 </body>
 </html>
