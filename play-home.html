@@ -215,6 +215,27 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 </main>
 
 <script>
+// light and shade: pieces pick up the sun's diagonal
+const scene=document.querySelector('.scene');
+const ang=112*Math.PI/180, DX=Math.sin(ang), DY=-Math.cos(ang);
+function shade(el){
+  const r=scene.getBoundingClientRect(), b=el.getBoundingClientRect();
+  const W=r.width, H=r.height, x=b.left+b.width/2-r.left, y=b.top+b.height/2-r.top;
+  const L=Math.abs(W*DX)+Math.abs(H*DY);
+  const p=((x-W/2)*DX+(y-H/2)*DY)/L+.5;                 // 0..1 along the sun gradient
+  let s=Math.min(1,Math.max(0,(p-.36)/(.5-.36))); s=s*s*(3-2*s); // 0 = full sun, 1 = full shade
+  const vx=(x-.45*W)/(.7*W), vy=(y-.4*H)/(.6*H), v=Math.min(1,Math.max(0,Math.hypot(vx,vy)-.35)); // lens falloff at the edges
+  const lit=(1-s)*(1-.6*v);
+  // sun is low, coming from the upper left: hard, long shadows down-right in the sun; soft, short ambient shadows in the shade
+  el.style.setProperty('--sx',(3+15*lit).toFixed(1)+'px');
+  el.style.setProperty('--sy',(4+9*lit).toFixed(1)+'px');
+  el.style.setProperty('--sbl',(14-12*lit).toFixed(1)+'px');
+  el.style.setProperty('--sa',(.32+.26*lit).toFixed(2));
+  el.style.setProperty('--sat',(.85+.2*lit).toFixed(3));
+  el.style.setProperty('--lit',lit.toFixed(3));
+}
+const shadeAll=()=>document.querySelectorAll('.board .piece:not(.static)').forEach(shade);
+window.addEventListener('resize',shadeAll); window.addEventListener('load',shadeAll);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.board').forEach(b=>io.observe(b));
 document.querySelectorAll('.paper').forEach(p=>p.style.setProperty('--bd',(-Math.random()*.5).toFixed(2)+'s'));
@@ -260,28 +281,8 @@ document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.
 }
 document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
 setV('A');
+shadeAll();
 
-// light and shade: pieces pick up the sun's diagonal
-const scene=document.querySelector('.scene');
-const ang=112*Math.PI/180, DX=Math.sin(ang), DY=-Math.cos(ang);
-function shade(el){
-  const r=scene.getBoundingClientRect(), b=el.getBoundingClientRect();
-  const W=r.width, H=r.height, x=b.left+b.width/2-r.left, y=b.top+b.height/2-r.top;
-  const L=Math.abs(W*DX)+Math.abs(H*DY);
-  const p=((x-W/2)*DX+(y-H/2)*DY)/L+.5;                 // 0..1 along the sun gradient
-  let s=Math.min(1,Math.max(0,(p-.36)/(.5-.36))); s=s*s*(3-2*s); // 0 = full sun, 1 = full shade
-  const vx=(x-.45*W)/(.7*W), vy=(y-.4*H)/(.6*H), v=Math.min(1,Math.max(0,Math.hypot(vx,vy)-.35)); // lens falloff at the edges
-  const lit=(1-s)*(1-.6*v);
-  // sun is low, coming from the upper left: hard, long shadows down-right in the sun; soft, short ambient shadows in the shade
-  el.style.setProperty('--sx',(3+15*lit).toFixed(1)+'px');
-  el.style.setProperty('--sy',(4+9*lit).toFixed(1)+'px');
-  el.style.setProperty('--sbl',(14-12*lit).toFixed(1)+'px');
-  el.style.setProperty('--sa',(.32+.26*lit).toFixed(2));
-  el.style.setProperty('--sat',(.85+.2*lit).toFixed(3));
-  el.style.setProperty('--lit',lit.toFixed(3));
-}
-const shadeAll=()=>document.querySelectorAll('.board .piece:not(.static)').forEach(shade);
-window.addEventListener('resize',shadeAll); window.addEventListener('load',shadeAll); shadeAll();
 </script>
 </body>
 </html>
