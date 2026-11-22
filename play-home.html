@@ -124,7 +124,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 .tries{display:flex;gap:6px;align-items:center;font:500 12px var(--sans)}
 .tries button{font:inherit;border:1.5px solid #e9e4d6;background:transparent;color:#e9e4d6;border-radius:99px;padding:5px 11px;cursor:pointer}
 .tries button.on{background:#e9e4d6;color:#1d1a16}
-@media (max-width:720px){.tries{gap:4px}.tries button{padding:4px 8px}.top .drag{display:none}}
+@media (max-width:720px){.top{flex-wrap:wrap;row-gap:10px}.tries{gap:4px;flex-wrap:wrap;width:100%}.tries button{padding:4px 8px}.top .drag{display:none}}
 
 @media (max-width:720px){
   .board{aspect-ratio:3/4.6}
@@ -163,11 +163,11 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     <div class="piece" style="--x:15%;--y:62%;--w:17%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:62%;--mw:40%">
       <div class="paper"><div id="s-cut" class="slot cutout" style="--fill:var(--wood);--ar:5/4"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
     </div>
-    <div class="piece" style="--x:70%;--y:66%;--w:11%;--r:-8deg;--z:5;--i:6;--mx:70%;--my:78%;--mw:22%">
+    <div class="piece" style="--x:70%;--y:66%;--w:11%;--r:-8deg;--z:5;--i:6;--mx:60%;--my:84%;--mw:34%">
       <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>new</b>photo</span></div></div>
     </div>
 
-    <div class="piece" style="--x:6%;--y:30%;--w:14%;--r:4deg;--z:5;--i:6;--mx:50%;--my:57%;--mw:34%">
+    <div class="piece" style="--x:6%;--y:30%;--w:14%;--r:4deg;--z:5;--i:6;--mx:52%;--my:54%;--mw:34%">
       <div class="paper"><div id="s-extra" class="slot torn" style="--fill:var(--olive);--ar:4/5"><span class="lbl"><b>new</b>your next photo</span></div></div>
     </div>
 
