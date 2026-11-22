@@ -179,10 +179,10 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   background:var(--teal);color:var(--cream);padding:8px 14px 9px;border-radius:99px}
 
 /* stick-on entrance */
-.board .piece{opacity:0}
-.board.in .piece{opacity:1;animation:stick .42s steps(3,end) both;animation-delay:calc(var(--i,0) * 80ms)}
-@keyframes stick{0%{opacity:0;transform:translate(var(--dx,0px),calc(var(--dy,0px) - 26px)) scale(1.16)}
-  100%{opacity:1;transform:translate(var(--dx,0px),var(--dy,0px)) scale(1)}}
+/* entrance: pieces drop onto the table, always fully solid (no fade) */
+.board.in .piece{animation:stick .35s steps(3,end) backwards;animation-delay:calc(var(--i,0) * 70ms)}
+@keyframes stick{0%{transform:translate(var(--dx,0px),calc(var(--dy,0px) - 18px)) scale(1.08)}
+  100%{transform:translate(var(--dx,0px),var(--dy,0px)) scale(1)}}
 
 
 /* real photos in the slots */
