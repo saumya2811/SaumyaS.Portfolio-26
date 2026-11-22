@@ -88,8 +88,14 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 .pc-waves{width:56%;margin-top:auto;margin-left:28%}
 .hw{display:block;height:auto;mix-blend-mode:multiply;opacity:1;pointer-events:none}
 .hw-msg{width:92%;margin-top:8%}
-.hw-to{width:78%;margin-top:40%}
-.hw-from{width:66%;margin-top:10%}
+.hw-to{width:46%;flex:none!important}
+.hw-to2{width:56%;flex:none!important;margin-left:16%}
+.pc-addr.pc-cont{margin-top:6%}
+.hw-from{width:64%;flex:none!important}
+.pc-addr{display:flex;align-items:flex-end;gap:3%;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:3%;margin-top:9%}
+.pc-addr.pc-first{margin-top:38%}
+.pc-addr span{font:2.9cqw/1 "Special Elite",monospace;flex:none;padding-bottom:1%}
+.pc-addr .hw{flex:1 1 auto;min-width:0}
 .pc-no{font:2.8cqw "Special Elite",monospace;opacity:.8}
 .pc-stamp{position:absolute;right:9%;top:8%;width:19%;transform:rotate(3deg);filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15))}
 .pc-post{position:absolute;right:24%;top:16%;width:24%;transform:rotate(-14deg)}
@@ -250,8 +256,9 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
             <defs><path id="pcarc" d="M60 60m-45 0a45 45 0 1 1 90 0a45 45 0 1 1-90 0"/></defs>
             <text font-family="Special Elite" font-size="11" fill="#2c2a4a" opacity=".65" letter-spacing="2"><textPath href="#pcarc">SAUMYASRI.IN · PLAY · SAUMYASRI.IN ·</textPath></text>
             <text x="60" y="64" text-anchor="middle" font-family="Special Elite" font-size="12" fill="#2c2a4a" opacity=".7">NOV 26</text></svg>
-          <img class="hw hw-to" src="img/outside/hw-to.png?v=5" alt="To, whoever wanders in">
-          <img class="hw hw-from" src="img/outside/hw-from.png?v=5" alt="From, Saumya S.">
+          <div class="pc-addr pc-first"><span>To,</span><img class="hw hw-to" src="img/outside/hw-to.png?v=7" alt="whoever"></div>
+          <div class="pc-addr pc-cont"><img class="hw hw-to2" src="img/outside/hw-to2.png?v=7" alt="wanders in"></div>
+          <div class="pc-addr"><span>From,</span><img class="hw hw-from" src="img/outside/hw-from.png?v=7" alt="Saumya S."></div>
         </div>
       </div></div>
     </div>
