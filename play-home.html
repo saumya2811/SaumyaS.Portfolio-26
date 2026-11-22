@@ -114,6 +114,18 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 @keyframes stick{0%{opacity:0;transform:translate(var(--dx,0px),calc(var(--dy,0px) - 26px)) scale(1.16)}
   100%{opacity:1;transform:translate(var(--dx,0px),var(--dy,0px)) scale(1)}}
 
+
+/* real photos in the slots */
+.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:contrast(1.06) saturate(1.05) sepia(.06)}
+.slot.has-photo::before,.slot.has-photo .lbl{display:none}
+.slot.png{background:none!important;border:none;outline:none;border-radius:0;aspect-ratio:auto}
+.slot.png::after{display:none}
+.slot.png img.ph{position:static;height:auto;object-fit:contain}
+.tries{display:flex;gap:6px;align-items:center;font:500 12px var(--sans)}
+.tries button{font:inherit;border:1.5px solid #e9e4d6;background:transparent;color:#e9e4d6;border-radius:99px;padding:5px 11px;cursor:pointer}
+.tries button.on{background:#e9e4d6;color:#1d1a16}
+@media (max-width:720px){.tries{gap:4px}.tries button{padding:4px 8px}.top .drag{display:none}}
+
 @media (max-width:720px){
   .board{aspect-ratio:3/4.6}
   .piece{left:var(--mx,var(--x));top:var(--my,var(--y));width:var(--mw,var(--w))}
@@ -136,22 +148,23 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
   <div class="top">
     <a href="index.html">← Saumya Srivastava</a>
-    <span>drag anything around</span>
+    <span class="drag">drag anything around</span>
+    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="A" class="on">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
   </div>
 
   <div class="board">
     <!-- photo slots (placeholders for your own photos) -->
     <div class="piece" style="--x:66%;--y:0%;--w:19%;--r:3deg;--i:1;--mx:58%;--my:2%;--mw:38%">
-      <div class="paper"><div class="slot round" style="--fill:var(--marigold);--ar:1"><span class="lbl"><b>photo 2</b>shot from above, in a tokri</span></div></div>
+      <div class="paper"><div id="s-tokri" class="slot round" style="--fill:var(--marigold);--ar:1"><span class="lbl"><b>photo 2</b>shot from above, in a tokri</span></div></div>
     </div>
     <div class="piece" style="--x:83%;--y:24%;--w:14%;--r:-6deg;--z:3;--i:2;--mx:22%;--my:5%;--mw:27%">
-      <div class="paper"><div class="slot oval" style="--fill:var(--lilac);--ar:3/4"><span class="lbl" style="color:#5a2c4a"><b>photo 3</b>a little portrait</span></div></div>
+      <div class="paper"><div id="s-portrait" class="slot oval" style="--fill:var(--lilac);--ar:3/4"><span class="lbl" style="color:#5a2c4a"><b>photo 3</b>a little portrait</span></div></div>
     </div>
-    <div class="piece" style="--x:12%;--y:52%;--w:24%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:62%;--mw:56%">
-      <div class="paper"><div class="slot cutout" style="--fill:var(--wood);--ar:5/4"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
+    <div class="piece" style="--x:12%;--y:52%;--w:24%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:55%;--mw:50%">
+      <div class="paper"><div id="s-cut" class="slot cutout" style="--fill:var(--wood);--ar:5/4"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
     </div>
     <div class="piece" style="--x:70%;--y:66%;--w:11%;--r:-8deg;--z:5;--i:6;--mx:70%;--my:78%;--mw:22%">
-      <div class="paper"><div class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>7</b>flowers</span></div></div>
+      <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>7</b>flowers</span></div></div>
     </div>
 
     <!-- title -->
@@ -161,7 +174,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     <div class="piece static" style="--x:33%;--y:58%;--w:34%;--z:9;--r:-1.5deg;--i:8;--mx:10%;--my:43%;--mw:76%">
       <div class="paper"><p class="blurb">a little library of what's been occupying my mind and life lately <span class="hindi">— खेल</span></p></div>
     </div>
-    <div class="piece static" style="--x:76%;--y:94%;--w:20%;--z:9;--i:9;--mx:4%;--my:100%;--mw:60%">
+    <div class="piece static" style="--x:76%;--y:94%;--w:20%;--z:9;--i:9;--mx:4%;--my:104%;--mw:60%">
       <div class="paper" style="filter:none"><span class="hint">✋ everything moves. drag it.</span></div>
     </div>
   </div>
@@ -187,6 +200,27 @@ document.querySelectorAll('.piece:not(.static)').forEach(el=>{
   const end=e=>{if(e.pointerId!==id)return;id=null;el.classList.remove('dragging');el.style.zIndex=++z};
   el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
 });
+
+// photo combinations to compare
+const P='img/outside/';
+const V={
+  A:{'s-tokri':'urli-roses.jpg','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'rangoli-2.jpg'},
+  B:{'s-tokri':'kheer.jpg','s-portrait':'friend.jpg','s-cut':'board-game-cut.png','s-flowers':'gerbera-pink.jpg'},
+  C:{'s-tokri':'urli-balcony.jpg','s-portrait':'kathakali.jpg','s-cut':'sadya-cut.png','s-flowers':'chrysanthemums.jpg'},
+  '0':{}
+};
+function setV(v){
+  for(const id of ['s-tokri','s-portrait','s-cut','s-flowers']){
+    const s=document.getElementById(id); let img=s.querySelector('img.ph');
+    const f=V[v][id];
+    if(!f){ if(img) img.remove(); s.classList.remove('has-photo','png'); continue; }
+    if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
+    img.src=P+f; s.classList.add('has-photo'); s.classList.toggle('png', f.endsWith('.png'));
+  }
+  document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
+}
+document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
+setV('A');
 </script>
 </body>
 </html>
