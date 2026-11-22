@@ -76,12 +76,15 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     #d9c094;}
 .postcard::before{content:"";position:absolute;inset:5%;border:2px dotted rgba(122,46,42,.6);pointer-events:none}
 .postcard::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;border-left:1.5px dashed rgba(58,42,34,.45)}
-.pc-left,.pc-right{position:relative;padding:9% 6% 7% 12%;display:flex;flex-direction:column}
+.pc-left,.pc-right{position:relative;padding:9% 6% 7% 26%;display:flex;flex-direction:column}
 .pc-right{padding:9% 9% 7% 7%}
 .pc-kicker{font:2.9cqw/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
 .pc-head{font:400 8.2cqw/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
 .pc-head span{color:#c9862f;margin:0 .12em}
-.pc-tag{font:3.3cqw/1.4 "Special Elite",monospace;max-width:92%}
+.pc-side{position:absolute;left:6.5%;top:0;bottom:0;margin:0;display:flex;align-items:center;justify-content:center;writing-mode:vertical-rl;transform:rotate(180deg);
+  font:400 4.6cqw/1 var(--hindi);color:#7a2e2a;letter-spacing:.04em;z-index:1}
+.pc-side span{color:#c9862f;margin:.25em 0}
+.pc-tag{margin-top:8%;font:3.6cqw/1.45 "Special Elite",monospace;max-width:92%}
 .pc-waves{width:56%;margin-top:auto;margin-left:28%}
 .pc-no{font:2.8cqw "Special Elite",monospace;opacity:.8}
 .pc-stamp{position:absolute;right:9%;top:8%;width:19%;transform:rotate(3deg);filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15))}
@@ -228,10 +231,10 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
     <!-- old Indian postcard -->
     <div class="piece static" style="--x:31.25%;--y:29.2%;--w:37.5%;--z:1;--r:0deg;--i:0;--mx:10%;--my:32.6%;--mw:80%">
-      <div class="paper" style="animation:none;filter:none"><div class="postcard">
+      <div class="paper" style="animation:none;filter:none"><div class="postcard"><h1 class="pc-side">खेल<span>·</span>कूद<span>·</span>मस्ती</h1>
         <div class="pc-left">
           <div class="pc-kicker">POST CARD</div>
-          <h1 class="pc-head">खेल<span>·</span>कूद<span>·</span>मस्ती</h1>
+          
           <p class="pc-tag">a little library of what's been occupying my mind and life lately</p>
           <svg class="pc-waves" viewBox="0 0 160 40" aria-hidden="true"><g fill="none" stroke="#3a2a22" stroke-width="2" opacity=".55">
             <path d="M0 6q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/><path d="M0 16q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/>
