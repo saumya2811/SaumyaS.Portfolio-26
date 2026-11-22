@@ -105,6 +105,19 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 .pc-line em{font:600 4.6cqw/1.2 "Dancing Script",cursive;color:#1f1d3a}
 .pc-msg{margin-top:12%;font:400 5cqw/1.5 "Kalam",var(--hindi);color:#1f1d3a}
 .pc-sign{margin-top:auto;text-align:right;font:600 6cqw "Dancing Script",cursive;color:#2c2a4a}
+
+/* ---------- 0.7cm Indian border around the postcard: a repeating marigold buti that travels around the card ---------- */
+.pc-frame{--bw:0.7cm;position:relative;padding:var(--bw);background:#7a2e2a}
+.pc-frame .bd{position:absolute;display:block;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' fill='%237a2e2a'/%3E%3Cg fill='%23ef8a2a'%3E%3Cellipse cx='20' cy='11' rx='4' ry='7'/%3E%3Cellipse cx='20' cy='29' rx='4' ry='7'/%3E%3Cellipse cx='11' cy='20' rx='7' ry='4'/%3E%3Cellipse cx='29' cy='20' rx='7' ry='4'/%3E%3C/g%3E%3Cg fill='%23f2c230'%3E%3Cellipse cx='14' cy='14' rx='2.6' ry='5' transform='rotate(-45 14 14)'/%3E%3Cellipse cx='26' cy='14' rx='2.6' ry='5' transform='rotate(45 26 14)'/%3E%3Cellipse cx='14' cy='26' rx='2.6' ry='5' transform='rotate(45 14 26)'/%3E%3Cellipse cx='26' cy='26' rx='2.6' ry='5' transform='rotate(-45 26 26)'/%3E%3C/g%3E%3Ccircle cx='20' cy='20' r='3.4' fill='%23c2124f'/%3E%3Cg fill='%23efe0bf'%3E%3Ccircle cx='0' cy='0' r='2.4'/%3E%3Ccircle cx='40' cy='0' r='2.4'/%3E%3Ccircle cx='0' cy='40' r='2.4'/%3E%3Ccircle cx='40' cy='40' r='2.4'/%3E%3C/g%3E%3C/svg%3E");background-size:var(--bw) var(--bw);background-repeat:repeat;z-index:0}
+.pc-frame .bd-t{left:0;right:0;top:0;height:var(--bw);animation:bd-x 9s linear infinite}
+.pc-frame .bd-b{left:0;right:0;bottom:0;height:var(--bw);animation:bd-x 9s linear infinite reverse}
+.pc-frame .bd-r{top:0;bottom:0;right:0;width:var(--bw);animation:bd-y 9s linear infinite}
+.pc-frame .bd-l{top:0;bottom:0;left:0;width:var(--bw);animation:bd-y 9s linear infinite reverse}
+@keyframes bd-x{from{background-position:0 0}to{background-position:calc(var(--bw) * 6) 0}}
+@keyframes bd-y{from{background-position:0 0}to{background-position:0 calc(var(--bw) * 6)}}
+.pc-frame > .postcard{position:relative;z-index:1;box-shadow:0 0 0 2px #efe0bf}
+@media (max-width:720px){.pc-frame{--bw:0.45cm}}
+@media (prefers-reduced-motion:reduce){.pc-frame .bd{animation:none}}
 /* photographic texture: plaster mottling, film grain, soft lens falloff */
 .plaster{position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;filter:blur(1.5px);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");background-size:600px 600px}
@@ -230,7 +243,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
     <!-- old Indian postcard -->
     <div class="piece static" style="--x:31.25%;--y:29.2%;--w:37.5%;--z:1;--r:0deg;--i:0;--mx:10%;--my:32.6%;--mw:80%">
-      <div class="paper" style="animation:none;filter:none"><div class="postcard">
+      <div class="paper" style="animation:none;filter:none"><div class="pc-frame"><i class="bd bd-t"></i><i class="bd bd-r"></i><i class="bd bd-b"></i><i class="bd bd-l"></i><div class="postcard">
         <div class="pc-left">
           <div class="pc-kicker">POST CARD</div>
           
@@ -260,7 +273,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
           <div class="pc-addr pc-cont"><img class="hw hw-to2" src="img/outside/hw-to2.png?v=9" alt="wanders in"></div>
           <div class="pc-addr"><span>From,</span><img class="hw hw-from" src="img/outside/hw-from.png?v=9" alt="Saumya S."></div>
         </div>
-      </div></div>
+      </div></div></div>
     </div>
 
     <div class="piece static" style="--x:76%;--y:94%;--w:20%;--z:9;--i:9;--mx:22%;--my:112%;--mw:60%">
