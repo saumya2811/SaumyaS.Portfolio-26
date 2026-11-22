@@ -227,7 +227,8 @@ const P='img/outside/';
 const V={
   A:{'s-tokri':['rangoli-cut.png','png'],     's-portrait':['cards-leg.jpg','torn','4/5'], 's-cut':['scuba.jpg','oval','6/7'],
      's-extra':['window-orange.jpg','torn','1'], 's-flowers':['chai-cut.png','png']},
-  B:{'s-tokri':['wildflowers-hi.jpg','round','1'], 's-portrait':['gajra.jpg','oval','3/4'], 's-cut':['sadya-cut.png','png']},
+  B:{'s-tokri':['wildflowers-hi.jpg','round','1'], 's-portrait':['gajra.jpg','oval','3/4'], 's-cut':['sadya-cut.png','png'],
+     's-extra':['codenames.jpg','torn','4/3'], 's-flowers':['paris-map.jpg','round','1']},
   C:{'s-tokri':['urli-balcony.jpg','round','1'], 's-portrait':['saree.jpg','oval','3/4'], 's-cut':['maggi.jpg','torn','1'],
      's-extra':['rumi.jpg','torn','4/5'], 's-flowers':['onions.jpg','round','1']}
 };
@@ -239,7 +240,7 @@ function setV(v){
     s.className='slot has-photo '+shape; if(ar) s.style.setProperty('--ar',ar); else s.style.removeProperty('--ar');
     let img=s.querySelector('img.ph');
     if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
-    img.src=P+f+'?v=8';
+    img.src=P+f+'?v=9';
   }
   
 // light and shade: pieces pick up the sun's diagonal
