@@ -149,7 +149,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   <div class="top">
     <a href="index.html">← Saumya Srivastava</a>
     <span class="drag">drag anything around</span>
-    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="I" class="on">I</button><button data-v="G">G</button><button data-v="H">H</button><button data-v="E">E</button><button data-v="F">F</button><button data-v="D">D</button><button data-v="A">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
+    <div class="tries" role="group" aria-label="Try photo combinations"><span>version:</span><button data-v="A" class="on">A</button><button data-v="B">B</button><button data-v="C">C</button></div>
   </div>
 
   <div class="board">
@@ -175,11 +175,11 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     <div class="piece static" style="--x:20%;--y:12%;--w:60%;--z:8;--i:7;--mx:4%;--my:22%;--mw:92%">
       <div class="paper" style="filter:none;animation:none"><div class="title"><h1>play</h1><p>thoda khel lein?</p></div></div>
     </div>
-    <div class="piece static" style="--x:33%;--y:58%;--w:34%;--z:9;--r:-1.5deg;--i:8;--mx:10%;--my:43%;--mw:76%">
-      <div class="paper"><p class="blurb">a little library of what's been occupying my mind and life lately <span class="hindi">— खेल</span></p></div>
+    <div class="piece" style="--x:33%;--y:58%;--w:34%;--z:9;--r:-1.5deg;--i:8;--mx:10%;--my:43%;--mw:76%">
+      <div class="paper"><p class="blurb">a little library of what's been occupying my mind and life lately</p></div>
     </div>
     <div class="piece static" style="--x:76%;--y:94%;--w:20%;--z:9;--i:9;--mx:4%;--my:104%;--mw:60%">
-      <div class="paper" style="filter:none"><span class="hint">✋ everything moves. drag it.</span></div>
+      <div class="paper" style="filter:none;animation:none"><span class="hint">✋ everything moves. drag it.</span></div>
     </div>
   </div>
 
@@ -205,32 +205,29 @@ document.querySelectorAll('.piece:not(.static)').forEach(el=>{
   el.addEventListener('pointerup',end);el.addEventListener('pointercancel',end);
 });
 
-// photo combinations to compare
+// three versions: 5 different photos each (15 in all), in different shapes
+// shape: round | oval | torn | png (a cut-out sticker); ar = aspect ratio of the frame
 const P='img/outside/';
 const V={
-  A:{'s-tokri':'urli-roses.jpg','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-flowers':'rangoli-2.jpg'},
-  B:{'s-tokri':'kheer.jpg','s-portrait':'friend.jpg','s-cut':'board-game-cut.png','s-flowers':'gerbera-pink.jpg'},
-  C:{'s-tokri':'urli-balcony.jpg','s-portrait':'kathakali.jpg','s-cut':'sadya-cut.png','s-flowers':'chrysanthemums.jpg'},
-  D:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png'},
-  I:{'s-tokri':'rangoli-cut.png','s-portrait':'cards-leg.jpg','s-cut':'scuba.jpg','s-extra':'window-orange.jpg','s-flowers':'chai-cut.png'},
-  G:{'s-tokri':'rangoli-cut.png','s-portrait':'scuba.jpg','s-cut':'sadya-cut.png','s-extra':'window-orange.jpg','s-flowers':'chai-cut.png'},
-  H:{'s-tokri':'rangoli-cut.png','s-portrait':'scuba.jpg','s-cut':'sadya-cut.png','s-extra':'cards.jpg','s-flowers':'chai-cut.png'},
-  E:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-extra':'cards.jpg','s-flowers':'window-orange.jpg'},
-  F:{'s-tokri':'rangoli-cut.png','s-portrait':'window-orange.jpg','s-cut':'sadya-cut.png','s-extra':'jetski-cut.png','s-flowers':'cards.jpg'},
-  '0':{}
+  A:{'s-tokri':['rangoli-cut.png','png'],     's-portrait':['cards-leg.jpg','torn','4/5'], 's-cut':['scuba.jpg','oval','6/7'],
+     's-extra':['window-orange.jpg','torn','1'], 's-flowers':['chai-cut.png','png']},
+  B:{'s-tokri':['urli-roses.jpg','round','1'], 's-portrait':['gajra.jpg','oval','3/4'],    's-cut':['sadya-cut.png','png'],
+     's-extra':['kathakali.jpg','torn','4/5'],  's-flowers':['jetski-cut.png','png']},
+  C:{'s-tokri':['kadhi.jpg','round','1'],      's-portrait':['friend.jpg','torn','1'],      's-cut':['board-game-cut.png','png'],
+     's-extra':['wildflowers-bhutan.jpg','oval','3/4'], 's-flowers':['urli-balcony.jpg','round','1']}
 };
 function setV(v){
-  for(const id of ['s-tokri','s-portrait','s-cut','s-flowers','s-extra']){
-    const s=document.getElementById(id); let img=s.querySelector('img.ph');
-    const f=V[v][id];
-    if(!f){ if(img) img.remove(); s.classList.remove('has-photo','png'); continue; }
+  for(const id in V[v]){
+    const [f,shape,ar]=V[v][id]; const s=document.getElementById(id);
+    s.className='slot has-photo '+shape; if(ar) s.style.setProperty('--ar',ar); else s.style.removeProperty('--ar');
+    let img=s.querySelector('img.ph');
     if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
-    img.src=P+f; s.classList.add('has-photo'); s.classList.toggle('png', f.endsWith('.png'));
+    img.src=P+f;
   }
   document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
 }
 document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
-setV('I');
+setV('A');
 </script>
 </body>
 </html>
