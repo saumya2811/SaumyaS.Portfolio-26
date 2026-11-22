@@ -77,22 +77,22 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   box-shadow:inset 0 0 0 1px rgba(90,60,30,.25);}
 .postcard::before{content:"";position:absolute;inset:5%;border:2px dotted rgba(122,46,42,.6);pointer-events:none}
 .postcard::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;border-left:1.5px dashed rgba(58,42,34,.45)}
-.pc-left,.pc-right{position:relative;padding:9% 7% 7% 9%;display:flex;flex-direction:column}
+.pc-left,.pc-right{position:relative;padding:9% 6% 7% 12%;display:flex;flex-direction:column}
 .pc-right{padding:9% 9% 7% 7%}
-.pc-kicker{font:2.4cqw/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
-.pc-head{font:400 7.4cqw/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
+.pc-kicker{font:2.9cqw/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
+.pc-head{font:400 8.2cqw/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
 .pc-head span{color:#c9862f;margin:0 .12em}
-.pc-tag{font:2.7cqw/1.45 "Special Elite",monospace;max-width:92%}
+.pc-tag{font:3.3cqw/1.4 "Special Elite",monospace;max-width:92%}
 .pc-waves{width:56%;margin-top:auto;margin-left:28%}
-.pc-no{font:2.2cqw "Special Elite",monospace;opacity:.8}
+.pc-no{font:2.8cqw "Special Elite",monospace;opacity:.8}
 .pc-stamp{position:absolute;right:9%;top:8%;width:19%;transform:rotate(3deg);filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15))}
 .pc-post{position:absolute;right:24%;top:16%;width:24%;transform:rotate(-14deg)}
-.pc-line{display:flex;gap:8px;align-items:baseline;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:4px;margin-top:6%}
-.pc-line.pc-first{margin-top:46%}
-.pc-line span{font:2.3cqw "Special Elite",monospace}
-.pc-line em{font:normal 2.4cqw/1.6 "Homemade Apple",cursive;color:#2c2a4a}
+.pc-line{display:flex;flex-wrap:wrap;gap:0 6px;align-items:baseline;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:4px;margin-top:6%}
+.pc-line.pc-first{margin-top:42%}
+.pc-line span{font:3cqw "Special Elite",monospace}
+.pc-line em{font:normal 3.6cqw/1.5 "Homemade Apple",cursive;color:#1f1d3a}
 .pc-blank{height:1.4em}
-.pc-sign{margin-top:auto;text-align:right;font:normal 3.4cqw "Homemade Apple",cursive;color:#2c2a4a}
+.pc-sign{margin-top:auto;text-align:right;font:normal 4.4cqw "Homemade Apple",cursive;color:#2c2a4a}
 /* photographic texture: plaster mottling, film grain, soft lens falloff */
 .plaster{position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;filter:blur(1.5px);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");background-size:600px 600px}
