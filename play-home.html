@@ -45,11 +45,11 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     radial-gradient(18% 30% at 92% 70%, rgba(20,18,15,.6), transparent 70%)}
 /* low winter sun: one hard diagonal shadow across everything */
 .sun{position:absolute;inset:0;z-index:6;pointer-events:none;mix-blend-mode:multiply;
-  background:linear-gradient(112deg, rgba(0,0,0,0) 0 38%, rgba(18,14,10,.2) 43%, rgba(18,14,10,.48) 49%, rgba(18,14,10,.58) 100%);filter:blur(10px)}
-.warm{position:absolute;inset:0;z-index:6;pointer-events:none;mix-blend-mode:screen;
+  background:linear-gradient(112deg, rgba(0,0,0,0) 0 38%, rgba(40,48,70,.28) 43%, rgba(30,36,58,.55) 49%, rgba(26,30,48,.62) 100%);filter:blur(10px)}
+.warm{position:absolute;inset:0;z-index:6;pointer-events:none;mix-blend-mode:soft-light;
   background:
-    linear-gradient(112deg, rgba(255,200,130,.24) 0 36%, rgba(255,200,130,.1) 44%, transparent 50%),
-    radial-gradient(45% 45% at 22% 62%, rgba(255,205,140,.32), transparent 70%)}
+    linear-gradient(112deg, rgba(255,170,70,.75) 0 34%, rgba(255,170,70,.35) 42%, transparent 49%),
+    radial-gradient(45% 45% at 22% 62%, rgba(255,190,110,.5), transparent 70%)}
 .window{position:absolute;inset:0;z-index:6;pointer-events:none;mix-blend-mode:screen;filter:blur(22px);opacity:.6;
   background:
     linear-gradient(112deg, transparent 0 16%, rgba(255,214,150,.35) 16% 21%, transparent 21% 22.5%, rgba(255,214,150,.35) 22.5% 27.5%, transparent 27.5%);
@@ -129,7 +129,16 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
 
 /* real photos in the slots */
-.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:contrast(1.06) saturate(1.05) sepia(.06)}
+.slot img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;filter:contrast(calc(.94 + .16*var(--lit,0))) saturate(calc(.86 + .22*var(--lit,0)))}
+/* each photo is lit from the upper left: a warm raking gradient across it, a soft glare where the sun hits,
+   and the far side falls off into shadow. Masked to the photo's own shape, so cut-outs stay cut-outs. */
+.slot .light,.slot .glare{position:absolute;inset:0;z-index:3;pointer-events:none;border-radius:inherit;opacity:var(--lit,0);
+  -webkit-mask-size:100% 100%;mask-size:100% 100%}
+.slot .light{mix-blend-mode:soft-light;
+  background:linear-gradient(130deg, rgba(255,196,110,1) 0%, rgba(255,190,110,.6) 30%, rgba(128,128,128,0) 60%, rgba(20,28,60,.85) 100%)}
+.slot .glare{mix-blend-mode:screen;
+  background:radial-gradient(55% 40% at 22% 18%, rgba(255,228,180,.38), rgba(255,228,180,0) 70%)}
+.slot.png .light,.slot.png .glare{-webkit-mask-image:var(--m);mask-image:var(--m)}
 .slot.has-photo::before,.slot.has-photo .lbl{display:none}
 .slot.png{background:none!important;border:none;outline:none;border-radius:0;aspect-ratio:auto}
 .slot.png::after{display:none}
@@ -228,19 +237,21 @@ const V={
   A:{'s-tokri':['rangoli-cut.png','png'],     's-portrait':['cards-leg.jpg','torn','4/5'], 's-cut':['scuba.jpg','oval','6/7'],
      's-extra':['window-orange.jpg','torn','1'], 's-flowers':['chai-cut.png','png']},
   B:{'s-tokri':['wildflowers-hi.jpg','round','1'], 's-portrait':['gajra.jpg','oval','3/4'], 's-cut':['sadya-cut.png','png'],
-     's-extra':['codenames.jpg','torn','4/3'], 's-flowers':['paris-map.jpg','round','1']},
+     's-extra':['codenames.jpg','torn','4/3'], 's-flowers':['paris-map.jpg','torn','4/5']},
   C:{'s-tokri':['urli-balcony.jpg','round','1'], 's-portrait':['saree.jpg','oval','3/4'], 's-cut':['maggi.jpg','torn','1'],
-     's-extra':['rumi.jpg','torn','4/5'], 's-flowers':['onions.jpg','round','1']}
+     's-extra':['rumi.jpg','torn','4/5'], 's-flowers':['earrings.jpg','torn','4/5']}
 };
 function setV(v){
   for(const id of ['s-tokri','s-portrait','s-cut','s-extra','s-flowers']){
     const s=document.getElementById(id);
-    if(!V[v][id]){ const o=s.querySelector('img.ph'); if(o) o.remove(); s.className='slot torn'; s.style.setProperty('--ar','1'); continue; }
+    if(!V[v][id]){ const o=s.querySelector('img.ph'); if(o) o.remove(); s.querySelectorAll('.light,.glare').forEach(x=>x.remove()); s.className='slot torn'; s.style.setProperty('--ar','1'); continue; }
     const [f,shape,ar]=V[v][id];
     s.className='slot has-photo '+shape; if(ar) s.style.setProperty('--ar',ar); else s.style.removeProperty('--ar');
     let img=s.querySelector('img.ph');
     if(!img){ img=document.createElement('img'); img.className='ph'; img.alt=''; img.draggable=false; s.prepend(img); }
-    img.src=P+f+'?v=12';
+    img.src=P+f+'?v=13';
+    for(const k of ['light','glare']){ if(!s.querySelector('.'+k)){ const d=document.createElement('i'); d.className=k; s.appendChild(d);} }
+    s.style.setProperty('--m', shape==='png' ? `url("${P+f}?v=13")` : 'none');
   }
   
 document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
@@ -265,6 +276,7 @@ function shade(el){
   el.style.setProperty('--sbl',(14-12*lit).toFixed(1)+'px');
   el.style.setProperty('--sa',(.32+.26*lit).toFixed(2));
   el.style.setProperty('--sat',(.85+.2*lit).toFixed(3));
+  el.style.setProperty('--lit',lit.toFixed(3));
 }
 const shadeAll=()=>document.querySelectorAll('.board .piece:not(.static)').forEach(shade);
 window.addEventListener('resize',shadeAll); window.addEventListener('load',shadeAll); shadeAll();
