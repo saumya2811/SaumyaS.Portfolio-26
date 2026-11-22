@@ -149,7 +149,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   <div class="top">
     <a href="index.html">← Saumya Srivastava</a>
     <span class="drag">drag anything around</span>
-    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="G" class="on">G</button><button data-v="H">H</button><button data-v="E">E</button><button data-v="F">F</button><button data-v="D">D</button><button data-v="A">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
+    <div class="tries" role="group" aria-label="Try photo combinations"><span>try:</span><button data-v="I" class="on">I</button><button data-v="G">G</button><button data-v="H">H</button><button data-v="E">E</button><button data-v="F">F</button><button data-v="D">D</button><button data-v="A">A</button><button data-v="B">B</button><button data-v="C">C</button><button data-v="0">empty</button></div>
   </div>
 
   <div class="board">
@@ -158,17 +158,17 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
       <div class="paper"><div id="s-tokri" class="slot round" style="--fill:var(--marigold);--ar:1"><span class="lbl"><b>photo 2</b>shot from above, in a tokri</span></div></div>
     </div>
     <div class="piece" style="--x:83%;--y:24%;--w:14%;--r:-6deg;--z:3;--i:2;--mx:22%;--my:5%;--mw:27%">
-      <div class="paper"><div id="s-portrait" class="slot oval" style="--fill:var(--lilac);--ar:3/4"><span class="lbl" style="color:#5a2c4a"><b>photo 3</b>a little portrait</span></div></div>
+      <div class="paper"><div id="s-portrait" class="slot torn" style="--fill:var(--lilac);--ar:4/5"><span class="lbl" style="color:#5a2c4a"><b>photo 3</b>a little portrait</span></div></div>
     </div>
-    <div class="piece" style="--x:15%;--y:62%;--w:17%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:62%;--mw:40%">
-      <div class="paper"><div id="s-cut" class="slot cutout" style="--fill:var(--wood);--ar:5/4"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
+    <div class="piece" style="--x:16%;--y:58%;--w:18%;--r:-3deg;--z:4;--i:3;--mx:4%;--my:62%;--mw:40%">
+      <div class="paper"><div id="s-cut" class="slot oval" style="--fill:var(--wood);--ar:6/7"><span class="lbl"><b>photo 4</b>a cut-out: a plate, a heap, a thing</span></div></div>
     </div>
     <div class="piece" style="--x:70%;--y:66%;--w:11%;--r:-8deg;--z:5;--i:6;--mx:60%;--my:84%;--mw:34%">
       <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>new</b>photo</span></div></div>
     </div>
 
     <div class="piece" style="--x:6%;--y:30%;--w:14%;--r:4deg;--z:5;--i:6;--mx:52%;--my:54%;--mw:34%">
-      <div class="paper"><div id="s-extra" class="slot torn" style="--fill:var(--olive);--ar:4/5"><span class="lbl"><b>new</b>your next photo</span></div></div>
+      <div class="paper"><div id="s-extra" class="slot torn" style="--fill:var(--olive);--ar:1"><span class="lbl"><b>new</b>your next photo</span></div></div>
     </div>
 
     <!-- title -->
@@ -212,6 +212,7 @@ const V={
   B:{'s-tokri':'kheer.jpg','s-portrait':'friend.jpg','s-cut':'board-game-cut.png','s-flowers':'gerbera-pink.jpg'},
   C:{'s-tokri':'urli-balcony.jpg','s-portrait':'kathakali.jpg','s-cut':'sadya-cut.png','s-flowers':'chrysanthemums.jpg'},
   D:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png'},
+  I:{'s-tokri':'rangoli-cut.png','s-portrait':'cards-leg.jpg','s-cut':'scuba.jpg','s-extra':'window-orange.jpg','s-flowers':'chai-cut.png'},
   G:{'s-tokri':'rangoli-cut.png','s-portrait':'scuba.jpg','s-cut':'sadya-cut.png','s-extra':'window-orange.jpg','s-flowers':'chai-cut.png'},
   H:{'s-tokri':'rangoli-cut.png','s-portrait':'scuba.jpg','s-cut':'sadya-cut.png','s-extra':'cards.jpg','s-flowers':'chai-cut.png'},
   E:{'s-tokri':'rangoli-cut.png','s-portrait':'gajra.jpg','s-cut':'sadya-cut.png','s-extra':'cards.jpg','s-flowers':'window-orange.jpg'},
@@ -229,7 +230,7 @@ function setV(v){
   document.querySelectorAll('.tries button').forEach(b=>b.classList.toggle('on',b.dataset.v===v));
 }
 document.querySelectorAll('.tries button').forEach(b=>b.addEventListener('click',()=>setV(b.dataset.v)));
-setV('G');
+setV('I');
 </script>
 </body>
 </html>
