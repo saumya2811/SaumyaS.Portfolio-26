@@ -68,9 +68,8 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
 /* ---- left strip: vertical play ---- */
 .sign{justify-content:center!important}
-.sign .vplay{writing-mode:vertical-rl;transform:rotate(180deg)!important;font:italic 500 clamp(64px,7vw,104px)/1 var(--serif);color:var(--sindoor)!important;letter-spacing:-.02em;text-shadow:none!important}
 /* ---- old Indian postcard ---- */
-.postcard{position:relative;aspect-ratio:3/2;display:grid;grid-template-columns:1fr 1fr;color:#3a2a22;
+.postcard{position:relative;aspect-ratio:3/2;container-type:inline-size;display:grid;grid-template-columns:1fr 1fr;color:#3a2a22;
   background:
     radial-gradient(3px 3px at 18% 72%, rgba(120,80,40,.35), transparent),radial-gradient(4px 3px at 77% 22%, rgba(120,80,40,.3), transparent),
     radial-gradient(5px 4px at 62% 84%, rgba(120,80,40,.25), transparent),radial-gradient(60% 55% at 30% 30%, rgba(255,245,220,.35), transparent 70%),
@@ -81,21 +80,20 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 .postcard::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;border-left:1.5px dashed rgba(58,42,34,.45)}
 .pc-left,.pc-right{position:relative;padding:9% 7% 7% 9%;display:flex;flex-direction:column}
 .pc-right{padding:9% 9% 7% 7%}
-.pc-kicker{font:clamp(11px,1vw,15px)/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
-.pc-head{font:400 clamp(30px,3.6vw,56px)/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
+.pc-kicker{font:2.4cqw/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
+.pc-head{font:400 7.4cqw/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
 .pc-head span{color:#c9862f;margin:0 .12em}
-.pc-tag{font:clamp(12px,1.12vw,17px)/1.45 "Special Elite",monospace;max-width:92%}
+.pc-tag{font:2.7cqw/1.45 "Special Elite",monospace;max-width:92%}
 .pc-waves{width:56%;margin-top:auto;margin-left:28%}
-.pc-no{font:clamp(11px,.95vw,14px) "Special Elite",monospace;opacity:.8}
+.pc-no{font:2.2cqw "Special Elite",monospace;opacity:.8}
 .pc-stamp{position:absolute;right:9%;top:8%;width:19%;transform:rotate(3deg);filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15))}
 .pc-post{position:absolute;right:24%;top:16%;width:24%;transform:rotate(-14deg)}
 .pc-line{display:flex;gap:8px;align-items:baseline;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:4px;margin-top:6%}
 .pc-line.pc-first{margin-top:46%}
-.pc-line span{font:clamp(11px,1vw,15px) "Special Elite",monospace}
-.pc-line em{font:normal clamp(11px,1.05vw,16px)/1.6 "Homemade Apple",cursive;color:#2c2a4a}
+.pc-line span{font:2.3cqw "Special Elite",monospace}
+.pc-line em{font:normal 2.4cqw/1.6 "Homemade Apple",cursive;color:#2c2a4a}
 .pc-blank{height:1.4em}
-.pc-sign{margin-top:auto;text-align:right;font:normal clamp(14px,1.4vw,22px) "Homemade Apple",cursive;color:#2c2a4a}
-@media (max-width:720px){.sign .vplay{font-size:40px}.pc-head{font-size:24px}.pc-tag{font-size:10px}.pc-line em{font-size:10px}.pc-line span,.pc-kicker,.pc-no{font-size:9px}.pc-sign{font-size:13px}}
+.pc-sign{margin-top:auto;text-align:right;font:normal 3.4cqw "Homemade Apple",cursive;color:#2c2a4a}
 /* photographic texture: plaster mottling, film grain, soft lens falloff */
 .plaster{position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;filter:blur(1.5px);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");background-size:600px 600px}
@@ -118,7 +116,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
 /* ---------- top bar ---------- */
 .top{position:relative;z-index:10;display:flex;justify-content:space-between;align-items:center;
-  padding:22px clamp(18px,4vw,48px) 0 clamp(96px,14vw,180px);font-family:var(--sans);font-size:14px;letter-spacing:.02em;color:#e9e4d6}
+  padding:22px clamp(18px,4vw,48px) 0;font-family:var(--sans);font-size:14px;letter-spacing:.02em;color:#e9e4d6}
 .top a{color:inherit;text-decoration:none;border-bottom:1.5px solid currentColor;padding-bottom:1px}
 
 /* ---------- board ---------- */
@@ -191,7 +189,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   .scene::before{background:linear-gradient(180deg,#4f6a67 0%,var(--slate) 30%,#4a615e 44%,#3a221c 44%,var(--wood) 46.5%,#24140f 47.5%,#8a705a 47.5%,var(--stone) 64%,#93795f 100%)}
   .window{-webkit-mask:linear-gradient(180deg,#000 0 42%,transparent 44%);mask:linear-gradient(180deg,#000 0 42%,transparent 44%)}
   .sign{height:40%;width:50px;font-size:22px;left:3%}
-  .top{padding-left:66px;font-size:13px}
+  .top{font-size:13px}
   .slot{border-width:5px}
   .slot.cutout{outline-width:5px}
   .slot .lbl{font-size:12px;margin:0 6px 10px}
@@ -204,7 +202,6 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 <main class="scene">
   <div class="blotch"></div>
   <div class="plaster"></div>
-  <div class="sign"><span class="vplay">play</span></div>
 
   <div class="top">
     <a href="index.html">← Saumya Srivastava</a>
@@ -227,12 +224,12 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
       <div class="paper"><div id="s-flowers" class="slot cutout" style="--fill:var(--rani);--ar:1"><span class="lbl"><b>new</b>photo</span></div></div>
     </div>
 
-    <div class="piece" style="--x:6%;--y:30%;--w:14%;--r:4deg;--z:5;--i:6;--mx:52%;--my:64%;--mw:34%">
+    <div class="piece" style="--x:4%;--y:24%;--w:15%;--r:4deg;--z:5;--i:6;--mx:52%;--my:64%;--mw:34%">
       <div class="paper"><div id="s-extra" class="slot torn" style="--fill:var(--olive);--ar:1"><span class="lbl"><b>new</b>your next photo</span></div></div>
     </div>
 
     <!-- old Indian postcard -->
-    <div class="piece static" style="--x:20%;--y:12%;--w:44%;--z:1;--r:-1.2deg;--i:0;--mx:17%;--my:27%;--mw:81%">
+    <div class="piece static" style="--x:30%;--y:22%;--w:30%;--z:1;--r:-1.2deg;--i:0;--mx:22%;--my:30%;--mw:64%">
       <div class="paper" style="animation:none"><div class="postcard">
         <div class="pc-left">
           <div class="pc-kicker">POST CARD</div>
