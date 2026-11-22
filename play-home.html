@@ -136,13 +136,13 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
   transform:translate(var(--dx,0px),var(--dy,0px));cursor:grab;user-select:none;-webkit-user-select:none;touch-action:none}
 .piece.dragging{cursor:grabbing;z-index:60}
 .piece.static{cursor:default;touch-action:auto;pointer-events:none}
-.paper{transform:rotate(var(--r,0deg));animation:boil .5s steps(1,end) infinite;animation-delay:var(--bd,0s);
+.paper{transform:rotate(var(--r,0deg));animation:boil 1.4s steps(1,end) infinite;animation-delay:var(--bd,0s);
   filter:drop-shadow(var(--sx,10px) var(--sy,8px) var(--sbl,3px) rgba(20,10,4,var(--sa,.45))) drop-shadow(0 2px 4px rgba(20,10,4,.25))}
 .piece.dragging .paper{filter:drop-shadow(calc(var(--sx,10px)*1.8) calc(var(--sy,8px)*1.8) calc(var(--sbl,3px) + 6px) rgba(20,10,4,calc(var(--sa,.45)*.8))) drop-shadow(0 4px 8px rgba(20,10,4,.25))}
 @keyframes boil{
   0%{transform:rotate(var(--r,0deg)) translate(0,0)}
-  33%{transform:rotate(calc(var(--r,0deg) + .7deg)) translate(.8px,-.6px)}
-  66%{transform:rotate(calc(var(--r,0deg) - .5deg)) translate(-.6px,.8px)}}
+  33%{transform:rotate(calc(var(--r,0deg) + .18deg)) translate(.2px,-.15px)}
+  66%{transform:rotate(calc(var(--r,0deg) - .12deg)) translate(-.15px,.2px)}}
 
 /* photo slots: where Saumya's own photos go */
 .slot{position:relative;aspect-ratio:var(--ar,3/4);overflow:hidden;display:flex;align-items:flex-end;justify-content:center;
@@ -300,7 +300,7 @@ const shadeAll=()=>document.querySelectorAll('.board .piece:not(.static)').forEa
 window.addEventListener('resize',shadeAll); window.addEventListener('load',shadeAll);
 const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15});
 document.querySelectorAll('.board').forEach(b=>io.observe(b));
-document.querySelectorAll('.paper').forEach(p=>p.style.setProperty('--bd',(-Math.random()*.5).toFixed(2)+'s'));
+document.querySelectorAll('.paper').forEach(p=>p.style.setProperty('--bd',(-Math.random()*1.4).toFixed(2)+'s'));
 let z=20;
 document.querySelectorAll('.piece:not(.static)').forEach(el=>{
   let sx,sy,ox,oy,id=null;
