@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Play · Saumya Srivastava</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,300;1,9..144,500&family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@400;500&family=Special+Elite&family=Homemade+Apple&family=Kalam:wght@400&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;1,9..144,300;1,9..144,500&family=Tiro+Devanagari+Hindi&family=DM+Sans:wght@400;500&family=Special+Elite&family=Homemade+Apple&family=Kalam:wght@400&family=Dancing+Script:wght@500;600&display=swap" rel="stylesheet">
 <style>
 :root{
   /* earthy base (sampled from her references) */
@@ -76,7 +76,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
     #d9c094;}
 .postcard::before{content:"";position:absolute;inset:5%;border:2px dotted rgba(122,46,42,.6);pointer-events:none}
 .postcard::after{content:"";position:absolute;left:50%;top:10%;bottom:10%;border-left:1.5px dashed rgba(58,42,34,.45)}
-.pc-left,.pc-right{position:relative;padding:9% 6% 7% 26%;display:flex;flex-direction:column}
+.pc-left,.pc-right{position:relative;padding:9% 6% 7% 16%;display:flex;flex-direction:column}
 .pc-right{padding:9% 9% 7% 7%}
 .pc-kicker{font:2.9cqw/1 "Special Elite",monospace;letter-spacing:.18em;opacity:.8}
 .pc-head{font:400 8.2cqw/1.05 var(--hindi);color:#7a2e2a;margin:6% 0 5%;letter-spacing:.01em}
@@ -89,12 +89,12 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 .pc-no{font:2.8cqw "Special Elite",monospace;opacity:.8}
 .pc-stamp{position:absolute;right:9%;top:8%;width:19%;transform:rotate(3deg);filter:drop-shadow(1px 1px 0 rgba(0,0,0,.15))}
 .pc-post{position:absolute;right:24%;top:16%;width:24%;transform:rotate(-14deg)}
-.pc-line{display:flex;flex-wrap:wrap;gap:0 6px;align-items:baseline;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:4px;margin-top:6%}
-.pc-line.pc-first{margin-top:36%}
+.pc-line{display:flex;flex-wrap:wrap;gap:0 6px;min-height:1.6em;align-items:baseline;border-bottom:1.5px dotted rgba(58,42,34,.5);padding-bottom:4px;margin-top:6%}
+.pc-line.pc-first{margin-top:44%}
 .pc-line span{font:3cqw "Special Elite",monospace}
-.pc-line em{font:normal 3.6cqw/1.5 "Homemade Apple",cursive;color:#1f1d3a}
-.pc-msg{margin-top:6%;font:400 3.3cqw/1.4 "Kalam",var(--hindi);color:#1f1d3a}
-.pc-sign{margin-top:auto;text-align:right;font:normal 4.4cqw "Homemade Apple",cursive;color:#2c2a4a}
+.pc-line em{font:600 4.6cqw/1.2 "Dancing Script",cursive;color:#1f1d3a}
+.pc-msg{margin-top:12%;font:400 5cqw/1.5 "Kalam",var(--hindi);color:#1f1d3a}
+.pc-sign{margin-top:auto;text-align:right;font:600 6cqw "Dancing Script",cursive;color:#2c2a4a}
 /* photographic texture: plaster mottling, film grain, soft lens falloff */
 .plaster{position:absolute;inset:0;z-index:-2;pointer-events:none;mix-blend-mode:soft-light;opacity:.55;filter:blur(1.5px);
   background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='600'%3E%3Cfilter id='p'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.012' numOctaves='5' seed='7'/%3E%3CfeColorMatrix values='0 0 0 0 .5 0 0 0 0 .45 0 0 0 0 .38 0 0 0 1.2 -.1'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23p)'/%3E%3C/svg%3E");background-size:600px 600px}
@@ -231,11 +231,11 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
 
     <!-- old Indian postcard -->
     <div class="piece static" style="--x:31.25%;--y:29.2%;--w:37.5%;--z:1;--r:0deg;--i:0;--mx:10%;--my:32.6%;--mw:80%">
-      <div class="paper" style="animation:none;filter:none"><div class="postcard"><h1 class="pc-side">खेल<span>·</span>कूद<span>·</span>मस्ती</h1>
+      <div class="paper" style="animation:none;filter:none"><div class="postcard">
         <div class="pc-left">
           <div class="pc-kicker">POST CARD</div>
           
-          <p class="pc-tag">a little library of what's been occupying my mind and life lately</p>
+          <p class="pc-msg">यहाँ सब कुशल मंगल है,<br>आशा है वहाँ भी<br>सब कुशल मंगल होगा।</p>
           <svg class="pc-waves" viewBox="0 0 160 40" aria-hidden="true"><g fill="none" stroke="#3a2a22" stroke-width="2" opacity=".55">
             <path d="M0 6q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/><path d="M0 16q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/>
             <path d="M0 26q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/><path d="M0 36q10-6 20 0t20 0 20 0 20 0 20 0 20 0 20 0 20 0"/></g></svg>
@@ -259,7 +259,7 @@ body{background:var(--stone);color:var(--cream);font-family:var(--serif);overflo
             <text x="60" y="64" text-anchor="middle" font-family="Special Elite" font-size="12" fill="#2c2a4a" opacity=".7">NOV 26</text></svg>
           <div class="pc-line pc-first"><span>To,</span><em>whoever wanders in</em></div>
           <div class="pc-line"><span>From,</span><em>Saumya</em></div>
-          <p class="pc-msg">यहाँ सब कुशल मंगल है,<br>आशा है वहाँ भी सब कुशल मंगल होगा।</p>
+          <div class="pc-line"></div>
           <div class="pc-sign">love, S.</div>
         </div>
       </div></div>
