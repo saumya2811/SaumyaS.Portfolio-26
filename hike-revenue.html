@@ -179,5 +179,5 @@ footer a{color:inherit}
 })();
 (function(){if(!document.querySelector('.show'))return;document.querySelectorAll('.show').forEach(function(w){var sl=w.querySelectorAll('.sl'),cur=w.querySelector('.cur'),i=0;function go(n){sl[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');cur.textContent=i+1;}w.querySelector('.prev').addEventListener('click',function(){go(i-1)});w.querySelector('.next').addEventListener('click',function(){go(i+1)});});})();
 </script>
-<script>try{if(sessionStorage.getItem('front')==='/product/'){[].forEach.call(document.querySelectorAll('a.back'),function(a){a.href='/product/#work'})}}catch(e){}</script>
+<script>try{if(sessionStorage.getItem('front')==='/portfolio/'){[].forEach.call(document.querySelectorAll('a.back'),function(a){a.href='/portfolio/#work'})}}catch(e){}</script>
 </body></html>
