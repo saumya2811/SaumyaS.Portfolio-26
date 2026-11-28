@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Rush (by Hike) · User Immersion · Saumya Srivastava</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600&family=DM+Sans:wght@400;500;700&display=swap">
+<style>
+:root{--navy:#13294B;--brown:#7A5A3B;--sage:#D3D5C2;--soft:#5B677D;--faint:#E9EAE1;
+--head:'Plus Jakarta Sans','Avenir Next','Segoe UI',sans-serif;--sans:'DM Sans','Avenir Next','Segoe UI',sans-serif;color-scheme:light}
+*{box-sizing:border-box}
+body{margin:0;background:#fff;color:var(--navy);font:400 17px/1.8 var(--sans);-webkit-font-smoothing:antialiased;padding:0 20px}
+.col{max-width:1040px;margin:0 auto}
+h1,h2,h3,p{margin:0}
+a{color:#2F6FD6;text-decoration:none}
+.cs-top{padding:28px 0 0}
+a.back{color:var(--soft);font-size:15px}
+a.back:hover{color:var(--navy)}
+.cs-head{padding:40px 0 8px;display:flex;flex-direction:column;gap:6px}
+.pl-n{font-weight:500;font-size:13px;color:var(--soft)}
+.cs-head h1{font-family:var(--head);font-weight:600;font-size:26px;line-height:1.35;letter-spacing:-0.015em;max-width:900px}
+.sum-row{padding:30px 0;border-top:1px solid var(--sage);display:flex;flex-direction:column;gap:12px;font-size:16px}
+.sum-row:first-child{border-top:0}
+.sum-l{font-family:var(--head);font-weight:600;font-size:21px;line-height:1.35;color:var(--brown)}
+.sub-l{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--soft);margin-top:14px}
+.logo{display:block;height:24px;width:133px;margin-bottom:6px}
+.sum-fig{margin:18px 0 0}
+.sum-fig img{display:block;width:100%;height:auto;background:#fff;border:1px solid var(--sage);border-radius:6px;padding:10px}
+.sum-fig figcaption{font-size:13px;color:var(--soft);margin-top:8px}
+.team{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.team li{border:1px solid var(--sage);border-radius:6px;padding:10px 14px;font-size:14px;line-height:1.5;color:var(--soft)}
+.team b{display:block;font-family:var(--head);font-weight:600;font-size:15px;color:var(--navy)}
+.team li.cm{border:1.5px solid var(--navy)}
+@media (max-width:700px){.team{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.ftab-wrap{overflow-x:auto;margin-top:8px}
+.ftab{width:100%;border-collapse:collapse;font-size:15px;line-height:1.75;color:var(--navy)}
+.ftab th{font-size:13px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;text-align:left;background:#F3EEE4;padding:10px 44px 10px 10px}
+.ftab td{vertical-align:top;text-align:left;padding:16px 44px 22px 10px;border-bottom:1px dashed #C9CDB6;width:33.3%}
+.ftab th:last-child,.ftab td:last-child{padding-right:0}
+.ftab tbody tr:last-child td{border-bottom:0}
+.fq{display:block}
+.nowtag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#2A7A4B;background:#EAF6EF;border:1px solid #2E8B57;border-radius:999px;padding:1px 9px;margin-bottom:6px}
+.fm{display:block;font-size:13px;color:var(--soft);margin-top:6px}
+ul.fl{margin:0;padding-left:18px}ul.fl li{margin:0 0 8px}ul.fl li:last-child{margin-bottom:0}
+.ship{display:flex;gap:8px;color:#2A7A4B}
+.ship::before{content:"✓";flex:none;font-weight:700;color:#2E8B57}
+.ship + .ship{margin-top:8px}
+@media (max-width:600px){.ftab{min-width:600px}}
+.thumb{display:block;width:100%;max-width:280px;margin-top:14px;cursor:zoom-in}
+.thumb img{display:block;width:100%;height:auto;max-height:260px;object-fit:cover;object-position:top;background:#fff;border:1px solid var(--sage);border-radius:4px;padding:4px}
+.thumb-cap{display:block;font-size:12px;color:var(--soft);margin-top:4px}
+.stat-line{display:flex;align-items:center;gap:12px;font-size:15px;line-height:1.5}
+.stat{font-family:var(--head);font-weight:600;font-size:15px;color:#2E8B57;white-space:nowrap}
+.imp-list{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:12px;font-size:15px;line-height:1.7}
+.imp-list li{position:relative;padding-left:22px}
+.imp-list li::before{content:"✓";position:absolute;left:0;top:0;font-weight:700;color:#2E8B57}
+.imp-h{color:#2A7A4B;font-weight:600}
+.phases{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:0;margin-top:6px}
+.phases li{position:relative;list-style:none;padding:0 24px 0 0}
+.phases li:not(:last-child)::after{content:"→";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--soft)}
+.pbox{height:100%;border:1px solid var(--sage);border-radius:8px;padding:12px 14px;font-size:14px;line-height:1.5}
+.pbox b{display:block;font-family:var(--head);font-weight:600;font-size:15px;margin-bottom:2px}
+.tk{color:#2E8B57;font-weight:700;margin-right:6px}
+.pbox.now{border:1.5px solid #2E8B57;background:#F4F9F5}
+.phases ol{margin:0;padding:0}
+@media (max-width:760px){.phases{grid-template-columns:minmax(0,1fr);gap:12px}.phases li{padding:0}.phases li:not(:last-child)::after{content:none}}
+.info{display:inline-flex;align-items:center;justify-content:center;width:12px;height:12px;margin:0 1px 0 3px;padding:0;border-radius:50%;border:none;background:var(--navy);color:#fff;font:italic 600 9px/1 Georgia,serif;vertical-align:3px;cursor:pointer}
+.tip{position:fixed;z-index:50;max-width:min(280px,calc(100vw - 32px));padding:12px 14px;border-radius:8px;background:var(--navy);color:#fff;font:400 14px/1.5 var(--sans);box-shadow:0 8px 24px rgba(19,41,75,.25)}
+.tip[hidden]{display:none}
+.lb{position:fixed;inset:0;z-index:60;background:rgba(19,41,75,.82);display:flex;align-items:center;justify-content:center;padding:24px;cursor:zoom-out}.lb[hidden]{display:none}
+.lb img{max-width:min(1200px,100%);max-height:100%;width:auto;height:auto;background:#fff;border-radius:6px;padding:10px}
+.show{background:#F4F5EF;border:1px solid var(--sage);border-radius:10px;padding:16px 16px 10px;margin-top:6px}
+.show-stage{position:relative}
+.show .sl{display:none;margin:0;flex-direction:column;gap:8px}
+.show .sl.on{display:flex}
+.show .sl img{display:block;width:100%;height:auto;border-radius:6px;background:#fff;border:1px solid var(--sage)}
+.show .sl figcaption{color:var(--soft);font-size:14px;text-align:center}
+.show-btn{position:absolute;top:calc(50% - 36px);width:40px;height:40px;border-radius:50%;border:1px solid var(--sage);background:#fff;color:var(--navy);font:600 24px/1 var(--sans);cursor:pointer;box-shadow:0 2px 8px rgba(19,41,75,.15);display:flex;align-items:center;justify-content:center;padding-bottom:3px}
+.show-btn.prev{left:-8px}.show-btn.next{right:-8px}
+.show-count{color:var(--soft);font-size:13px;text-align:center;margin-top:2px}
+@media (max-width:640px){.show{padding:10px 8px 8px}.show-btn{width:32px;height:32px;font-size:20px}}
+.cs-foot{margin:40px 0 0}
+footer{border-top:1px solid var(--sage);margin-top:40px;padding:24px 0 48px;font-size:13px;color:var(--soft)}
+footer a{color:inherit}
+.ctx-fig{margin:10px 0 0;max-width:200px}.ctx-fig img{display:block;width:100%;height:auto;border-radius:10px}
+.ctx-fig figcaption{font-size:13px;color:var(--soft);margin-top:8px}
+.imp-row{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin:4px 0 8px}
+.imp-row figure{margin:0;display:flex;flex-direction:column;gap:6px}
+.imp-row img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid var(--sage)}
+.imp-row figcaption{font-size:13px;line-height:1.5;color:var(--soft)}
+@media (max-width:700px){.imp-row{grid-template-columns:minmax(0,1fr)}}
+.stats{display:flex;flex-direction:column;gap:6px}
+.steps{list-style:none;margin:6px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:10px;counter-reset:s}
+.steps li{border:1px solid var(--sage);border-radius:6px;padding:10px 14px;font-size:14px;line-height:1.5;color:var(--soft);counter-increment:s}
+.steps li b{display:block;font-family:var(--head);font-weight:600;font-size:15px;color:var(--navy)}
+.steps li b::before{content:counter(s) " · ";color:var(--brown)}
+@media (max-width:760px){.steps{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+</style></head><body><div class="col">
+<div class="cs-top"><a class="back" href="index.html#work">← Back</a></div>
+<header class="cs-head"><h1>Running twice-yearly user immersions with leadership, which shaped the quarterly roadmap</h1></header>
+
+<section>
+  <div class="sum-row">
+    <p class="sum-l">Rush (by Hike)</p>
+    <p>Rush (by Hike) is a gaming app with 5 crore+ players, who play games like Ludo, Call Break and Carrom. Most of them are from Tier 2 and 3 cities in India, many with low English proficiency and new to the internet: a very different world from the team building the app.</p>
+    <p><b>User Immersion</b> was a large-scale ethnographic study the research team ran every six months. We took leadership and senior management into players' own context, to meet them where they live and play.</p>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">The problem</p>
+    <p>Immersion only works if the right players show up. Recruitment was outsourced, took 40–45 days, and players often backed out at the last minute.</p>
+    <p>And the findings had to be ready in time, and strong enough, to shape the next quarter's roadmap.</p>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">How I approached it</p>
+    <p>Each round took about two months of preparation, in five stages. The process evolved with every round.</p>
+    <div class="ftab-wrap"><table class="ftab">
+      <thead><tr><th>Stage</th><th>What I did</th><th>What came out of it</th></tr></thead>
+      <tbody>
+        <tr><td><span class="fq">Plan</span><span class="fm">Starting two months ahead</span></td>
+          <td><ul class="fl"><li>Reviewed the last immersion and the last quarter before setting objectives</li><li>Set the objectives and discussion guide with design, engineering, product, game design, finance and customer support</li></ul></td>
+          <td><span class="ship"><span>An agenda every team had a stake in</span></span></td></tr>
+        <tr><td><span class="fq">Recruit</span><span class="fm">Moved from an outsourced agency to an in-house recruiter, whom I onboarded</span></td>
+          <td><ul class="fl"><li>Set up a two-step verification process that builds players' trust before the visit (below)</li><li>Oversaw on-the-ground execution of the in-person visits, end to end</li></ul></td>
+          <td><span class="ship"><span>81% fewer last-minute back-outs</span></span><span class="ship"><span>Recruitment down from 40–45 days to 14–15</span></span></td></tr>
+        <tr><td><span class="fq">Brief stakeholders</span><span class="fm">A day or two before the visits</span></td>
+          <td><ul class="fl"><li>Briefed stakeholders going on visits on the process</li></ul></td>
+          <td><span class="ship"><span>Stakeholders who knew what to expect in the field</span></span></td></tr>
+        <tr><td><span class="fq">Field research</span><span class="fm">Ethnographic visits</span></td>
+          <td><ul class="fl"><li>Stakeholders visited players in teams of two, with a researcher moderating</li><li>Discussion guides were adapted to the language players use</li></ul></td>
+          <td><span class="ship"><span>Leadership hearing problems first-hand</span></span></td></tr>
+        <tr><td><span class="fq">Analysis and report</span><span class="fm">Synthesis of all the visits</span></td>
+          <td><ul class="fl"><li>Managed all the data and collaborated on the reports</li></ul></td>
+          <td><span class="ship"><span>A report with strategic recommendations, timed for planning week</span></span><span class="ship"><span>Personas, key user journeys and empathy maps, iterated every round</span></span></td></tr>
+      </tbody>
+    </table></div>
+    <p class="sub-l">Two-step verification for recruitment</p>
+    <ol class="steps">
+      <li><b>Introductory call</b>The recruiter gauges interest and pairs players by location</li>
+      <li><b>Confirmation call</b>The recruiter confirms details and profile screenshots</li>
+      <li><b>Trust-building visit</b>An admin team member visits, so the player doesn't back out</li>
+      <li><b>Final visit</b>The same admin takes stakeholders to meet the player</li>
+    </ol>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">Impact</p>
+    <div class="stats">
+      <p class="stat-line"><span class="stat">−81%</span>last-minute back-outs</p>
+      <p class="stat-line"><span class="stat">40–45 → 14–15 days</span>to recruit for each round</p>
+    </div>
+    <ul class="imp-list">
+      <li><span class="imp-h">Burning issues fixed fast:</span> leadership saw problems first-hand, and a TDS cashback was launched right after the second immersion</li>
+      <li><span class="imp-h">A direct line into the roadmap:</span> immersion ran just before planning week, so its report shaped each next quarter</li>
+      <li><span class="imp-h">Foundational knowledge of players:</span> key journeys and personas were evaluated, and we uncovered how players think and behave</li>
+      <li><span class="imp-h">Empathy from the top down:</span> it became one of the most awaited exercises at Hike, and raised UX maturity across the company</li>
+    </ul>
+  </div>
+
+  <div class="sum-row">
+    <p class="sum-l">Reflection: research operations are research</p>
+    <p>The most important work happened before anyone left the office. Building trust with players before the visit is what made the visits happen at all, and a report timed for planning week is what turned what leaders saw into roadmap decisions.</p>
+  </div>
+</section>
+
+<p class="cs-foot" style="margin-top:16px"><a class="back" href="index.html#work">← Back to all case studies</a></p>
+<footer>© 2026 Saumya Srivastava · <a href="https://www.linkedin.com/in/saumya2811">LinkedIn</a></footer>
+</div>
+<div class="tip" id="tip" role="tooltip" hidden></div>
+<div class="lb" id="lb" hidden><img alt=""></div>
+<script>
+(function(){
+  var tip=document.getElementById('tip'),cur=null,pinned=false;
+  function show(b){cur=b;tip.textContent=b.getAttribute('data-tip');tip.hidden=false;
+    var r=b.getBoundingClientRect(),t=tip.getBoundingClientRect();
+    var x=Math.min(Math.max(16,r.left+r.width/2-t.width/2),window.innerWidth-t.width-16);
+    var y=r.top-t.height-10;if(y<12)y=r.bottom+10;tip.style.left=x+'px';tip.style.top=y+'px';}
+  function hide(){cur=null;pinned=false;tip.hidden=true;}
+  document.querySelectorAll('.info').forEach(function(b){
+    b.addEventListener('mouseenter',function(){if(!pinned)show(b)});
+    b.addEventListener('mouseleave',function(){if(!pinned)hide()});
+    b.addEventListener('click',function(e){e.preventDefault();e.stopPropagation();if(pinned&&cur===b){hide()}else{show(b);pinned=true}});
+  });
+  document.addEventListener('click',function(e){if(cur&&!tip.contains(e.target))hide()});
+  window.addEventListener('scroll',function(){if(cur)hide()},{passive:true});
+  var lb=document.getElementById('lb'),im=lb.querySelector('img');
+  document.querySelectorAll('a.thumb').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();var t=a.querySelector('img');im.src=t.src;im.alt=t.alt;lb.hidden=false;});});
+  lb.addEventListener('click',function(){lb.hidden=true;im.removeAttribute('src');});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')lb.hidden=true;});
+})();
+(function(){if(!document.querySelector('.show'))return;document.querySelectorAll('.show').forEach(function(w){var sl=w.querySelectorAll('.sl'),cur=w.querySelector('.cur'),i=0;function go(n){sl[i].classList.remove('on');i=(n+sl.length)%sl.length;sl[i].classList.add('on');cur.textContent=i+1;}w.querySelector('.prev').addEventListener('click',function(){go(i-1)});w.querySelector('.next').addEventListener('click',function(){go(i+1)});});})();
+</script>
+<script>try{if(sessionStorage.getItem('front')==='/portfolio/'){[].forEach.call(document.querySelectorAll('a.back'),function(a){a.href='/portfolio/#work'})}}catch(e){}</script>
+</body></html>
